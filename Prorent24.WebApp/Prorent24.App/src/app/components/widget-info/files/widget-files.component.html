@@ -1,0 +1,46 @@
+<pgcard Controls="false" Type="transparent" HeaderClass="separator" AdditionalClasses="mb-0">
+    <ng-template #CardTitle>
+        Файлы
+    </ng-template>
+    <div class="text-right">
+        <button type="button" class="btn btn-link"
+        matTooltip="Файл не должен превышать 50 мб. Допустимые форматы файлов: jpeg, png, pdf, doc, docx.">
+        <i class="fa fa-question-circle-o"></i>
+    </button>
+    </div>
+    <div class="">
+        <pg-upload *ngIf="data" Type="drag" [Multiple]="true" [Limit]="7" [Action]="fileUploadUrl"
+            [ShowUploadList]="false" [WithCredentials]="true" (Change)="fileHandleChange($event)" extraClass="dropzone"
+            progressType="circle" [Size]="50000"
+            FileType="image/png,image/jpeg,image/gif,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+            <div class="d-flex flex-column align-items-center">
+                <p class="bold no-margin small">Перетащите файл</p>
+                <p class="small">или нажмите, чтобы загрузить</p>
+            </div>
+        </pg-upload>
+
+        <!--   <ul class="list-unstyled mb-0 pt-2">
+            <li *ngFor="let file of data" class="small"><i class="fa fa-file"></i> {{file.name}}</li>
+        </ul>  -->
+
+        <div class="upload-list upload-list-text list-group">
+            <div *ngFor="let file of data" class="list-group-item">
+                <div class="list-group-item-inner justify-content-between">
+                    <div class="d-flex">
+                        <a href="{{file.url}}" target="_blank">
+                            <i class="fa fa-paperclip p-l-5 p-r-5"></i>
+                            <span class="list-item-name text-info">
+                                {{(file.name.length > 20) ? (file.name.split('.')[0] | slice:0:20)+'...'+file.name.split('.')[1] :(file.name)}}
+                            </span>
+                        </a>
+                        <i class="fa p-l-5 p-r-5" [ngClass]="file.confidential ? 'fa-eye-slash' : 'fa-eye-o'"></i>
+                    </div>
+                    <button class="btn-link" (click)="removeFile(file.id)" matTooltip="Удалить">
+                        <i class="pg pg-close" title="Remove File"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</pgcard>

@@ -1,0 +1,13 @@
+<div [ngStyle]="{'height': height}" > <!-- [ngClass]="_controlPanel ? 'pb-35' : ''" class="full-height" --> 
+    <!-- <div *ngIf="_controlPanel" class="container-fluid bg-white p-1" style="height: 35px;">
+        <div class="pull-right">
+            <div class="btn-group" btnRadioGroup [(ngModel)]="zLevel" (ngModelChange)="setZoomLevel()">
+                <label class="btn btn-xs btn-default" btnRadio="Day" uncheckable tabindex="0" role="button">День</label>
+                <label class="btn btn-xs btn-default" btnRadio="Week" uncheckable tabindex="1" role="button">Неделя</label>
+                <label class="btn btn-xs btn-default" btnRadio="Month" uncheckable tabindex="2" role="button">Месяц</label>
+            </div>
+        </div>
+    </div> -->
+
+    <daypilot-scheduler #scheduler [config]="config" [events]="events"></daypilot-scheduler>
+</div>

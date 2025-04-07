@@ -1,0 +1,303 @@
+﻿[
+  {
+    "Name": "Первое напоминание",
+    "Type": "Reminder",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "First reminder",
+    "Type": "Reminder",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Второе напоминание",
+    "Type": "Reminder",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Second reminder",
+    "Type": "Reminder",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Packing slip",
+    "Type": "PackingSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Call sheet",
+    "Type": "PackingSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Sub-projects are listed on packing slip",
+    "Type": "PackingSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Carnet",
+    "Type": "PackingSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Список отгрузки",
+    "Type": "PackingSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Расписание проекта",
+    "Type": "PackingSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Суб-проекты указаны на товарных накладных",
+    "Type": "PackingSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Карнет",
+    "Type": "PackingSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "No individual prices",
+    "Type": "Contract",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Split subprojects",
+    "Type": "Contract",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Extended",
+    "Type": "Contract",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Compact",
+    "Type": "Contract",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Italian ddt",
+    "Type": "Contract",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Отсутствие розничных цен",
+    "Type": "Contract",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Зарегистрированный субпроект",
+    "Type": "Contract",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Расширенный",
+    "Type": "Contract",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Скомпаковать",
+    "Type": "Contract",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "One line",
+    "Type": "Invoice",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Extended",
+    "Type": "Invoice",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Одна линия",
+    "Type": "Invoice",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Расширенный",
+    "Type": "Invoice",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Default",
+    "Type": "SubhireSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "По умолчанию",
+    "Type": "SubhireSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Equipment tag",
+    "Type": "EquipmentSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Тег оборудования",
+    "Type": "EquipmentSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Planning",
+    "Type": "CrewMemberNote",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Планирование",
+    "Type": "CrewMemberNote",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Compact",
+    "Type": "Quotation",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "No individual prices",
+    "Type": "Quotation",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Split subprojects",
+    "Type": "Quotation",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Extended",
+    "Type": "Quotation",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Скомпаковать",
+    "Type": "Quotation",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Отсутствие розничных цен",
+    "Type": "Quotation",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Зарегистрированный субпроект",
+    "Type": "Quotation",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Расширенный",
+    "Type": "Quotation",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Default",
+    "Type": "RepairSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "По умолчанию",
+    "Type": "RepairSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 0
+  },
+  {
+    "Name": "Planning",
+    "Type": "VehicleSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  },
+  {
+    "Name": "Планирование",
+    "Type": "VehicleSlip",
+    "IsHidden": false,
+    "IsSystemTemplate": true,
+    "LanguageId": 1
+  }
+]

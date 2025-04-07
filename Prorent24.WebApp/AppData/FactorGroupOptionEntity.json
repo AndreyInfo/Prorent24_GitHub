@@ -1,0 +1,67 @@
+﻿[
+  {
+    "NumberOfDaysFrom": 1,
+    "NumberOfDaysTo": 1,
+    "Factor": 1
+  },
+  {
+    "NumberOfDaysFrom": 2,
+    "NumberOfDaysTo": 2,
+    "Factor": 1.50
+  },
+  {
+    "NumberOfDaysFrom": 3,
+    "NumberOfDaysTo": 3,
+    "Factor": 2
+  },
+  {
+    "NumberOfDaysFrom": 4,
+    "NumberOfDaysTo": 4,
+    "Factor": 2.40
+  },
+  {
+    "NumberOfDaysFrom": 5,
+    "NumberOfDaysTo": 5,
+    "Factor": 2.80
+  },
+  {
+    "NumberOfDaysFrom": 6,
+    "NumberOfDaysTo": 6,
+    "Factor": 3
+  },
+  {
+    "NumberOfDaysFrom": 7,
+    "NumberOfDaysTo": 7,
+    "Factor": 3.20
+  },
+  {
+    "NumberOfDaysFrom": 8,
+    "NumberOfDaysTo": 8,
+    "Factor": 3.40
+  },
+  {
+    "NumberOfDaysFrom": 9,
+    "NumberOfDaysTo": 9,
+    "Factor": 5
+  },
+  {
+    "NumberOfDaysFrom": 10,
+    "NumberOfDaysTo": 10,
+    "Factor": 5
+  },
+  {
+    "NumberOfDaysFrom": 11,
+    "NumberOfDaysTo": 11,
+    "Factor": 5.20
+  },
+  {
+    "NumberOfDaysFrom": 12,
+    "NumberOfDaysTo": 12,
+    "Factor": 5.40
+  },
+  {
+    "NumberOfDaysFrom": 13,
+    "NumberOfDaysTo": 13,
+    "Factor": 6
+  }
+]

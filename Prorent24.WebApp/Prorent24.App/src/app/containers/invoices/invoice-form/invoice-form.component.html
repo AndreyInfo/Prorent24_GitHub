@@ -1,0 +1,368 @@
+<div class="container-fixed-lg pt-3 full-height page-content-wrapper scroll-vertical-blue">
+    <div class="splitter-panel">
+        <div class="jumbotron no-margin" style="height: 32px;">
+            <div class="container-fluid" style="margin-right: 20px;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="inner" pg-parallax>
+                            <div class="container-fluid sm-p-l-0 sm-p-r-0">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a routerLink="/invoices">{{'invoice' | translate}}</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">
+                                        {{ (entity.id ? "form.edit" : "form.create") | translate }}
+                                        {{'the_bill' | translate}}
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <form role="form" #form="ngForm" (ngSubmit)="onSubmitInvoiceForm(form)">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row col-white">
+                    <div class="col-md-12 controls-top" style="height: 62px;">
+                        <div *ngIf="id">
+                            <a (click)="docViewer = !docViewer" class="link-button form-edit">
+                                <svg *ngIf="!docViewer" width="10" height="7" viewBox="0 0 10 7" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M5 0C1.204 0 0.063159 3.29073 0.0527154 3.32405L0 3.4812L0.0522181 3.63835C0.063159 3.67167 1.204 6.9624 5 6.9624C8.796 6.9624 9.93684 3.67167 9.94728 3.63835L10 3.4812L9.94778 3.32405C9.93684 3.29073 8.796 0 5 0ZM5 5.47046C3.90292 5.47046 3.01074 4.57828 3.01074 3.4812C3.01074 2.38413 3.90292 1.49194 5 1.49194C6.09707 1.49194 6.98926 2.38413 6.98926 3.4812C6.98926 4.57828 6.09707 5.47046 5 5.47046Z"
+                                        fill="#192D3E" />
+                                    <path
+                                        d="M5 2.48633C4.46091 2.48633 4.00537 2.94187 4.00537 3.48096C4.00537 4.02005 4.46091 4.47559 5 4.47559C5.53909 4.47559 5.99463 4.02005 5.99463 3.48096C5.99463 2.94187 5.53909 2.48633 5 2.48633Z"
+                                        fill="#192D3E" />
+                                </svg>
+                                {{ (docViewer ? 'form.edit' : 'form.review') | translate}}
+                            </a>
+                            <a (click)="onSubmitInvoiceForm(form)"
+                                class="link-button form-edit">
+                                {{'form.refresh' | translate}}
+                            </a>
+                            <a class="link-button form-edit" (click)="downloadFile()">
+                                {{'form.download' | translate}}
+                            </a>
+                        </div>
+                        <div *ngIf="!id">
+                            <button type="submit" class="btn btn-primary btn-xs mr-1 link-button form-edit"
+                                [disabled]="form.invalid">
+                                <i class="fa fa-file-text-o"></i> {{'form.generate' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div *ngIf="docViewer" class="row" style="height: 91%;">
+                    <div class="col pdf-viewer">
+                        <!-- INVOICE VIEWER -->
+                        <div *ngIf="docViewer && (entity.url !== undefined)" class="full-height pb-100">
+                            <object [attr.data]="entity.url" type="application/pdf" width="100%" height="100%">
+                                <p>PDF cannot be displayed.</p>
+                            </object>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="!docViewer" class="row">
+                    <div class="col-md-4 col-white invoice-status-block">
+                        <label>Статус </label>
+                        <div class="list-notifications">
+                            <ul class="ul-notifications">
+                                <li *ngFor="let item of invoiceState | enumToArray">
+                                    <div class="radio">
+                                        <input type="radio" id="{{item}}" value="{{item}}" name="state"
+                                            [(ngModel)]="entity.state">
+                                        <label for="{{item}}"> {{ 'entity.' + item | translate}}</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col col-white" style="margin-left: 15px;">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <div class="invoice-client-block">
+                                    <label>Клиент</label>
+                                    <div class="form-group" [ngClass]="{'errors-submit-select': !entity.clientId}">
+                                        <address>
+                                            <label style="padding-top: 0px !important;"
+                                                class="bold-text">{{'Company:' | translate}}</label>
+                                            <span *ngIf="entity.client.id">{{ entity.client.companyName }}</span>
+                                            <br>
+                                            <label style="padding-top: 0px !important;"
+                                                class="bold-text">{{'City:' | translate }}</label>
+                                            <span
+                                                *ngIf="entity.client.id">{{ entity.client.visitingAddress?.city }}</span>
+                                            <br>
+                                            <label style="padding-top: 0px !important;"
+                                                class="bold-text">{{'Address:' | translate}}</label>
+                                            <span
+                                                *ngIf="entity.client.id">{{ entity.client.visitingAddress?.address }}</span>
+                                            <span
+                                                *ngIf="entity.client.id">{{ entity.client.visitingAddress?.number }}</span>
+                                            <br>
+                                            <label style="padding-top: 0px !important;"
+                                                class="bold-text">{{'Postcode:' | translate}}</label>
+                                            <span
+                                                *ngIf="entity.client.id">{{ entity.client.visitingAddress?.postalCode }}</span>
+                                            <br>
+                                        </address>
+                                        <pg-select style="width: 100%;" [(ngModel)]="entity.clientId" name="clientId"
+                                            [PlaceHolder]="'Введите по крайней мере, три буквы для начала поиска'"
+                                            AllowClear ShowSearch [NotFoundContent]="'Не найдено'"
+                                            (keyup)="onChangeContactSearch($event)"
+                                            (ngModelChange)="onSelectedContact()" [required]="true">
+                                            <pg-option *ngFor="let option of contacts" [Label]="option.name"
+                                                [Value]="option.id" [Disabled]="option.disabled">
+                                            </pg-option>
+                                        </pg-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div *ngIf="!docViewer" class="row">
+                    <div class="col-md-12">
+                        <!-- INVOICE -->
+                        <pgcard MinimalHeader="true" Toggle="false">
+                            <ng-template #CardTitle>
+                                {{'theBill' | translate}}
+                            </ng-template>
+                            <span
+                                class="help fs-10">{{'Add invoice lines to determine the invoice amount.' | translate}}</span>
+
+                            <!-- FORM -->
+                            <div class="table-responsive table-invoice">
+                                <form role="form" #invoiceLineform="ngForm"
+                                    (ngSubmit)="onAddInvoiceLine(invoiceLineform)">
+                                    <table class="table table-borderless">
+                                        <thead>
+                                            <tr>
+                                                <th class="pl-0 pr-0" style="width: 40px;"></th>
+                                                <th class="">{{'description' | translate}}</th>
+                                                <th class="text-center" style="width: 130px;">
+                                                    {{'entity.price' | translate}}</th>
+                                                <th class="text-center" style="width: 180px;">{{'VAT' | translate}}
+                                                </th>
+                                                <th class="text-center" style="width: 180px;">
+                                                    {{'grouptype' | translate}}</th>
+                                                <th class="text-right"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let invoiceLine of entity.invoiceLines;let i = index">
+                                                <td class="pl-0 pr-0">
+                                                    <button class="btn btn-link text-danger"
+                                                        (click)="removeInvoiceLine(i, invoiceLine.id)">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                                <td class="border-blue">
+                                                    <input type="text" class="form-control" name="description{{i+1}}"
+                                                        [(ngModel)]="invoiceLine.description" style="min-width: 100px;"
+                                                        (change)="changeInvoiceLine(invoiceLine, true)">
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="form-group m-0" style="min-width: 130px;">
+                                                        <div class="input-group border-blue input-group-prepend-text">
+                                                            <input type="text" class="form-control"
+                                                                [(ngModel)]="invoiceLine.price" name="price{{i+1}}"
+                                                                (change)="changeInvoiceLine(invoiceLine)" numbersOnly
+                                                                [numType]="'decimal'" required>
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text">
+                                                                    {{financialModel.currencySign}}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <pg-select style="width: 100%; min-width: 180px;" [PlaceHolder]="''"
+                                                        [(ngModel)]="invoiceLine.vatClassId" name="vatClassId{{i+1}}"
+                                                        (ngModelChange)="changeInvoiceLine(invoiceLine, true)">
+                                                        <pg-option *ngFor="let option of vatClasses"
+                                                            [Label]="option.name" [Value]="option.id"
+                                                            [Disabled]="option.disabled">
+                                                        </pg-option>
+                                                    </pg-select>
+                                                </td>
+                                                <td>
+                                                    <pg-select style="width: 100%; min-width: 180px;" [PlaceHolder]="''"
+                                                        [(ngModel)]="invoiceLine.ledgerId" name="ledgerId{{i+1}}"
+                                                        (ngModelChange)="changeInvoiceLine(invoiceLine, true)">
+                                                        <pg-option *ngFor="let option of ledgers" [Label]="option.name"
+                                                            [Value]="option.id" [Disabled]="option.disabled">
+                                                        </pg-option>
+                                                    </pg-select>
+                                                </td>
+                                                <td class="text-right">
+                                                    <div class="pt-2">
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- INVOICE LINE FORM -->
+                                            <tr>
+                                                <td class="pl-2.5 pt-2 pr-0">
+                                                    <button type="submit" class="btn btn-primary btn-xs row-invoice-add"
+                                                        [disabled]="invoiceLineform.invalid"
+                                                        style="margin-top: 13px;margin-left: 0px;">
+                                                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M4.99984 0.666992H2.99984V2.99599H0.666504V4.99599H2.99984V7.32499H4.99984V4.99599H7.33317V2.99599H4.99984V0.666992Z"
+                                                                fill="white" />
+                                                        </svg>
+                                                    </button>
+                                                </td>
+                                                <td class="border-blue">
+                                                    <input type="text" name="description" id="description"
+                                                        [(ngModel)]="newInvoiceLine.description"
+                                                        style="min-width: 100px;"
+                                                        placeholder="{{'description' | translate}}" class="form-control"
+                                                        required>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="form-group m-0" style="min-width: 130px;">
+                                                        <div class="input-group border-blue input-group-prepend-text">
+                                                            <input type="text" [(ngModel)]="newInvoiceLine.price"
+                                                                name="price" class="form-control" numbersOnly
+                                                                [numType]="'decimal'" required>
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text">
+                                                                    {{financialModel.currencySign}}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <pg-select style="width: 100%; min-width: 180px;"
+                                                        [(ngModel)]="newInvoiceLine.vatClassId" name="vatClassId"
+                                                        [PlaceHolder]="''" [required]="true" [FirstDefault]="true">
+                                                        <pg-option *ngFor="let option of vatClasses"
+                                                            [Label]="option.name" [Value]="option.id"
+                                                            [Disabled]="option.disabled">
+                                                        </pg-option>
+                                                    </pg-select>
+                                                </td>
+                                                <td>
+                                                    <pg-select style="width: 100%; min-width: 180px;"
+                                                        [(ngModel)]="newInvoiceLine.ledgerId" name="ledgerId"
+                                                        [PlaceHolder]="''" [required]="true" [FirstDefault]="true">
+                                                        <pg-option *ngFor="let option of ledgers" [Label]="option.name"
+                                                            [Value]="option.id" [Disabled]="option.disabled">
+                                                        </pg-option>
+                                                    </pg-select>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+                            <!-- TOTAL -->
+                            <div class="row" style="height: 393px !important;">
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-12 col-lg-9">
+                                    <div class="table-responsive table-invoice table-invoice-account">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <p class="text-black">{{'Account line' | translate}}</p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        {{financialModel.currencySign}}
+                                                        <!--  {{financialModel.invoiceLineTotal | currency:' '}} -->
+                                                        {{entity.priceExcludeVAT | currency:' '}}
+                                                    </td>
+                                                    <td>
+                                                        <div class="row">
+                                                            <div class="col col-tax">
+                                                                <p class="text-black">
+                                                                    {{'Tax system' | translate}}
+                                                                </p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <pg-select style="width: 100%;"
+                                                                    [(ngModel)]="entity.vatSchemeId" name="vatSchemeId"
+                                                                    [PlaceHolder]="''"
+                                                                    (ngModelChange)="calculateTotal()">
+                                                                    <pg-option *ngFor="let option of vatSchemas"
+                                                                        [Label]="option.name" [Value]="option.id"
+                                                                        [Disabled]="option.disabled">
+                                                                    </pg-option>
+                                                                </pg-select>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-0">
+                                                        <p class="text-black">
+                                                            {{'Total excluding taxes and deductions' | translate}}
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right border-0">
+                                                        {{financialModel.currencySign}}
+                                                        {{entity.priceExcludeVAT | currency:' '}}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p class="text-black">{{'Taxes and deductions' | translate}}
+                                                        </p>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        {{financialModel.currencySign}}
+                                                        {{entity.vat | currency:' '}}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-0">
+                                                        <p class="text-black">
+                                                            {{'Total taxes and deductions' | translate}}</p>
+                                                    </td>
+                                                    <td class="text-right border-0">
+                                                        {{financialModel.currencySign}}
+                                                        {{entity.priceIncludeVAT | currency:' '}}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </pgcard>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <rent-document-configuration [(entity)]="entity" [entityType]="entityType"
+                    [documentTemplateType]="documentTemplateType">
+                </rent-document-configuration>
+            </div>
+        </div>
+
+        <input type="hidden" name="id" [(ngModel)]="entity.id" />
+        <input type="hidden" name="letterheadId" [(ngModel)]="entity.letterheadId" />
+        <input type="hidden" name="templateId" [(ngModel)]="entity.templateId" />
+        <input type="hidden" name="date" [(ngModel)]="entity.date" />
+        <input type="hidden" name="number" [(ngModel)]="entity.number" />
+        <input type="hidden" name="dueDate" [(ngModel)]="entity.dueDate" />
+        <input type="hidden" name="paymentConditionId" [(ngModel)]="entity.paymentConditionId" />
+        <input type="hidden" name="subject" [(ngModel)]="entity.subject" />
+        <input type="hidden" name="name" [(ngModel)]="entity.name" />
+        <input type="hidden" name="openKitsAndCases" [(ngModel)]="entity.openKitsAndCases" />
+        <input type="hidden" name="useLetterhead" [(ngModel)]="entity.useLetterhead" />
+    </form>
+</div>

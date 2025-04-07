@@ -1,0 +1,37 @@
+﻿[
+  {
+    "Name": "Аренда",
+    "AccountingCode": "Аренда",
+    "IsSystem": true
+  },
+  {
+    "Name": "Продажа",
+    "AccountingCode": "Продажа",
+    "IsSystem": true
+  },
+  {
+    "Name": "Команда",
+    "AccountingCode": "Команда",
+    "IsSystem": true
+  },
+  {
+    "Name": "Транспорт",
+    "AccountingCode": "Транспорт",
+    "IsSystem": true
+  },
+  {
+    "Name": "Страхование",
+    "AccountingCode": "Страхование",
+    "IsSystem": true
+  },
+  {
+    "Name": "Другие",
+    "AccountingCode": "Другие",
+    "IsSystem": true
+  },
+  {
+    "Name": "Standard",
+    "AccountingCode": "Default",
+    "IsSystem": true
+  }
+]

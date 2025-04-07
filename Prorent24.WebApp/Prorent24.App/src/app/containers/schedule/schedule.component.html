@@ -1,0 +1,139 @@
+<div class="inner-content full-height page-content-wrapper scroll-vertical-hidden">
+
+    <div class="row overflow-auto myschedule" style="height: 1039px !important;">
+        <div class="col-md-12">
+            <jqxScheduler [theme]="'metro'" [localization]="localization" #myScheduler [width]="'100%'" [height]="'100%'"
+            [date]="date" [source]="dataAdapter" [dayNameFormat]="'abbr'" [view]="'weekView'" [toolbarHeight]="34"
+            [scrollBarSize]="7" [contextMenu]="false" [editDialog]="false" [resources]="resources" [views]="views"
+            [appointmentDataFields]="appointmentDataFields" (onCellClick)="showEditDialog($event)"
+            [renderAppointment]="renderAppointment"
+            (onAppointmentClick)="onClickEvent($event)" [showLegend]="false">
+        </jqxScheduler>
+        </div>
+    </div>
+    
+    <!-- HEADER -->
+    <div class="row" style="position: relative;top: -132%;background: none;">
+        <div class="col-md-12">
+            <div class="jumbotron no-margin" style="background: none !important;">
+                <div class="container-fluid" style="margin-right: 20px;">
+                    <div class="inner" pg-parallax>
+                        <h4>{{'My schedule' | translate}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="full-height pb-51 overflow-auto" style="margin-top: -34px;">
+      
+    </div> -->
+</div>
+
+<!-- MODAL STICK UP  -->
+<div bsModal #calendarCellModal="bs-modal" class="modal fade stick-up" tabindex="-1" role="dialog"
+    aria-labelledby="calendarCellModal" [config]="{backdrop: 'static'}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix">
+                <button type="button" class="close" (click)="calendarCellModal.hide()" aria-hidden="true">
+                    <i class="pg pg-close fs-14"></i>
+                </button>
+                <h4 class="p-b-5"><span
+                        class="semi-bold">{{ (calendarFormData.id ? 'form.edit' : 'form.add') | translate }}</span>
+                    {{'Availability' | translate}}</h4>
+            </div>
+            <form role="form" #form="ngForm" (ngSubmit)="onSubmitCalendarData(form)">
+                <input type="hidden" [(ngModel)]="calendarFormData.id" name="id">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" [ngClass]="{'errors-submit-select': !calendarFormData.action}">
+                                <label>{{'Action' | translate}} <span class="text-danger">*</span></label>
+                                <pg-select style="width: 100%;" [(ngModel)]="calendarFormData.action" id="action"
+                                    name="action" [FirstDefault]="true" [PlaceHolder]="''" [required]="true">
+                                    <pg-option *ngFor="let action of timeEventType | enumToArray"
+                                        [Label]="action | translate" [Value]="action">
+                                    </pg-option>
+                                </pg-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group" [ngClass]="{'errors-submit-date': !calendarFormData.start}">
+                                <label>{{'Since' | translate}} <span class="text-danger">*</span></label>
+                                <div class="input-group date">
+                                    <pg-datepicker (ngModelChange)="calendarFormData.start=$event;_startValueChange()"
+                                        Placeholder="С" [ngModel]="calendarFormData.start" name="start"
+                                        [ShowTime]="true" [DisabledDate]="_disabledStartDate"
+                                        [Format]="'DD-MM-YYYY HH:mm'" [required]="true">
+                                    </pg-datepicker>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <svg onclick="document.getElementsByName('start')[0].getElementsByTagName('input')[0].click()"
+                                            width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                                fill="black" fill-opacity="0.2" />
+                                            <path
+                                                d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                                fill="black" fill-opacity="0.2" />
+                                        </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group" [ngClass]="{'errors-submit-date': !calendarFormData.end}">
+                                <label>{{'To' | translate}} <span class="text-danger">*</span></label>
+                                <div class="input-group date">
+                                    <pg-datepicker (ngModelChange)="calendarFormData.end=$event;_endValueChange()"
+                                        Placeholder="По" [ngModel]="calendarFormData.end" name="end" [ShowTime]="true"
+                                        [DisabledDate]="_disabledEndDate" [Format]="'DD-MM-YYYY HH:mm'"
+                                        [required]="true"></pg-datepicker>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <svg onclick="document.getElementsByName('end')[0].getElementsByTagName('input')[0].click()"
+                                            width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                                fill="black" fill-opacity="0.2" />
+                                            <path
+                                                d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                                fill="black" fill-opacity="0.2" />
+                                        </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>{{'entity.description' | translate}}</label>
+                                <textarea rows="3" class="form-control" id="comment" name="comment" placeholder="..."
+                                    [(ngModel)]="calendarFormData.comment" #text="ngModel">
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-xs btn-primary btn-cons"
+                        [disabled]="form.invalid || buildProgress">
+                        {{'form.save' | translate}}
+                    </button>
+                    <button type="button" class="btn btn-xs btn-cons" [disabled]="buildProgress"
+                        (click)="calendarCellModal.hide()">
+                        {{'form.cancel' | translate}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

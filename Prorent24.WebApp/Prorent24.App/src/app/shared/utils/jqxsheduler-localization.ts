@@ -1,0 +1,162 @@
+export const getLocalization: any = (culture: string): any => {
+  let localization: any = null;
+  switch (culture) {
+    case "ru":
+      localization = {
+        "/": "/",
+        ":": ":",
+        firstDay: 1,
+        days: {
+          names: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+          namesAbbr: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+          namesShort: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
+        },
+        months: {
+          names: [
+            "Январь",
+            "Февраль",
+            "Март",
+            "Апрель",
+            "Май",
+            "Июнь",
+            "Июль",
+            "Август",
+            "Сентябрь",
+            "Октябрь",
+            "Ноябрь",
+            "Декабрь",
+            ""
+          ],
+          // abbreviated month names
+          namesAbbr: [
+            "Янв",
+            "Фев",
+            "Март",
+            "Апр",
+            "Май",
+            "Июнь",
+            "Июль",
+            "Авг",
+            "Сен",
+            "Окт",
+            "Ноя",
+            "Дек",
+            ""
+          ]
+        },
+        AM: ["AM", "am", "AM"],
+        PM: ["PM", "pm", "PM"],
+        eras: [{ name: "A.D.", start: null, offset: 0 }],
+        twoDigitYearMax: 2029,
+        patterns: {
+          d: "M/d/yyyy",
+          D: "dddd, MMMM dd, yyyy",
+          t: "h:mm tt",
+          T: "h:mm:ss tt",
+          f: "dddd, MMMM dd, yyyy h:mm tt",
+          F: "dddd, MMMM dd, yyyy h:mm:ss tt",
+          M: "MMMM dd",
+          Y: "yyyy MMMM",
+          S:
+            "yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss",
+          ISO: "yyyy-MM-dd hh:mm:ss",
+          ISO2: "yyyy-MM-dd HH:mm:ss",
+          d1: "dd.MM.yyyy",
+          d2: "dd-MM-yyyy",
+          d3: "dd-MMMM-yyyy",
+          d4: "dd-MM-yy",
+          d5: "H:mm",
+          d6: "HH:mm",
+          d7: "HH:mm tt",
+          d8: "dd/MMMM/yyyy",
+          d9: "MMMM-dd",
+          d10: "MM-dd",
+          d11: "MM-dd-yyyy"
+        },
+        backString: "Предыдущий",
+        forwardString: "Следующий",
+        toolBarPreviousButtonString: "Предыдущий",
+        toolBarNextButtonString: "Следующий",
+        emptyDataString: "Нет данных",
+        loadString: "Загрузка...",
+        clearString: "Очистить",
+        todayString: "Сегодня",
+        dayViewString: "День",
+        weekViewString: "Неделя",
+        monthViewString: "Месяц",
+        agendaViewString: "Дела",
+        agendaDateColumn: "Дата",
+        agendaTimeColumn: "Время",
+        agendaAppointmentColumn: "Дела",
+        timelineDayViewString: "График дня",
+        timelineWeekViewString: "График недели",
+        timelineMonthViewString: "График месяца",
+        loadingErrorMessage: "Ошибка",
+        editRecurringAppointmentDialogTitleString:
+          "Bearbeiten Sie wiederkehrenden Termin",
+        editRecurringAppointmentDialogContentString:
+          "Wollen Sie nur dieses eine Vorkommen oder die Serie zu bearbeiten ?",
+        editRecurringAppointmentDialogOccurrenceString: "Vorkommen bearbeiten",
+        editRecurringAppointmentDialogSeriesString: "Bearbeiten Die Serie",
+        editDialogTitleString: "Termin bearbeiten",
+        editDialogCreateTitleString: "Erstellen Sie Neuer Termin",
+        contextMenuEditAppointmentString: "Termin bearbeiten",
+        contextMenuCreateAppointmentString: "Erstellen Sie Neuer Termin",
+        editDialogSubjectString: "Subjekt",
+        editDialogLocationString: "Ort",
+        editDialogFromString: "Von",
+        editDialogToString: "Bis",
+        editDialogAllDayString: "Den ganzen Tag",
+        editDialogExceptionsString: "Ausnahmen",
+        editDialogResetExceptionsString: "Zurücksetzen auf Speichern",
+        editDialogDescriptionString: "Bezeichnung",
+        editDialogResourceIdString: "Kalender",
+        editDialogStatusString: "Status",
+        editDialogColorString: "Farbe",
+        editDialogColorPlaceHolderString: "Farbe wählen",
+        editDialogTimeZoneString: "Zeitzone",
+        editDialogSelectTimeZoneString: "Wählen Sie Zeitzone",
+        editDialogSaveString: "Sparen",
+        editDialogDeleteString: "Löschen",
+        editDialogCancelString: "Abbrechen",
+        editDialogRepeatString: "Wiederholen",
+        editDialogRepeatEveryString: "Wiederholen alle",
+        editDialogRepeatEveryWeekString: "woche(n)",
+        editDialogRepeatEveryYearString: "Jahr (en)",
+        editDialogRepeatEveryDayString: "Tag (e)",
+        editDialogRepeatNeverString: "Nie",
+        editDialogRepeatDailyString: "Täglich",
+        editDialogRepeatWeeklyString: "Wöchentlich",
+        editDialogRepeatMonthlyString: "Monatlich",
+        editDialogRepeatYearlyString: "Jährlich",
+        editDialogRepeatEveryMonthString: "Monate (n)",
+        editDialogRepeatEveryMonthDayString: "Day",
+        editDialogRepeatFirstString: "erste",
+        editDialogRepeatSecondString: "zweite",
+        editDialogRepeatThirdString: "dritte",
+        editDialogRepeatFourthString: "vierte",
+        editDialogRepeatLastString: "letzte",
+        editDialogRepeatEndString: "Ende",
+        editDialogRepeatAfterString: "Nach",
+        editDialogRepeatOnString: "Am",
+        editDialogRepeatOfString: "von",
+        editDialogRepeatOccurrencesString: "Eintritt (e)",
+        editDialogRepeatSaveString: "Vorkommen Speichern",
+        editDialogRepeatSaveSeriesString: "Save Series",
+        editDialogRepeatDeleteString: "Vorkommen löschen",
+        editDialogRepeatDeleteSeriesString: "Series löschen",
+        editDialogStatuses: {
+          free: "Frei",
+          tentative: "Versuchsweise",
+          busy: "Beschäftigt",
+          outOfOffice: "Ausserhaus"
+        }
+      };
+      break;
+    case "en":
+      // localization = {};
+      break;
+  }
+
+  return localization;
+};

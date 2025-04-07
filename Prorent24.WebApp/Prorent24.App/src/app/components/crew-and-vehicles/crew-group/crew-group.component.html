@@ -1,0 +1,8 @@
+<!-- <jqxGrid #dataGrid [theme]="'metro'" [localization]="localization" [width]="'100%'" [height]="'100%'"
+    [source]="source" [columns]="tableSource.columns" [columnsresize]="true" [filterable]="true" [sortable]="true" [groupable]="true"
+    [showgroupsheader]="false" [autoshowfiltericon]="true" [scrollbarsize]="7" [enabletooltips]="false" [selectionmode]="selectMode"
+    (onRowselect)="onRowSelect($event); checkedRowsEvent();" (onRowunselect)="checkedRowsEvent()" (onRowdoubleclick)="doubleClickRowEvent(selected_entity)">
+</jqxGrid> -->
+
+
+ <tree-checklist (checklistCheck)="checkedRowsEvent($event)" *ngIf="tableSource && tableSource.columns && tableSource.columns.length > 0" [tableSource]="tableSource"></tree-checklist>

@@ -1,0 +1,59 @@
+.icon-thumbnail.menu-items {
+    &>li ul.sub-menu {
+        margin: 0;
+        padding: 0;
+
+        &> :first-child {
+            margin-top: 19px;
+        }
+
+        &> :last-child {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.acvtive-nav-blue{
+    background: #74C1D9;
+}
+
+.menu-items > li:hover{
+    background: #74C1D9;
+    pg-menu-icon{
+        background: #74C1D9;
+    }
+}
+
+.menu-item-toggle{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.sub-menu-text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.sub-menu-li:hover{
+    background: #74C1D9;
+}
+
+.overlay-text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height */
+
+
+    color: rgba(255, 255, 255, 0.5);
+}

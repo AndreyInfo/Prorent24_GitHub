@@ -1,0 +1,61 @@
+<!-- <jqxGrid #eqCatalogGrid [theme]="'metro'" [localization]="localization" [width]="'100%'" [height]="'100%'" [scrollbarsize]="7"
+    [source]="source" [columns]="tableSource.columns" [columnsresize]="true" [enabletooltips]="false" [groupable]="true"
+    [showgroupsheader]="false" [sortable]="true" (onRowselect)="onRowSelect($event)" (onRowdoubleclick)="addRowEvent(selected_entity)"
+    [selectionmode]="'singlerow'">
+
+</jqxGrid> -->
+<div class="tree equipment-catalog-tree pl-2">
+    <div class="inner folder-search" pg-parallax style="margin-top: -17px;padding-top: 10px;">
+        <div class="input-group mb-3">
+            <div class="input-group-append">
+                <button type="button" class="filter-search-btn">
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6.41471 12.8294C7.89491 12.8294 9.25563 12.3203 10.3413 11.4759L13.8662 15.0008L15 13.867L11.4751 10.3421C12.3203 9.25562 12.8294 7.89491 12.8294 6.41471C12.8294 2.8778 9.95162 0 6.41471 0C2.8778 0 0 2.8778 0 6.41471C0 9.95162 2.8778 12.8294 6.41471 12.8294ZM6.41471 1.60368C9.068 1.60368 11.2257 3.76143 11.2257 6.41471C11.2257 9.068 9.068 11.2257 6.41471 11.2257C3.76143 11.2257 1.60368 9.068 1.60368 6.41471C1.60368 3.76143 3.76143 1.60368 6.41471 1.60368Z"
+                            fill="black" />
+                    </svg>
+                </button>
+            </div>
+            <input class="input-sm folder-search-input" style="width: 87% !important;padding-right: 6px !important;" (keyup)="searchByText($event)" name="searchFolders" type="text"
+                placeholder="Поиск...">
+        </div>
+    </div>
+    <div>
+        <jqxTree #foldersTree [theme]="'metro'" [width]="'100%'" [height]="'800'">
+            <ul class="equipment-catalog-container scroll-vertical-blue">
+                <li class="li-level-0" item-expanded='true' *ngFor="let group of euipmentGroups">
+                    <div class="equipment-catalog-level-0">
+                        <span data-toggle="tooltip"
+                            (click)="group.expanded ? group.expanded=false : group.expanded = true" data-placement="top"
+                            title="{{group.key}}">{{ (group.key.length > 28) ? (group.key | slice:0:28) + '...' : group.key | translate }}</span>
+                        <svg *ngIf="!group.expanded" width="7" height="5" viewBox="0 0 7 5" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.83896 0L3.3323 2.50667L0.825629 0L0 0.825629L3.3323 4.15792L6.66459 0.825629L5.83896 0Z"
+                                fill="#192D3E" />
+                        </svg>
+                        <svg *ngIf="group.expanded" width="7" height="5" viewBox="0 0 7 5" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.826078 4.15771L3.33274 1.65105L5.83941 4.15771L6.66504 3.33209L3.33274 -0.000209623L0.000448299 3.33209L0.826078 4.15771Z"
+                                fill="#192D3E" />
+                        </svg>
+                    </div>
+                    <span class="count-equipment-items">{{ group.values ? group.values.length : 0}}</span>
+                    <ul *ngIf="!group.expanded" class="equipment-item-container">
+                        <li class="equipment-item" item-expanded='false' *ngFor="let item of group.values">
+                            <span (dblclick)="addRowEvent(item)" data-toggle="tooltip" data-placement="top"
+                                title="{{item.name}}"
+                                class="truncate">{{ (item.name.length > getLengthTrancateText()) ? (item.name | slice:0:getLengthTrancateText()) + '...' : item.name | translate }}</span>
+                            <svg (click)="addRowEvent(item)" width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.2 0H2.8V2.7948H0V5.1948H2.8V7.9896H5.2V5.1948H8V2.7948H5.2V0Z"
+                                    fill="#CCCCCC" />
+                            </svg>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </jqxTree>
+    </div>
+</div>

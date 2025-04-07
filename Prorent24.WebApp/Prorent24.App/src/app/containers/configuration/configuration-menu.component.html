@@ -1,0 +1,184 @@
+<!-- START SIDEBAR -->
+<rent-secondary-sidebar extraClass="light">
+
+    <p class="menu-title mt-2 sidebar-menu-config-header-item">
+        {{'ACCOUNT' | translate}}
+        <svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.83896 0L3.3323 2.50667L0.825629 0L0 0.825629L3.3323 4.15792L6.66459 0.825629L5.83896 0Z"
+                fill="#192D3E" />
+        </svg>
+    </p>
+    <ul class="sub-menu no-padding sidebar-menu-config">
+        <li>
+            <a routerLink="/configuration/account/company-details" routerLinkActive="sidebar-menu-config-item-active">
+                <span class="title sidebar-menu-config-item">{{'companyInfo' | translate}}</span>
+            </a>
+        </li>
+        <!--         <li>
+        <a routerLink="account/licenses">
+            <span class="title">{{'Licenses' | translate}}</span>
+        </a>
+    </li> -->
+        <!--         <li>
+        <a routerLink="account/payments">
+            <span class="title">{{'Payments' | translate}}</span>
+        </a>
+    </li> -->
+        <li>
+            <a routerLink="/configuration/account/user-roles" routerLinkActive="sidebar-menu-config-item-active">
+                <span class="title sidebar-menu-config-item">{{'UserRoles' | translate}}</span>
+            </a>
+        </li>
+        <!--         <li>
+        <a routerLink="account/extensions">
+            <span class="title">{{'Extensions' | translate}}</span>
+        </a>
+    </li> -->
+    </ul>
+
+    <p class="menu-title m-t-10 sidebar-menu-config-header-item">
+        {{'Settings' | translate}}
+        <svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.83896 0L3.3323 2.50667L0.825629 0L0 0.825629L3.3323 4.15792L6.66459 0.825629L5.83896 0Z"
+                fill="#192D3E" />
+        </svg>
+    </p>
+    <ul class="sub-menu no-padding sidebar-menu-config">
+        <li class="">
+            <a routerLink="/configuration/settings/time-and-location" routerLinkActive="sidebar-menu-config-item-active">
+                <span class="title sidebar-menu-config-item">{{'TimeAndLocation' | translate}}</span>
+            </a>
+        </li>
+        <!--         <li>
+        <a routerLink="settings/range-numbers">
+            <span class="title">{{'Ranges of numbers' | translate}}</span>
+        </a>
+    </li> -->
+        <li>
+            <a routerLink="/configuration/settings/project-types" routerLinkActive="sidebar-menu-config-item-active">
+                <span class="title sidebar-menu-config-item">{{'ProjectTypes' | translate}}</span>
+            </a>
+        </li>
+        <!--   <li>
+        <a routerLink="settings/project-templates">
+            <span class="title">{{'Project Templates' | translate}}</span>
+        </a>
+    </li> -->
+        <!--  <li>
+        <a routerLink="settings/inspections">
+            <span class="title">{{'inspections' | translate}}</span>
+        </a>
+    </li> -->
+        <!-- <li>
+        <a routerLink="settings/time-registration">
+            <span class="title">{{'TimeRegistration' | translate}}</span>
+        </a>
+    </li> -->
+        <!--         <li>
+        <a routerLink="settings/custom-fields">
+            <span class="title">{{'Additional fields' | translate}}</span>
+        </a>
+    </li> -->
+        <!--         <li>
+        <a routerLink="settings/database">
+            <span class="title">{{'Database reset' | translate}}</span>
+        </a>
+    </li> -->
+    </ul>
+
+    <p class="menu-title m-t-10 sidebar-menu-config-header-item">
+        {{'Workflow setup' | translate}}
+        <svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.83896 0L3.3323 2.50667L0.825629 0L0 0.825629L3.3323 4.15792L6.66459 0.825629L5.83896 0Z"
+                fill="#192D3E" />
+        </svg>
+    </p>
+    <ul class="sub-menu no-padding sidebar-menu-config">
+        <li class="">
+            <a routerLink="/configuration/communication" routerLinkActive="sidebar-menu-config-item-active">
+                <span class="title sidebar-menu-config-item">{{'Communication' | translate}}</span>
+            </a>
+        </li>
+        <!-- <li>
+        <a routerLink="communication/document-templates">
+            <span class="title">{{'Document Templates' |translate}}</span>
+        </a>
+    </li> -->
+        <!-- <li>
+            <a routerLink="communication/blanks">
+                <span class="title">{{'Бланки' | translate}} </span>
+            </a>
+        </li> -->
+        <!-- <li>
+            <a routerLink="communication/salutation">
+                <span class="title">{{'Appeal' | translate}}</span>
+            </a>
+        </li> -->
+    </ul>
+    <p class="menu-title bold m-t-10 sidebar-menu-config-header-item">
+        {{'Management and accounting' | translate}}
+        <svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.83896 0L3.3323 2.50667L0.825629 0L0 0.825629L3.3323 4.15792L6.66459 0.825629L5.83896 0Z"
+                fill="#192D3E" />
+        </svg>
+    </p>
+    <ul class="sub-menu no-padding sidebar-menu-config">
+        <li class="">
+            <a routerLink="/configuration/financial" routerLinkActive="sidebar-menu-config-item-active">
+                <span class="title sidebar-menu-config-item">{{'finance' | translate}}</span>
+            </a>
+        </li>
+        <!-- <li>
+                <a routerLink="financial/electronic-invoicing">
+                    <span class="title">{{'Выставление счетов' | translate}}</span>
+                </a>
+            </li> -->
+        <li>
+            <a routerLink="/configuration/invoice-moments" routerLinkActive="sidebar-menu-config-item-active">
+                <span class="title sidebar-menu-config-item">{{'InvoiceMoments' | translate}}</span>
+            </a>
+        </li>
+        <!-- <li>
+                <a routerLink="financial/factor-groups">
+                    <span class="title">{{'Group factors' | translate}}</span>
+                </a>
+            </li> -->
+        <li>
+            <a routerLink="/configuration/discount-groups" routerLinkActive="sidebar-menu-config-item-active">
+                <span class="title sidebar-menu-config-item">{{'DiscountGroups' | translate}}</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/configuration/payment-conditions" routerLinkActive="sidebar-menu-config-item-active">
+                <span class="title sidebar-menu-config-item">{{'PaymentConditions' | translate}}</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/configuration/vat-schemes" routerLinkActive="sidebar-menu-config-item-active">
+                <span class="title sidebar-menu-config-item">{{'VatSchemes' | translate}}</span>
+            </a>
+        </li>
+        <!-- <li>
+                <a routerLink="financial/vat-classes">
+                    <span class="title">{{'VatClasses' | translate}}</span>
+                </a>
+            </li> -->
+        <li>
+            <a routerLink="/configuration/payment-methods" routerLinkActive="sidebar-menu-config-item-active">
+                <span class="title sidebar-menu-config-item">{{'PaymentMethods' | translate}}</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/configuration/ledger" rouformterLinkActive="sidebar-menu-config-item-active">
+                <span class="title sidebar-menu-config-item">{{'Ledger' | translate}}</span>
+            </a>
+        </li>
+        <!--  <li>
+                <a routerLink="financial/additional-conditions" routerLinkActive="active">
+                    <span class="title">{{'Additional terms' | translate}}</span>
+                </a>
+            </li> -->
+    </ul>
+
+</rent-secondary-sidebar>
+<!-- END SECONDARY SIDEBAR -->

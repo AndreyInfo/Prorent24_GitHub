@@ -1,0 +1,131 @@
+<div class="full-height sm-p-t-30 overflow-auto" style="height: 97% !important; overflow-x: hidden !important;background: #fff;">
+    <div class="row" style="margin-top: 111px;">
+        <div class="col-md-9">
+            <img src="../../../../assets/img/logo/logo-register.png" width="100%">
+        </div>
+        <div class="col-md-3" style="padding-right: 45px;">
+            <span class="register-account-title">{{'Account registration' | translate}}</span>
+            <form class="p-t-15" role="form" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div pgFormGroupDefault class="form-group border-blue" [ngClass]="{'errors-submit': name.errors}"
+                            [class.has-error]="name.invalid && (name.dirty || name.touched)">
+                            <label>{{ 'session.name' | translate }}</label>
+                            <input type="text" placeholder="{{ 'session.enter_name' | translate }}" class="form-control"
+                                id="firstName" name="firstName" [(ngModel)]="register.firstName" #name="ngModel"
+                                required>
+                        </div>
+                        <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                            <label class="error">{{'messages.field_is_required' | translate}}.</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div pgFormGroupDefault class="form-group border-blue" [ngClass]="{'errors-submit': surname.errors}"
+                            [class.has-error]="surname.invalid && (surname.dirty || surname.touched)">
+                            <label>{{'session.surname' | translate}}</label>
+                            <input type="text" placeholder="{{'session.enter_surname' | translate}}"
+                                class="form-control" id="lastName" name="lastName" [(ngModel)]="register.lastName"
+                                #surname="ngModel" required>
+                        </div>
+                        <div *ngIf="surname.invalid && (surname.dirty || surname.touched)">
+                            <label class="error">{{'messages.field_is_required' | translate}}.</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div pgFormGroupDefault class="form-group border-blue" [ngClass]="{'errors-submit': companyName.errors}"
+                            [class.has-error]="companyName.invalid && (companyName.dirty || companyName.touched)">
+                            <label>{{'session.company' | translate}}</label>
+                            <input type="text" placeholder="{{'session.enter_company' | translate}}"
+                                class="form-control" id="companyName" name="companyName"
+                                [(ngModel)]="register.companyName" #companyName="ngModel" required>
+                        </div>
+                        <div *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)">
+                            <label class="error">{{'messages.field_is_required' | translate}}.</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div pgFormGroupDefault class="form-group border-blue" [ngClass]="{'errors-submit': email.errors}"
+                            [class.has-error]="email.invalid && (email.dirty || email.touched)">
+                            <label>{{'session.email' | translate}}</label>
+                            <input type="email" placeholder="{{'session.enter_email' | translate}}" class="form-control"
+                                id="email" name="email" [(ngModel)]="register.email" #email="ngModel" required>
+                        </div>
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                            <label class="error">{{'messages.field_is_required' | translate}}.</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div pgFormGroupDefault class="form-group border-blue" [ngClass]="{'errors-submit': password.errors}"
+                            [class.has-error]="password.invalid && (password.dirty || password.touched)">
+                            <label>{{'session.enter_password' | translate}}</label>
+                            <input type="password" placeholder="{{'session.enter_password' | translate}}"
+                                class="form-control" id="password" name="password" [(ngModel)]="register.password"
+                                #password="ngModel" required>
+                        </div>
+                        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                            <label class="error">{{'messages.field_is_required' | translate}}.</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div pgFormGroupDefault class="form-group border-blue" style="padding-left: 0;"
+                            [ngClass]="{'errors-submit': passwordConfirm.errors}"
+                            [class.has-error]="passwordConfirm.invalid && (passwordConfirm.dirty || passwordConfirm.touched)">
+                            <label style="width: 102%;">{{'session.enter_repeat_password' | translate}}</label>
+                            <input type="password" placeholder="{{'session.enter_password' | translate}}"
+                                class="form-control" id="passwordConfirm" name="passwordConfirm"
+                                [(ngModel)]="register.passwordConfirm" #passwordConfirm="ngModel" required>
+                        </div>
+                        <div *ngIf="passwordConfirm.invalid && (passwordConfirm.dirty || passwordConfirm.touched)">
+                            <label class="error">{{'messages.field_is_required' | translate}}.</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="pt-4 btn-group register-group-btn">
+                            <button type="submit" class="btn btn-sm btn-white">
+                                {{'session.createa_new_account' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row session-block-bottom-info">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12" style="display: grid;">
+                                <img src="../../../../assets/img/logo/logo-prorent24-red.png">
+                                <span class="register-text-under-logo">{{'session.text-under-logo' | translate}}</span>
+
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 42px !important;">
+                            <div class="col-md-12">
+                                <div class="register-container m-b-10 clearfix">
+                                    <div class="m-b-30 sm-m-t-20 sm-p-r-15 sm-p-b-20 clearfix d-flex-md-up">
+                                        <div class="col-md-12 no-padding d-flex align-items-center">
+                                            <p class="hinted-text small inline">
+                                                <span class="text-link-not-navigarte">Copyright &copy; 2019 </span>
+                                                <span class="text-uppercase">Prorent24</span>.
+                                                <span class="text-link-not-navigarte">All rights reserved.</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- <div class="full-width">
+
+            </div> -->
+        </div>
+    </div>
+</div>

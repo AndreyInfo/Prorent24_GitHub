@@ -1,0 +1,121 @@
+<div class="widget-info">
+    <div perfectScrollbar>
+        <ng-template *ngFor="let t of templates" [ngTemplateOutlet]="loadTemplate(t)">
+        </ng-template>
+    </div>
+</div>
+
+<!-- TEMPLATES -->
+<!-- Details -->
+<ng-template #detailsTemplate>
+    <pgcard Controls="false" Type="transparent" HeaderClass="separator" AdditionalClasses="mb-0">
+        <ng-template #CardTitle>
+            Подробности
+        </ng-template>
+        <div class="pt-2">
+            <div *ngFor="let item of details">
+                <span class="small"><span class="font-weight-bold">{{item.key.toLowerCase() | translate}}:</span> <span class="text">{{item.value}}</span> </span>
+            </div>
+        </div>
+    </pgcard>
+</ng-template>
+
+<!-- Tags -->
+<ng-template #tagsTemplate>
+    <rent-widget-tags [entityId]="entityId" [entityType]="entityType" [data]="tags"></rent-widget-tags>
+</ng-template>
+
+<!-- Notes -->
+<ng-template #notesTemplate>
+    <rent-widget-notes [entityId]="entityId" [entityType]="entityType" [data]="notes"></rent-widget-notes>
+</ng-template>
+
+<!-- Tasks -->
+<ng-template #tasksTemplate>
+    <rent-widget-tasks [entityId]="entityId" [entityType]="entityType" [data]="tasks"></rent-widget-tasks>
+</ng-template>
+
+<!-- Files -->
+<ng-template #filesTemplate>
+    <rent-widget-files [entityId]="entityId" [entityType]="entityType" [data]="files"></rent-widget-files>
+</ng-template>
+
+<!-- viewTimeLine -->
+<ng-template #viewTimeLineTemplate>
+    <pgcard Controls="false" Type="transparent" HeaderClass="separator" AdditionalClasses="mb-0">
+        <ng-template #CardTitle>
+            Часы работы
+        </ng-template>
+        <div class="pt-2">
+            <div class="pb-1">
+                <span class="font-weight-normal">Время работы</span><br />
+                <span>{{viewTimeLine['working hours']}}</span>
+            </div>
+
+            <div *ngFor="let item of viewTimeLine.times">
+                <div *ngFor="let i of item | keyvalue">
+                    <span class="small">{{i.key | translate}}: {{i.value}}</span>
+                </div>
+            </div>
+
+            <hr />
+            <span class="font-weight-normal">Итого: {{viewTimeLine['total']}}</span><br />
+
+            <div *ngFor="let item of viewTimeLine.additional">
+                <div *ngFor="let i of item | keyvalue">
+                    <span class="small">{{i.key | translate}}: {{i.value}}</span>
+                </div>
+            </div>
+        </div>
+    </pgcard>
+</ng-template>
+
+<!-- detailLinkedItemTemplate -->
+<ng-template #detailLinkedItemTemplate>
+    <pgcard Controls="false" Type="transparent" HeaderClass="separator" AdditionalClasses="mb-0">
+        <ng-template #CardTitle>
+            Детали связанного элемента
+        </ng-template>
+        <div class="pt-2">
+            <div *ngFor="let item of detailLinkedItem">
+                <span class="small">{{item.key.toLowerCase() | translate}}: {{item.value}}</span>
+            </div>
+        </div>
+    </pgcard>
+</ng-template>
+
+<!-- lastNotesLinkedItemTemplate -->
+<ng-template #lastNotesLinkedItemTemplate>
+    <pgcard Controls="false" Type="transparent" HeaderClass="separator" AdditionalClasses="mb-0">
+        <ng-template #CardTitle>
+            Связанные примечания
+        </ng-template>
+        <div class="pt-2">
+            <ul class="list-unstyled mb-0">
+                <li *ngFor="let n of lastNotesLinkedItem; let i = index" class="small">
+                    {{i + 1}}. {{n.text}}
+                    <span class="hint fs-10"><i class="fa"
+                            [ngClass]="n.confidential === 'everyone' ? 'fa-eye': 'fa-eye-slash'"></i>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </pgcard>
+</ng-template>
+
+<!-- lastTasksLinkedItemTemplate -->
+<ng-template #lastTasksLinkedItemTemplate>
+    <pgcard Controls="false" Type="transparent" HeaderClass="separator" AdditionalClasses="mb-0">
+        <ng-template #CardTitle>
+            Последние связанные задачи
+        </ng-template>
+        <div class="pt-2">
+            <ul class="list-unstyled mb-0">
+                <li *ngFor="let task of lastTasksLinkedItem; let i = index" class="small">
+                    {{i + 1}}. {{task.name}}
+                    <div class="hint fs-10">Крайний срок: {{task.deadLine | date:'dd.MM.yyyy HH:mm' }}</div>
+                </li>
+            </ul>
+        </div>
+    </pgcard>
+</ng-template>

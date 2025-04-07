@@ -1,0 +1,106 @@
+<div class="card card-transparent">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <pgcard MinimalHeader="true" HeaderClass="separator">
+                    <ng-template #CardTitle>
+                        <div *ngIf="!removeArrayMode">
+                            <button class="btn btn-primary btn-xs mr-1" (click)="onEditRowModal()">
+                                <i class="fa fa-plus"></i> {{'form.add' | translate}}
+                            </button>
+                            <button class="btn btn-info btn-xs mr-1" (click)="onEditRowModal(selected_entity?.id)"
+                                [disabled]="!canAction">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                            <button class="btn btn-danger btn-xs mr-1" (click)="changeRemoveArrayMode()">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                        <div *ngIf="removeArrayMode">
+                            <button class="btn btn-danger btn-xs mr-1" [disabled]="!canAction" (click)="onDeleteRows()">
+                                <i class="fa fa-trash"></i> {{'Confirm' | translate}}
+                            </button>
+                            <button class="btn btn-white btn-xs mr-1" (click)="changeRemoveArrayMode()">
+                                {{'form.cancel' | translate}}
+                            </button>
+                        </div>
+                    </ng-template>
+
+                    <div class="pt-3">
+                        <jqxGrid #dataGrid [theme]="'metro'" [localization]="localization" [width]="'100%'"
+                            [autoheight]="true" [source]="source" [columns]="tableSource.columns" [columnsresize]="true"
+                            [sortable]="true" [filterable]="true" [filter]="true" [autoshowfiltericon]="true"
+                            [enabletooltips]="false" [selectionmode]="selectMode" [columnsreorder]="true"
+                            (onRowselect)="onRowSelect($event)" (onRowdoubleclick)="onEditRowModal(selected_entity?.id)">
+                        </jqxGrid>
+                    </div>
+                </pgcard>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL STICK UP  -->
+<div bsModal #rowModal="bs-modal" class="modal fade stick-up" tabindex="-1" role="dialog" aria-labelledby="rowModal"
+    [config]="{backdrop: 'static'}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix ">
+                <button type="button" class="close" (click)="rowModal.hide()" aria-hidden="true">
+                    <i class="pg pg-close fs-14"></i>
+                </button>
+                <h4 class="p-b-5"><span class="semi-bold">{{'Supplier' | translate}}</span></h4>
+            </div>
+            <form role="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <input type="hidden" id="id" name="id" [(ngModel)]="entity.id">
+                <div class="modal-body">
+                    <p class="small-text">
+                        {{ (entity.id ? "edit" : "Create new") | translate }} {{'provider' | translate}}
+                    </p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" [class.has-error]="price.invalid && (price.dirty || price.touched)">
+                                <label>{{'entity.price' | translate}}</label>
+                                <input type="number" class="form-control" id="price" name="price" placeholder="0"
+                                    [(ngModel)]="entity.price" #price="ngModel" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>{{'entity.contactname' | translate}}</label>
+                                <div class="input-group">
+                                    <pg-select style="width: 100%;" [(ngModel)]="entity.contactId" id="contactId"
+                                        name="contactId" [PlaceHolder]="''" [required]="true" [ShowSearch]="true">
+                                        <pg-option *ngFor="let item of contacts" [Label]="item.companyName"
+                                            [Value]="item.id">
+                                        </pg-option>
+                                    </pg-select>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>{{'entity.details' | translate}}</label>
+                                <textarea rows="3" class="form-control" id="details" name="details" placeholder="..."
+                                    [(ngModel)]="entity.details" #details="ngModel">
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-xs btn-primary btn-cons" [disabled]="form.invalid">
+                        {{'form.save' | translate}}
+                    </button>
+                    <button type="button" class="btn btn-xs btn-cons" (click)="rowModal.hide()">
+                        {{'form.cancel' | translate}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

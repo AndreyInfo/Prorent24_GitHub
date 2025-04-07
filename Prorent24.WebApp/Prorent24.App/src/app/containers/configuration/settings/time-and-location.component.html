@@ -1,0 +1,74 @@
+<div class="jumbotron no-margin" style="height: 100px;">
+  <div class="sm-p-l-0 sm-p-r-0">
+    <div class="inner" pg-parallax="">
+      <div class="container-fluid sm-p-l-0 sm-p-r-0">
+        <br>
+        <div>
+          <span class="config-nav-route-first" style="padding-right: 34px;">{{'account' | translate}}</span>
+          <svg style="margin-top: -8px;" width="9" height="15" viewBox="0 0 9 15" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M-5.74444e-07 1.85825L5.42578 7.5L-8.12264e-08 13.1418L1.78711 15L9 7.5L1.78711 -7.8117e-08L-5.74444e-07 1.85825Z"
+              fill="black" fill-opacity="0.2" />
+          </svg>
+          <span class="config-nav-route-second" style="padding-left: 34px;">{{'TimeAndLocation' | translate}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form role="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <div class="row"  style="height: 91%;">
+    <div class="col-lg-2.5">
+      <div>
+        <app-configuration-menu></app-configuration-menu>
+        <div class="row col-white control-config">
+          <div class="col">
+            <button type="submit" class="btn btn-sm btn-white form-save" [disabled]="form.invalid">
+              {{ 'form.save' | translate }}
+            </button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-white btn-xs mr-1 form-cancel" style="margin-left: 5px;">
+              {{'form.cancel' | translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width: 21px;"></div>
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col-lg-12">
+          <pgcard MinimalHeader="true">
+            <ng-template #CardTitle>
+              {{'Timezone' | translate}}
+            </ng-template>
+            <div class="">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group border-blue required">
+                    <label>{{'Timezone' | translate}}</label>
+                    <pg-select style="width: 100%;" [(ngModel)]="entity.timeZone" name="timeZone"
+                      [PlaceHolder]="'Choose time zone'" AllowClear ShowSearch>
+                      <pg-option *ngFor="let zone of timeZones" [Label]="zone.name" [Value]="zone.id">
+                      </pg-option>
+                    </pg-select>
+                  </div>
+                  <span class="text-info">{{'Current time:' | translate}}
+                    {{dateNow | date:'dd/MM/yyyy HH:mm'}}</span>
+                </div>
+              </div>
+            </div>
+          </pgcard>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <img width="100%" src="../../../../assets/img/logo/logo-time.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

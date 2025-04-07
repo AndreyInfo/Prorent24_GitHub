@@ -1,0 +1,144 @@
+<div class="bg-white" perfectScrollbar>
+    <div style="padding-bottom: 200px;">
+        <div class="card card-transparent mb-0">
+            <div class="card-header separator text-uppercase">
+                Макет
+            </div>
+            <div class="card-body pt-2">
+                <div class="form-group form-group-sm">
+                    <label>{{'template' | translate}}</label>
+                    <pg-select style="width: 100%;" [(ngModel)]="entity.templateId" name="templateId"
+                        [PlaceHolder]="''">
+                        <pg-option *ngFor="let option of templates" [Label]="option.name" [Value]="option.id"
+                            [Disabled]="option.disabled">
+                        </pg-option>
+                    </pg-select>
+                </div>
+
+                <div class="form-group">
+                    <label>Фирменный бланк</label>
+                    <pg-select style="width: 100%;" [(ngModel)]="entity.letterheadId" name="letterheadId"
+                        [PlaceHolder]="''">
+                        <pg-option *ngFor="let option of letterheads" [Label]="option.name" [Value]="option.id"
+                            [Disabled]="option.disabled">
+                        </pg-option>
+                    </pg-select>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-transparent mb-0">
+            <!-- <div class="card-header separator text-uppercase">
+                {{'version' | translate}}
+            </div> -->
+            <div class="card-body pt-2">
+                <div class="form-group border-blue">
+                    <label>{{'number' | translate}}</label>
+                    <input type="number" class="form-control input-sm" name="number" [(ngModel)]="entity.number"
+                        id="number" placeholder="Номер" />
+                </div>
+
+                <div class="form-group border-blue">
+                    <label>{{'date' | translate}}</label>
+                    <div class="input-group date">
+                        <pg-datepicker [Placeholder]="''" [ngModel]="entity.date" name="date"
+                            (ngModelChange)="entity.date=$event;" [Format]="'DD-MM-YYYY'">
+                        </pg-datepicker>
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <svg width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                        fill="black" fill-opacity="0.2" />
+                                    <path
+                                        d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                        fill="black" fill-opacity="0.2" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-transparent mb-0">
+            <div class="card-header separator text-uppercase">
+                {{'finances' | translate}}
+            </div>
+            <div class="card-body pt-2">
+                <div class="form-group border-blue">
+                    <label>Дата исполнения</label>
+                    <div class="input-group date">
+                        <pg-datepicker [Placeholder]="''" [ngModel]="entity.dueDate" name="dueDate"
+                            (ngModelChange)="entity.dueDate=$event;" [Format]="'DD-MM-YYYY'">
+                        </pg-datepicker>
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <svg onclick="document.getElementsByName('dueDate')[0].getElementsByTagName('input')[0].click()"
+                                    width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                        fill="black" fill-opacity="0.2" />
+                                    <path
+                                        d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                        fill="black" fill-opacity="0.2" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group border-blue">
+                    <label>Условия оплаты</label>
+                    <pg-select style="width: 100%;" [(ngModel)]="entity.paymentConditionId" name="paymentConditionId"
+                        [PlaceHolder]="''">
+                        <pg-option *ngFor="let option of paymentConditions" [Label]="option.name" [Value]="option.id"
+                            [Disabled]="option.disabled">
+                        </pg-option>
+                    </pg-select>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-transparent mb-0">
+            <div class="card-header separator text-uppercase">
+                {{'document' | translate}}
+            </div>
+            <div class="card-body pt-2">
+                <div class="form-group border-blue">
+                    <label>Тема</label>
+                    <input type="text" class="form-control input-sm" name="subject" [(ngModel)]="entity.subject"
+                        id="subject" placeholder="Тема" />
+                </div>
+
+                <div class="form-group">
+                    <label>Развернуть наборы и кейсы</label>
+                    <pg-select style="width: 100%;" [(ngModel)]="entity.openKitsAndCases" name="openKitsAndCases"
+                        [PlaceHolder]="''">
+                        <pg-option *ngFor="let type of openKitsAndCasesTypes | enumToArray" [Label]="type | translate"
+                            [Value]="type">
+                        </pg-option>
+                    </pg-select>
+                </div>
+
+                <div class="form-group border-blue">
+                    <label>{{'file' | translate}}</label>
+                    <input type="text" class="form-control input-sm" name="name" [(ngModel)]="entity.name" id="name"
+                        placeholder="Файл" />
+                </div>
+
+                <div class="form-group pt-1">
+                    <div class="checkbox check-primary">
+                        <input type="checkbox" id="useLetterhead" checked="checked" name="useLetterhead"
+                            [(ngModel)]="entity.useLetterhead">
+                        <label for="useLetterhead">
+                            Использовать бланк
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

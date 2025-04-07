@@ -1,0 +1,77 @@
+[
+  {
+    "Type": "ModuleTypeEnum.Dashboard",
+    "Name": "Dashboard",
+    "Order": 1
+  },
+  {
+    "Type": "ModuleTypeEnum.Warehouse",
+    "Name": "Warehouse",
+    "Order": 2
+  },
+  {
+    "Type": "ModuleTypeEnum.Projects",
+    "Name": "Projects",
+    "Order": 3
+  },
+  {
+    "Type": "ModuleTypeEnum.CrewPlanner",
+    "Name": "Crew Planner",
+    "Order": 4
+  },
+  {
+    "Type": "ModuleTypeEnum.Subhire",
+    "Name": "Subhire",
+    "Order": 5
+  },
+  {
+    "Type": "ModuleTypeEnum.Invoices",
+    "Name": "Invoices",
+    "Order": 6
+  },
+  {
+    "Type": "ModuleTypeEnum.Equipment",
+    "Name": "Equipment",
+    "Order": 7
+  },
+  {
+    "Type": "ModuleTypeEnum.Contacts",
+    "Name": "Contacts",
+    "Order": 8
+  },
+  {
+    "Type": "ModuleTypeEnum.CrewMembers",
+    "Name": "Crew Members",
+    "Order": 9
+  },
+  {
+    "Type": "ModuleTypeEnum.Vehicles",
+    "Name": "Vehicles",
+    "Order": 10
+  },
+  {
+    "Type": "ModuleTypeEnum.Tasks",
+    "Name": "Tasks",
+    "Order": 11
+  },
+  {
+    "Type": "ModuleTypeEnum.TimeRegistration",
+    "Name": "Time Registration",
+    "Order": 12
+  },
+  {
+    "Type": "ModuleTypeEnum.Maintenance",
+    "Name": "Maintenance",
+    "Order": 13
+  },
+  {
+    "Type": "ModuleTypeEnum.Statistics",
+    "Name": "Statistics",
+    "Order": 14
+  },
+  {
+    "Type": "ModuleTypeEnum.Configuration",
+    "Name": "Configuration",
+    "Order": 15
+  }
+]

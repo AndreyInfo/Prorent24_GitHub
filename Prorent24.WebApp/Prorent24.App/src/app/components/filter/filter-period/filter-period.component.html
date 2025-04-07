@@ -1,0 +1,210 @@
+<pgcard Controls="false" Type="transparent" HeaderClass="separator" AdditionalClasses="mb-0">
+    <ng-template #CardTitle>
+        Период
+    </ng-template>
+    <div class="pt-2">
+        <ng-template [ngTemplateOutlet]="loadTemplate(entityType)">
+        </ng-template>
+    </div>
+</pgcard>
+
+<ng-template #periodProjectsTemplate>
+    <div class="text-center">
+        <div class="btn-group" btnRadioGroup [(ngModel)]="filterPeriod.periodType">
+            <label btnRadio="period" uncheckable class="btn btn-xs btn-default">Период</label>
+            <label btnRadio="fromToUntil" uncheckable class="btn btn-xs btn-default">С /
+                По</label>
+        </div>
+    </div>
+
+    <div *ngIf="filterPeriod.periodType === 'period'" class="pt-2 pl-3 pr-3">
+        <pg-select class="mb-1" style="width: 100%;" name="durationTime" [(ngModel)]="filterPeriod.durationTime"
+            (ngModelChange)="change()" [PlaceHolder]="''">
+            <pg-option *ngFor="let unit of durationType | enumToArray" [Label]="unit | translate" [Value]="unit">
+            </pg-option>
+        </pg-select>
+
+        <div *ngIf="filterPeriod.durationTime !== durationType.today" class="input-group">
+            <input type="text" class="form-control" name="duration" [(ngModel)]="filterPeriod.duration" placeholder="0"
+                (change)="change()" numbersOnly [minValue]="1" [maxValue]="30">
+            <div class="input-group-append">
+                <pg-select style="width: 105px;" name="timeUnit" [(ngModel)]="filterPeriod.timeUnit" [PlaceHolder]="''"
+                    (ngModelChange)="change()">
+                    <pg-option *ngFor="let unit of timeUnitExtend | enumToArray" [Label]="unit | translate"
+                        [Value]="unit">
+                    </pg-option>
+                </pg-select>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="filterPeriod.periodType === 'fromToUntil'" class="pt-2 pl-3 pr-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="input-group date">
+                        <pg-datepicker (ngModelChange)="filterPeriod.fromDate=$event;_startValueChange();change()"
+                            Placeholder="Начало" [ngModel]="filterPeriod.fromDate" name="from"
+                            [DisabledDate]="_disabledStartDate" [Format]="'DD-MM-YYYY'">
+                        </pg-datepicker>
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <svg onclick="document.getElementsByName('from')[0].getElementsByTagName('input')[0].click()"
+                                    width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                        fill="black" fill-opacity="0.2" />
+                                    <path
+                                        d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                        fill="black" fill-opacity="0.2" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="input-group date">
+                        <pg-datepicker (ngModelChange)="filterPeriod.toDate=$event;_endValueChange();change()"
+                            Placeholder="Конец" [ngModel]="filterPeriod.toDate" name="until"
+                            [DisabledDate]="_disabledEndDate" [Format]="'DD-MM-YYYY'">
+                        </pg-datepicker>
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <svg onclick="document.getElementsByName('until')[0].getElementsByTagName('input')[0].click()"
+                                width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                    fill="black" fill-opacity="0.2" />
+                                <path
+                                    d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                    fill="black" fill-opacity="0.2" />
+                            </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #periodTimeRegTemplate>
+    <div class="text-center">
+        <div class="btn-group" btnRadioGroup [(ngModel)]="filterPeriod.periodType">
+            <label btnRadio="period" uncheckable class="btn btn-xs btn-default">Период</label>
+            <label btnRadio="fromToUntil" uncheckable class="btn btn-xs btn-default">С /
+                По</label>
+        </div>
+    </div>
+
+    <div *ngIf="filterPeriod.periodType === 'period'" class="pt-2 pl-3 pr-3">
+        <pg-select class="mb-1" style="width: 100%;" name="durationTime" [(ngModel)]="filterPeriod.durationTime"
+            (ngModelChange)="change()" [PlaceHolder]="''">
+            <pg-option *ngFor="let unit of durationType | enumToArray" [Label]="unit | translate" [Value]="unit">
+            </pg-option>
+        </pg-select>
+
+        <div *ngIf="filterPeriod.durationTime !== durationType.today" class="input-group">
+            <input type="text" class="form-control" name="duration" [(ngModel)]="filterPeriod.duration" placeholder="0"
+                (change)="change()" numbersOnly [minValue]="1" [maxValue]="30">
+            <div class="input-group-append">
+                <pg-select style="width: 105px;" name="timeUnit" [(ngModel)]="filterPeriod.timeUnit" [PlaceHolder]="''"
+                    (ngModelChange)="change()">
+                    <pg-option *ngFor="let unit of timeUnitExtend | enumToArray" [Label]="unit | translate"
+                        [Value]="unit">
+                    </pg-option>
+                </pg-select>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="filterPeriod.periodType === 'fromToUntil'" class="pt-2 pl-3 pr-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="input-group date">
+                        <pg-datepicker (ngModelChange)="filterPeriod.fromDate=$event;_startValueChange();change()"
+                            Placeholder="Начало" [ngModel]="filterPeriod.fromDate" name="from"
+                            [DisabledDate]="_disabledStartDate" [Format]="'DD-MM-YYYY'">
+                        </pg-datepicker>
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <svg onclick="document.getElementsByName('from')[0].getElementsByTagName('input')[0].click()"
+                                width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                    fill="black" fill-opacity="0.2" />
+                                <path
+                                    d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                    fill="black" fill-opacity="0.2" />
+                            </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="input-group date">
+                        <pg-datepicker (ngModelChange)="filterPeriod.toDate=$event;_endValueChange();change()"
+                            Placeholder="Конец" [ngModel]="filterPeriod.toDate" name="until"
+                            [DisabledDate]="_disabledEndDate" [Format]="'DD-MM-YYYY'">
+                        </pg-datepicker>
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <svg onclick="document.getElementsByName('until')[0].getElementsByTagName('input')[0].click()"
+                                width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                    fill="black" fill-opacity="0.2" />
+                                <path
+                                    d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                    fill="black" fill-opacity="0.2" />
+                            </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #periodTaskTemplate>
+    <!--     <div class="text-center">
+        <div class="btn-group" btnRadioGroup [(ngModel)]="filterPeriod.periodType">
+            <label btnRadio="relative" uncheckable class="btn btn-xs btn-default">Относительно</label>
+            <label btnRadio="date" uncheckable class="btn btn-xs btn-default">Дата</label>
+        </div>
+    </div>
+ -->
+    <!--     <div *ngIf="filterPeriod.periodType === 'relative'" class="pt-2 pl-3 pr-3">
+    
+    </div> -->
+
+    <pg-select class="mb-1" style="width: 100%;" name="durationTime" [(ngModel)]="filterPeriod.durationTime"
+        (ngModelChange)="change()" [PlaceHolder]="''">
+        <pg-option *ngFor="let unit of durationType | enumToArray" [Label]="unit | translate" [Value]="unit">
+        </pg-option>
+    </pg-select>
+
+    <div *ngIf="filterPeriod.durationTime != durationType.today" class="input-group">
+        <input type="text" class="form-control" name="duration" [(ngModel)]="filterPeriod.duration"
+            (ngModelChange)="change()" placeholder="0" numbersOnly [minValue]="1" [maxValue]="30">
+        <div class="input-group-append">
+            <pg-select style="width: 105px;" name="timeUnit" [(ngModel)]="filterPeriod.timeUnit"
+                (ngModelChange)="change()" [PlaceHolder]="''">
+                <pg-option *ngFor="let unit of timeUnitExtend | enumToArray" [Label]="unit | translate" [Value]="unit">
+                </pg-option>
+            </pg-select>
+        </div>
+    </div>
+
+
+</ng-template>

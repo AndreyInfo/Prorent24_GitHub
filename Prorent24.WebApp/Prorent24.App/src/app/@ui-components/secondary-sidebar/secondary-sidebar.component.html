@@ -1,0 +1,9 @@
+<!-- START SECONDARY SIDEBAR MENU-->
+<div class="sidebar-menu-config {{_extraClass}}" [ngStyle]="_togglePosition" [class.secondary-show]="_toggleMobileSidebar"
+    [class.secondary-hide]="!_toggleMobileSidebar">
+    <div class="pt-2" style="height:50%" perfectScrollbar>
+        <ng-content></ng-content>
+    </div>
+
+</div>
+<!-- END SECONDARY SIDEBAR MENU -->

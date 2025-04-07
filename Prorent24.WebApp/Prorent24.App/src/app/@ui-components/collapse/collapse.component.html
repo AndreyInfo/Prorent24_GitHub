@@ -1,0 +1,37 @@
+<div class="card-header" [attr.aria-expanded]="_active" (click)="clickHeader($event)" role="tab">
+    <ng-template [ngIf]="Title">
+        <h4 class="card-title">
+            <div *ngIf="_headerCheckbox" class="checkbox check-primary">
+                <input type="checkbox" id="headerCheckbox{{_id}}" name="headerCheckbox{{_id}}" [checked]="_checked"
+                    (change)="clickHeaderCheckbox($event)">
+                <label for="headerCheckbox{{_id}}">
+                    {{ Title }}
+                </label>
+                <svg *ngIf="_checked" width="7" height="5" viewBox="0 0 7 5" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.83896 0L3.3323 2.50667L0.825629 0L0 0.825629L3.3323 4.15792L6.66459 0.825629L5.83896 0Z"
+                        fill="#192D3E" />
+                </svg>
+                <svg *ngIf="!_checked" width="7" height="5" viewBox="0 0 7 5" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.82559 4.1582L3.33226 1.65154L5.83892 4.1582L6.66455 3.33257L3.33226 0.000278658L-3.99821e-05 3.33257L0.82559 4.1582Z"
+                        fill="#192D3E" />
+                </svg>
+
+            </div>
+            <a *ngIf="!_headerCheckbox" href="javascript:;" [ngClass]="{'collapsed':!_active}">
+                {{ Title }}
+            </a>
+        </h4>
+    </ng-template>
+    <ng-template [ngIf]="!Title">
+        <ng-content select="[collapse-title]"></ng-content>
+    </ng-template>
+</div>
+<div class="collapse" [ngClass]="{'show':true,'active':_active,'inactive':!_active}"
+    [@collapseState]="_active?'active':'inactive'">
+    <div class="card-body">
+        <ng-content></ng-content>
+    </div>
+</div>

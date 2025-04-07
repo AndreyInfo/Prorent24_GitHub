@@ -1,0 +1,54 @@
+<div class="filters-container  full-height">
+    <ng-template *ngFor="let filter of filters" [ngTemplateOutlet]="loadTemplate(filter.filterType)"
+        [ngTemplateOutletContext]="{ $implicit: filter.data}">
+    </ng-template>
+</div>
+
+<!-- Folders -->
+<ng-template #foldersTemplate let-data>
+    <div class="filter-folders scroll-vertical-blue" style="min-height: 150px;">
+        <br>
+        <span class="filter-folders-title">{{ 'folders' | translate }}:</span>
+        <ul class="nav">
+            <li *ngFor="let item of folders" class="nav-link">
+                <div *ngIf="item.items && existsGroup(item)" class="checkbox check-primary check-box-group" style="margin:0px;">
+                    <input type="checkbox" id="{{item.id}}" name="checked" [(ngModel)]="item.checked"
+                        (change)="item.items ? (item.checked ? showFoldersModal(item.id) : showFoldersModal(item.id)) : filterChange()">
+                    <label for="{{item.id}}">
+                        {{ item.text }}
+                    </label>
+                </div>
+                <div *ngIf="!item.items" class="checkbox check-primary" style="margin:0px;">
+                    <input type="checkbox" id="{{item.id}}" name="checked" [(ngModel)]="item.checked"
+                        (change)="filterChange()">
+                    <label for="{{item.id}}">
+                        {{ item.text }}
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+</ng-template>
+
+<!-- Tags -->
+<ng-template #tagsTemplate let-data>
+<div class="filter-tags scroll-vertical-blue" [ngStyle]="styleTag" style="min-height: 150px;">
+        <br>
+        <span class="filter-tags-title">{{ 'marks' | translate }}:</span>
+        <ul class="nav">
+            <li *ngFor="let tag of data" class="nav-link">
+                <button id="{{tag.id}}" name="{{tag.id}}" type="button" [(ngModel)]="tag.selected" class="filter-tags-btn btn-xs mr-1 mb-1" btnCheckbox
+                    btnCheckboxTrue="true" btnCheckboxFalse="false" (click)="filterChange()">
+                    <svg style="margin-right: 5px;" width="7" height="9" viewBox="0 0 7 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7 3.62392V3.17093V0.905979C7 0.406332 6.5515 0 6 0H1C0.4485 0 0 0.406332 0 0.905979V3.17093V3.62392V9L3.5 6.88635L7 9V3.62392Z"
+                            fill="#E7A953" />
+                    </svg>
+                    {{tag.name}}</button>
+            </li>
+        </ul>
+
+    </div>
+</ng-template>
+
+<rent-tree-folders [showCheckBox]="true" [position]="'left'" [entityType]="entityType" (onSelect)="setIdsFolders($event)"></rent-tree-folders>

@@ -1,0 +1,38 @@
+[
+  {
+    "Type": "VatReverseCharge",
+    "Rate": 0,
+    "AccountingCode": "rc",
+    "EdifactCode": ""
+  },
+  {
+    "Type": "Rates",
+    "Rate": 7,
+    "AccountingCode": "",
+    "EdifactCode": ""
+  },
+  {
+    "Type": "Rates",
+    "Rate": 20,
+    "AccountingCode": "20",
+    "EdifactCode": ""
+  },
+  {
+    "Type": "Rates",
+    "Rate": 0,
+    "AccountingCode": "00",
+    "EdifactCode": ""
+  },
+  {
+    "Type": "FixedRate",
+    "Rate": 20,
+    "AccountingCode": "",
+    "EdifactCode": ""
+  },
+  {
+    "Type": "FixedRate",
+    "Rate": 70,
+    "AccountingCode": "",
+    "EdifactCode": ""
+  }
+]

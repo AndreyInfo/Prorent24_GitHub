@@ -1,0 +1,152 @@
+<div class="full-height sm-p-t-30 overflow-auto" style="height: 97% !important; overflow-x: hidden !important;background: #fff;">
+    <div class="row" style="margin-top: 111px;">
+        <div class="col-md-9">
+            <img src="../../../../assets/img/logo/logo-login.jpg" width="100%">
+        </div>
+        <div class="col-md-3" style="padding-right: 45px;">
+            <span *ngIf="formForgotPassword" class="come-back">
+                <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3.2777 4.8433L1.54501 3.11061H5.414V2.30339H1.54501L3.2777 0.570702L2.707 0L0 2.707L2.707 5.414L3.2777 4.8433Z"
+                        fill="#192D3E" />
+                </svg>
+                <a [routerLink]="['.']" class="text-info small come-back-a"
+                    (click)="formForgotPassword = false">{{ 'come_back' | translate }}</a>
+            </span>
+            <br>
+            <span *ngIf="!formForgotPassword"
+                class="register-account-title">{{'session.sign_into_your_account' | translate}}</span>
+            <span *ngIf="formForgotPassword"
+                class="register-account-title">{{'session.password_recowery' | translate}}</span>
+
+            <!-- FORM LOGIN -->
+            <form *ngIf="!formForgotPassword" style="padding-top: 39px;" role="form" #loginForm="ngForm"
+                (ngSubmit)="onSubmit(loginForm)">
+                <div pgFormGroupDefault class="form-group border-blue" [ngClass]="{'errors-submit': loginUserName.errors}"
+                    [class.has-error]="loginUserName.invalid && (loginUserName.dirty || loginUserName.touched)">
+                    <label>{{'session.login' | translate}}</label>
+                    <input type="text" id="userName" name="userName" [(ngModel)]="login.email" #loginUserName="ngModel"
+                        required placeholder="{{'session.enter_login' | translate}}" class="form-control">
+                </div>
+                <div *ngIf="loginUserName.invalid && (loginUserName.dirty || loginUserName.touched)">
+                    <label class="error">{{'messages.field_is_required' | translate}}.</label>
+                </div>
+
+                <div pgFormGroupDefault class="form-group border-blue" [ngClass]="{'errors-submit': loginPassword.errors}"
+                    [class.has-error]="loginPassword.invalid && (loginPassword.dirty || loginPassword.touched)">
+                    <label>{{'session.password' | translate}}</label>
+                    <input type="password" class="form-control" placeholder="{{'session.enter_password' | translate}}"
+                        id="password" name="password" [(ngModel)]="login.password" #loginPassword="ngModel" required>
+                </div>
+                <div *ngIf="loginPassword.invalid && (loginPassword.dirty || loginPassword.touched)">
+                    <label class="error">{{'messages.field_is_required' | translate}}.</label>
+                </div>
+
+                <div class="row" style="margin-left: 21px;">
+                    <div class="col-md-6 no-padding sm-p-l-10">
+                        <div class="checkbox check-primary">
+                            <input type="checkbox" value="1" id="checkbox1">
+                            <label for="checkbox1" class="remember-me-btn">{{'session.keep_me_signed_in' | translate}}</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center justify-content-end ">
+                        <a [routerLink]="['.']" style="text-decoration: underline;margin-right: 12px;"
+                            class="text-info small forgot-password-btn"
+                            (click)="formForgotPassword=true">{{ 'session.forgot_password' | translate }}?</a>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-sm btn-white folder-save-btn" style="margin-left: 12px;padding:11px !important; padding-left: 45px !important;
+                padding-right: 45px !important; margin-top: 47px !important;">
+                    {{'session.sign_in' | translate}}
+                </button>
+
+                <div class="row session-block-bottom-info">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12" style="display: grid;">
+                                <img src="../../../../assets/img/logo/logo-prorent24-red.png">
+                                <span class="register-text-under-logo">{{'session.text-under-logo' | translate}}</span>
+
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 42px !important;">
+                            <div class="col-md-12">
+                                <div class="register-container m-b-10 clearfix">
+                                    <div class="m-b-30 sm-m-t-20 sm-p-r-15 sm-p-b-20 clearfix d-flex-md-up">
+                                        <div class="col-md-12 no-padding d-flex align-items-center">
+                                            <p class="hinted-text small inline">
+                                                <span class="text-link-not-navigarte">Copyright &copy; 2019 </span>
+                                                <span class="text-uppercase">Prorent24</span>.
+                                                <span class="text-link-not-navigarte">All rights reserved.</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- FORM FORGOT PASSWORD -->
+            <form *ngIf="formForgotPassword" role="form" #form="ngForm" (ngSubmit)="onRemindPassword(form)">
+                <p *ngIf="sentEmail" class="fs-16 text-black">
+                    {{ 'session.new_password_sent_to_mail' | translate }} {{ email }}</p>
+                <p *ngIf="notSentEmail" class="font-montserrat bold text-danger m-r-20 fs-16">
+                    {{ 'session.email_not_found' | translate }}</p>
+                <div *ngIf="!sentEmail">
+                    <div pgFormGroupDefault class="form-group border-blue" [ngClass]="{'errors-submit': your_email.errors}"
+                        [class.has-error]="your_email.invalid && (your_email.dirty || your_email.touched)">
+                        <label>{{'Enter your Email' | translate}}</label>
+                        <input type="text" id="your_email" name="email" [(ngModel)]="email" #your_email="ngModel"
+                            required placeholder="E-mail" class="form-control">
+                        <span
+                            class="text-info-forgot-password">{{ 'session.text-info-forgot-password' | translate }}</span>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="pt-4 btn-group">
+                            <button type="submit" class="btn btn-sm btn-white register-group-btn-button">
+                                {{'form.send' | translate}}
+                            </button>
+                            <button type="button" class="btn btn-white btn-xs mr-1 form-cancel"
+                                style="margin-left: 5px;background: #fff; !important" (click)="formForgotPassword=false">
+                                {{'form.cancel' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row session-block-bottom-info">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12" style="display: grid;">
+                                <img src="../../../../assets/img/logo/logo-prorent24-red.png">
+                                <span class="register-text-under-logo">{{'session.text-under-logo' | translate}}</span>
+
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 42px !important;">
+                            <div class="col-md-12">
+                                <div class="register-container m-b-10 clearfix">
+                                    <div class="m-b-30 sm-m-t-20 sm-p-r-15 sm-p-b-20 clearfix d-flex-md-up">
+                                        <div class="col-md-12 no-padding d-flex align-items-center">
+                                            <p class="hinted-text small inline">
+                                                <span class="text-link-not-navigarte">Copyright &copy; 2019 </span>
+                                                <span class="text-uppercase">Prorent24</span>.
+                                                <span class="text-link-not-navigarte">All rights reserved.</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

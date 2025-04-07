@@ -1,0 +1,110 @@
+<div class="card card-transparent">
+  <div class="card-header">
+    <div class="card-title"><span>{{'Ranges of numbers' | translate}}</span></div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-12">
+        <form role="form" #rangeNumbersForm="ngForm" (ngSubmit)="onSubmit(rangeNumbersForm)">
+          <pgcard MinimalHeader="true" HeaderClass="separator">
+            <ng-template #CardTitle>
+              <button type="submit" class="btn btn-primary btn-xs" [disabled]="rangeNumbersForm.invalid">
+                <i class="fa fa-save"></i> {{'form.save' | translate}}
+              </button>
+            </ng-template>
+
+            <div class="pt-3">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group" pgFormGroupDefault>
+                      <label>{{'Package Quantity Available' | translate}}</label>
+                    <input type="number" class="form-control input-sm">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group" pgFormGroupDefault>
+                      <label>{{'Current offer number' | translate}}</label>
+                    <input type="number" class="form-control input-sm">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group" pgFormGroupDefault>
+                      <label>{{'Current contract number' | translate}}</label>
+                    <input type="number" class="form-control input-sm">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group" pgFormGroupDefault>
+                      <label>{{'Current account number' | translate}}</label>
+                    <input type="number" class="form-control input-sm">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group" pgFormGroupDefault>
+                      <label>{{'Current number of reminders' | translate}}</label>
+                    <input type="number" class="form-control input-sm">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group" pgFormGroupDefault>
+                      <label>{{'Current amount of work for sublease' | translate}}</label>
+                    <input type="number" class="form-control input-sm">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group" pgFormGroupDefault>
+                      <label>{{'Current sublease number' | translate}}</label>
+                    <input type="number" class="form-control input-sm">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group" pgFormGroupDefault>
+                      <label>{{'Current project number' | translate}}</label>
+                    <input type="number" class="form-control input-sm">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group" pgFormGroupDefault>
+                      <label>{{'Current contact number' | translate}}</label>
+                    <input type="number" class="form-control input-sm">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group" pgFormGroupDefault>
+                      <label>{{'Code number of current equipment' | translate}}</label>
+                    <input type="number" class="form-control input-sm">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group" pgFormGroupDefault>
+                      <label>{{'Current number of QR codes' | translate}}</label>
+                    <input type="number" class="form-control input-sm">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </pgcard>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

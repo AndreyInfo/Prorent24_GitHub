@@ -1,0 +1,454 @@
+<div class="inner-content full-height page-content-wrapper scroll-vertical-hidden">
+
+    <!-- HEADER -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron no-margin">
+                <div class="container-fluid" style="margin-right: 20px;">
+                    <div class="inner" pg-parallax>
+                        <h4>11{{'Dashboard' | translate}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="" *ngIf="data!=null">
+        <div class="row" style="height: 730px;">
+            <div class="col-lg-8">
+                <div class="card card-borderless dashboard-left-block" style="height: 100%;">
+                    <pg-tabset tabAnimation="slide-left" Type="simple" ShowPagination="true">
+                        <pg-tab>
+                            <ng-template #TabHeading>
+                                {{'dashboard.today' | translate}}
+                            </ng-template>
+                            <div class="row column-seperation">
+                                <ng-container *ngTemplateOutlet="dashboardTemplate;context:data.today"></ng-container>
+                            </div>
+                        </pg-tab>
+                        <pg-tab>
+                            <ng-template #TabHeading>
+                                {{'dashboard.tomorrow' | translate}}
+                            </ng-template>
+                            <div class="row column-separation">
+                                <ng-container *ngTemplateOutlet="dashboardTemplate;context:data.tomorrow">
+                                </ng-container>
+                            </div>
+                        </pg-tab>
+                    </pg-tabset>
+
+                    <ng-template #dashboardTemplate let-board="blockData">
+                        <div class="col-md-12 scroll">
+                            <div class="dashboard-card">
+                                <div class="dashboard-card-content">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <h4>
+                                                <span>{{ 'dashboard.my_schedule' | translate}}</span>
+                                                <svg style="margin-left:27px;" width="15" height="17"
+                                                     viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                                          fill="black" fill-opacity="0.2" />
+                                                </svg>
+                                            </h4>
+                                            <div>
+                                                <p *ngIf="board.timeline.length === 0" class="text-success ng-hide">
+                                                    {{ 'dashboard.nothing_panning_today' | translate}}
+                                                </p>
+                                                <!---->
+                                                <div style="height: 460px;" perfectScrollbar>
+                                                    <ng-container *ngFor="let item of board.timeline">
+                                                        <div class="timeline-item pointer"
+                                                             (click)="onTimelineItemClick(item)" role="button"
+                                                             tabindex="0">
+                                                            <div class="row">
+                                                                <div class="col-md-12 date">
+                                                                    <strong class="timeline-item-time">{{toBrowserTime(item.timeStart) | date:'HH:mm'}}-{{toBrowserTime(item.timeEnd) |  date:'HH:mm'}}</strong>
+                                                                    <span class="timeline-item-time-title"
+                                                                          style="margin-left: 10px;">{{item.title}}</span>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <p class="m-b-xs">
+
+                                                                    </p>
+                                                                    <p>{{item.description}}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ng-container>
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <!---->
+                                        <div class="col-sm-6" *ngIf="data.license === 'pro'">
+                                            <h4><span>{{'dashboard.equipment_in_out' | translate}}</span></h4>
+                                            <ul class="list-group clear-list">
+                                                <li class="list-group-item first-item clearfix">
+                                                    <button class="info-btn btn btn-primary m-r-xs counter-block"
+                                                            [ngClass]="getClassByCount(board.equipment.dryhire.in)"
+                                                            (click)="goToWarehouse('equipment.dryhire.in')">
+                                                        {{board.equipment.dryhire.in}}
+                                                    </button>
+                                                    <button class="info-btn btn btn-primary m-r-xs counter-block"
+                                                            [ngClass]="getClassByCount(board.equipment.dryhire.in)"
+                                                            (click)="goToWarehouse('equipment.dryhire.out')">
+                                                        {{board.equipment.dryhire.in}}
+                                                    </button>
+
+                                                    <span>{{'dashboard.dry_hire' | translate}}</span>
+                                                    <small class="text-muted">(<span>{{'dashboard.transport_by_сlient' | translate}}</span>)</small>
+                                                </li>
+                                                <li class="list-group-item clearfix first-item ">
+                                                    <button class="info-btn btn btn-primary m-r-xs counter-block"
+                                                            [ngClass]="getClassByCount(board.equipment.project.in)"
+                                                            (click)="goToWarehouse('equipment.project.in')">
+                                                        {{board.equipment.project.in}}
+                                                    </button>
+                                                    <button class="info-btn btn btn-primary m-r-xs counter-block"
+                                                            [ngClass]="getClassByCount(board.equipment.project.out)"
+                                                            (click)="goToWarehouse('equipment.project.out')">
+                                                        {{board.equipment.project.out}}
+                                                    </button>
+                                                    <span>{{'Projects' | translate}}</span>
+                                                    <small class="text-muted">(<span>{{'dashboard.transport_by_us' | translate}}</span>)</small>
+                                                </li>
+                                                <li class="list-group-item clearfix first-item">
+                                                    <button class="info-btn btn btn-primary m-r-xs counter-block"
+                                                            [ngClass]="getClassByCount(board.equipment.subhire.in)"
+                                                            (click)="goToWarehouse('equipment.subhire.in')">
+                                                        {{board.equipment.subhire.in}}
+                                                    </button>
+                                                    <button class="info-btn btn btn-primary m-r-xs counter-block"
+                                                            [ngClass]="getClassByCount(board.equipment.subhire.out)"
+                                                            (click)="goToWarehouse('equipment.subhire.out')">
+                                                        {{board.equipment.subhire.out}}
+                                                    </button>
+                                                    <span>{{'dashboard.subhires' | translate}}</span>
+                                                </li>
+                                                <li class="list-group-item clearfix">
+                                                    <button class="info-btn btn btn-primary m-r-xs counter-block"
+                                                            [ngClass]="getClassByCount(board.equipment.overtime.in)"
+                                                            (click)="goToWarehouse('equipment.overtime.in')">
+                                                        {{board.equipment.overtime.in}}
+                                                    </button>
+                                                    <span>{{ 'dashboard.delayed' | translate}}</span>
+                                                    <small class="text-muted">
+                                                        (<span>
+                                                            {{ 'dashboard.projects' | translate}}
+                                                        </span>)
+                                                    </small>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                        <!---->
+                                        <div class="col-sm-6">
+                                            <h4>
+                                                <span>{{ 'dashboard.crew' | translate }}</span> / <span>
+                                                    {{'dashboard.transport' | translate}}
+                                                </span>
+                                            </h4>
+
+                                            <ul class="list-group clear-list">
+                                                <li class="list-group-item clearfix first-item"
+                                                    (click)="showDetails('crew_transport','project',board.crewTransport.projectsWithPlanningData)">
+                                                    <span style="width: 32.25px;"
+                                                          class="info-btn btn btn-primary m-r-xs counter-block"
+                                                          [ngClass]="getClassByCount(board.crewTransport.projectsWithPlanning)"
+                                                          (click)="goToProjectList('main', ['hasCrew', 'hasTransport'], 'crewTransport.projectsWithPlanning')"
+                                                          role="button"
+                                                          tabindex="0">{{board.crewTransport.projectsWithPlanning}}</span>
+                                                    <span>{{'dashboard.projects_with_crew_and_transport' | translate}}</span>
+                                                </li>
+                                                <li class="list-group-item clearfix first-item" (click)="showDetails('crew_transport','project_crew_or_transport',board.crewTransport.plannedCrewData)">
+                                                    <span style="width: 32.25px;"
+                                                          class="info-btn btn btn-primary m-r-xs counter-block"
+                                                          [ngClass]="getClassByCount(board.crewTransport.plannedCrew)"
+                                                          (click)="goToWarehouse('crewTransport.plannedCrew')"
+                                                          role="button"
+                                                          tabindex="0">{{board.crewTransport.plannedCrew}}</span>
+                                                    <span>{{ 'dashboard.scheduled_crew_members' | translate}}</span>
+                                                </li>
+                                                <li class="list-group-item clearfix first-item" (click)="showDetails('crew_transport','project_crew_or_transport',board.crewTransport.plannedTransportData)">
+                                                    <span style="width: 32.25px;"
+                                                          class="info-btn btn btn-primary m-r-xs counter-block"
+                                                          [ngClass]="getClassByCount(board.crewTransport.plannedTransport)"
+                                                          (click)="goToWarehouse('crewTransport.plannedTransport')"
+                                                          role="button"
+                                                          tabindex="0">{{board.crewTransport.plannedTransport}}</span>
+                                                    <span>{{'dashboard.scheduled_vehicles' | translate}}</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+            <div class="col-lg-4 col-white">
+                <div class="row">
+                    <div class="col m-t-md">
+                        <div class="dashboard-card">
+                            <div class="dashboard-card-title clearfix hr-right-block">
+                                <h5 class="inline-block text-right-block-title">{{'Projects' | translate}}</h5>
+                            </div>
+                            <div class="dashboard-card-content">
+                                <ul class="list-group clear-list">
+                                    <li class="list-group-item first-item clearfix" (click)="showDetails('projects','project',data.blockData.projects.projectsOptionsData)">
+                                        <div class="pull-left">
+                                            <span class="info-btn btn counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.projects.projectsOptions)"
+                                                  title="Projects in option"
+                                                  [ngClass]="{'btn-warning': data.blockData.projects.projectsOptions > 0, 'btn-info': data.blockData.projects.projectsOptions == 0}"
+                                                  role="button"
+                                                  tabindex="0">{{data.blockData.projects.projectsOptions}}</span>
+                                        </div>
+                                        <span>{{ 'dashboard.projects_in_option' | translate }}</span>
+                                    </li>
+                                    <!---->
+                                    <li class="list-group-item clearfix" *ngIf="data.license === 'pro'" (click)="showDetails('projects','project',board.crewTransport.confirmedData)">
+                                        <div class="pull-left">
+                                            <span class="info-btn btn m-r-xs counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.projects.openTasks.option)"
+                                                  title="Projects in option"
+                                                  (click)="goToProjectList('projects', ['isOption', 'openTasks'], 'projects.openTasks.option')"
+                                                  [ngClass]="{'btn-warning': data.blockData.projects.openTasks.option > 0, 'btn-info': data.blockData.projects.openTasks.option == 0}"
+                                                  role="button"
+                                                  tabindex="0">{{data.blockData.projects.openTasks.option}}</span>
+                                            <span class="info-btn btn  counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.projects.openTasks.confirmed)"
+                                                  title="Confirmed projects"
+                                                  (click)="goToProjectList('projects', ['isConfirmed', 'openTasks'], 'projects.openTasks.confirmed')"
+                                                  [ngClass]="{'btn-danger': data.blockData.projects.openTasks.confirmed > 0, 'btn-info': data.blockData.projects.openTasks.confirmed == 0}"
+                                                  role="button"
+                                                  tabindex="0">{{data.blockData.projects.openTasks.confirmed}}</span>
+                                        </div>
+                                        <span>{{ 'dashboard.projects_with_open_tasks' | translate }}</span>
+                                    </li>
+                                    <!---->
+                                    <li class="list-group-item clearfix" (click)="showDetails('projects','project',data.blockData.projects.projectsInvoiceData)">
+                                        <div class="pull-left">
+                                            <span class="info-btn btn counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.projects.projectsInvoice)"
+                                                  title="Confirmed projects"
+                                                  (click)="goToState('root.invoices.invoices-daily-tab.list', 'todo', [], 'projects.projectsInvoice')"
+                                                  [ngClass]="{'btn-danger': data.blockData.projects.projectsInvoice > 0, 'btn-info': data.blockData.projects.projectsInvoice == 0}"
+                                                  role="button"
+                                                  tabindex="0">{{data.blockData.projects.projectsInvoice}}</span>
+                                        </div>
+                                        <span> {{ 'dashboard.projects_open_for_invoicing' | translate }}</span>
+                                    </li>
+                                    <li class="list-group-item clearfix" (click)="showDetails('projects','project',data.blockData.projects.cancelledWithCrewData)">
+                                        <div class="pull-left">
+                                            <span class="info-btn btn counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.projects.cancelledWithCrew)"
+                                                  (click)="openCancelledProjects('hasCrewOnCancelledSubprojects', 'projects.cancelledWithCrew')"
+                                                  [ngClass]="{'btn-danger': data.blockData.projects.cancelledWithCrew > 0, 'btn-info': data.blockData.projects.cancelledWithCrew == 0}"
+                                                  role="button"
+                                                  tabindex="0">{{data.blockData.projects.cancelledWithCrew}}</span>
+                                        </div>
+                                        <span>{{'dashboard.canceled_projects_with_planned_crew_members' | translate}}</span>
+                                    </li>
+                                    <li class="list-group-item clearfix" (click)="showDetails('projects','project',data.blockData.projects.cancelledWithTransportData)">
+                                        <div class="pull-left">
+                                            <span class="info-btn btn counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.projects.cancelledWithTransport)"
+                                                  (click)="openCancelledProjects('hasTransportOnCancelledSubprojects', 'projects.cancelledWithTransport')"
+                                                  [ngClass]="{'btn-danger': data.blockData.projects.cancelledWithTransport > 0, 'btn-info': data.blockData.projects.cancelledWithTransport == 0}"
+                                                  role="button"
+                                                  tabindex="0">{{data.blockData.projects.cancelledWithTransport}}</span>
+                                        </div>
+                                        <span>{{'dashboard.canceled_projects_with_planned_transport' | translate }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col m-t-md">
+                        <div class="dashboard-card">
+                            <div class="dashboard-card-title  hr-right-block">
+                                <h5 class="text-right-block-title">{{ 'dashboard.planning' | translate}}</h5>
+                            </div>
+                            <div class="dashboard-card-content">
+                                <ul class="list-group clear-list">
+                                    <li class="list-group-item first-item clearfix" (click)="showDetails('planning','planning',data.blockData.planning.unscheduledCrew.optionData)">
+                                        <div class="pull-left">
+                                            <span class="info-btn btn m-r-xs counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.planning.unscheduledCrew.option)"
+                                                  title="Projects in option"
+                                                  (click)="goToPlanner(['isOption', 'unplannedCrewFunctions'], 'planning.unscheduledCrew.option')"
+                                                  [ngClass]="{'btn-warning': data.blockData.planning.unscheduledCrew.option > 0, 'btn-info': data.blockData.planning.unscheduledCrew.option == 0}"
+                                                  role="button"
+                                                  tabindex="0">{{data.blockData.planning.unscheduledCrew.option}}</span>
+                                        </div>
+                                        <span>{{ 'dashboard.unscheduled_crew_functions' | translate}}</span>
+                                    </li>
+                                    <li class="list-group-item clearfix" (click)="showDetails('planning','planning',data.blockData.planning.unscheduledTransport.optionData)">
+                                        <div class="pull-left">
+                                            <span class="info-btn btn m-r-xs counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.planning.unscheduledTransport.option)"
+                                                  title="Projects in option"
+                                                  (click)="goToPlanner(['isOption', 'unplannedTransportFunctions'], 'planning.unscheduledTransport.option')"
+                                                  [ngClass]="{'btn-warning': data.blockData.planning.unscheduledTransport.option > 0, 'btn-info': data.blockData.planning.unscheduledTransport.option == 0}"
+                                                  role="button"
+                                                  tabindex="0">{{data.blockData.planning.unscheduledTransport.option}}</span>
+                                        </div>
+                                        <span>{{ 'dashboard.unscheduled_transport_functions' | translate }}</span>
+                                    </li>
+                                    <li class="list-group-item clearfix" (click)="showDetails('planning','planning',data.blockData.planning.notEnoughCrew.optionData)">
+                                        <div class="pull-left">
+                                            <span class="info-btn btn m-r-xs counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.planning.notEnoughCrew.option)"
+                                                  title="Projects in option"
+                                                  (click)="goToPlanner(['isOption', 'unfilledCrewFunctions'], 'planning.notEnoughCrew.option')"
+                                                  [ngClass]="{'btn-warning': data.blockData.planning.notEnoughCrew.option > 0, 'btn-info': data.blockData.planning.notEnoughCrew.option == 0}"
+                                                  role="button"
+                                                  tabindex="0">{{data.blockData.planning.notEnoughCrew.option}}</span>
+                                        </div>
+                                        <span>{{ 'dashboard.understaffed_crew_functions' | translate }}</span>
+                                    </li>
+                                    <li class="list-group-item clearfix" (click)="showDetails('planning','planning',data.blockData.planning.notEnoughTransport.optionData)">
+                                        <div class="pull-left">
+                                            <span class="info-btn btn m-r-xs counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.planning.notEnoughTransport.option)"
+                                                  title="Projects in option"
+                                                  (click)="goToPlanner(['isOption', 'unfilledTransportFunctions'], 'planning.notEnoughTransport.option')"
+                                                  [ngClass]="{'btn-warning': data.blockData.planning.notEnoughTransport.option > 0, 'btn-info': data.blockData.planning.notEnoughTransport.option == 0}"
+                                                  role="button"
+                                                  tabindex="0">{{data.blockData.planning.notEnoughTransport.option}}</span>
+                                        </div>
+                                        <span>{{ 'dashboard.understaffed_transport_functions' | translate}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col m-t-md">
+                        <div class="dashboard-card">
+                            <div class="dashboard-card-title  hr-right-block">
+                                <h5 class="text-right-block-title">{{'dashboard.to_do' | translate}}</h5>
+                            </div>
+                            <div class="dashboard-card-content">
+                                <ul class="list-group clear-list">
+                                    <!---->
+                                    <li class="list-group-item first-item clearfix" *ngIf="data.license === 'pro'">
+                                        <div class="pull-left">
+                                            <span class="info-btn btn m-r-xs counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.todo.openTasks.expired)"
+                                                  (click)="goToTaskList(true, 'todo.openTasks.expired')"
+                                                  title="Expired deadline"
+                                                  [ngClass]="{'btn-danger': data.blockData.todo.openTasks.expired > 0, 'btn-info': data.blockData.todo.openTasks.expired == 0}"
+                                                  role="button"
+                                                  tabindex="0">{{data.blockData.todo.openTasks.expired}}</span>
+                                            <span class="info-btn btn btn-info counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.todo.openTasks.open)"
+                                                  (click)="goToTaskList(false, 'todo.openTasks.open')" role="button"
+                                                  tabindex="0">{{data.blockData.todo.openTasks.open}}</span>
+                                        </div>
+                                        <span>{{'dashboard.open_tasks' | translate }}</span>
+                                    </li>
+                                    <!---->
+                                    <li class="list-group-item clearfix"
+                                        [ngClass]="{'first-item':  data.license !== 'pro'}" (click)="showDetails('plans','invoices',data.blockData.todo.openInvoices.expiredData)">
+                                        <div class="pull-left">
+                                            <span class="info-btn btn m-r-xs counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.todo.openInvoices.expired)"
+                                                  (click)="goToState('root.invoices.invoices-tab.list', 'todo', ['notPayed', 'deadline'], 'todo.openInvoices.expired')"
+                                                  title="{{'Expired deadline' | translate}}"
+                                                  [ngClass]="{'btn-danger': data.blockData.todo.openInvoices.expired > 0, 'btn-info': data.blockData.todo.openInvoices.expired == 0}"
+                                                  role="button"
+                                                  tabindex="0">{{data.blockData.todo.openInvoices.expired}}</span>
+                                        </div>
+                                        <span>{{ 'dashboard.open_invoices' | translate}}</span>
+                                    </li>
+                                    <!---->
+                                    <li class="list-group-item clearfix" *ngIf="data.license === 'pro'">
+                                        <div class="pull-left">
+                                            <span class="info-btn btn counter-block"
+                                                  [ngClass]="getClassByCount(data.blockData.todo.subhireoption)"
+                                                  (click)="goToState('root.subhire.subhire-list', 'todo', ['isOption'], 'todo.subhireoption')"
+                                                  role="button" tabindex="0">{{data.blockData.todo.subhireoption}}</span>
+                                        </div>
+                                        <span>{{'dashboard.open_subhires' | translate}}</span>
+                                    </li>
+                                    <!---->
+                                    <li class="list-group-item clearfix" (click)="showDetails('plans','repair',data.blockData.todo.openRepairsData)">
+                                        <span class="info-btn btn pull-left counter-block"
+                                              [ngClass]="getClassByCount(data.blockData.todo.openRepairs)"
+                                              (click)="goToRepairList(['notRepaired'], 'todo.openRepairs')" role="button"
+                                              tabindex="0">{{data.blockData.todo.openRepairs}}</span>
+                                        <span> {{ 'dashboard.open_repairs' | translate}}</span>
+                                    </li>
+                                    <li class="list-group-item clearfix" (click)="showDetails('plans','equipments',data.blockData.todo.criticalStockData)">
+                                        <span class="info-btn btn pull-left counter-block"
+                                              [ngClass]="getClassByCount(data.blockData.todo.criticalStock)"
+                                              (click)="goToState('root.materials.list', 'todo', ['criticalStock'], 'todo.criticalStock')"
+                                              [ngClass]="{'btn-danger': data.blockData.todo.criticalStock > 0, 'btn-info': data.blockData.todo.criticalStock == 0}"
+                                              role="button" tabindex="0">{{data.blockData.todo.criticalStock}}</span>
+                                        <span>{{ 'dashboard.critical_stock' | translate }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL STICK UP  -->
+<div bsModal #rowModal="bs-modal" class="modal fade slide-right" tabindex="-1" role="dialog" aria-labelledby="rowModal"
+    [config]="{backdrop: 'static'}" aria-hidden="true">
+    <div class="modal-dialog additional-columns-modal"
+        style="max-width: 710px;width: 710px !important;top: 1% !important;left: 45% !important;">
+        <div class="modal-content" *ngIf="modalData"
+            style="box-shadow: 0px 25px 40px rgba(0, 0, 0, 0.25);border-radius: 3px;height: auto;">
+            <div>
+                <div class="inner additional-columns-modal-header" pg-parallax>
+                    <div class="input-group mb-2">
+                        <div *ngIf="modalData.title == 'crew_transport'" class="modal-header-block">
+                            {{ 'dashboard.crew' | translate }} / {{'dashboard.transport' | translate}}
+                        </div>
+                        <div *ngIf="modalData.title == 'projects'" class="modal-header-block">
+                            {{'Projects' | translate}}
+                        </div>
+                        <div *ngIf="modalData.title == 'planning'" class="modal-header-block">
+                            {{'dashboard.planning' | translate}}
+                        </div>
+                        <div *ngIf="modalData.title == 'plans'" class="modal-header-block">
+                            {{'dashboard.to_do' | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body" style="margin-top:30px;">
+                <div class="scroll-vertical-blue" style="max-height: 473px;">
+                    <div *ngFor="let item of modalData.items | keyvalue" class="alert alert-primary" role="alert">
+                        <a *ngIf="modalData.type == 'project'" routerLink="/projects/edit/{{item.key}}/data" class="alert-link">{{item.value}}</a>
+                        <a *ngIf="modalData.type == 'project_crew_or_transport'" routerLink="/projects/edit/{{item.key}}/staff_and_vehicles" class="alert-link">{{item.value}}</a>
+                        <a *ngIf="modalData.type == 'planning'" routerLink="/projects/edit/{{item.key}}/planning" class="alert-link">{{item.value}}</a>
+                        <a *ngIf="modalData.type == 'invoices'" routerLink="/invoices/edit/{{item.key}}" class="alert-link">{{item.value}}</a>
+                        <a *ngIf="modalData.type == 'repair'" routerLink="/repair/edit/{{item.key}}" class="alert-link">{{item.value}}</a>
+                        <a *ngIf="modalData.type == 'equipments'" routerLink="/equipments/edit/{{item.key}}" class="alert-link">{{item.value}}</a>
+                    </div>
+                </div>
+                <div class="text-center pt-5 btn-group">
+                    <button type="button" (click)="rowModal.hide()"
+                        class="btn btn-sm btn-white folder-save-btn">
+                        {{'form.close' | translate}}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

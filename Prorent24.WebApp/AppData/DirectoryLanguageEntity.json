@@ -1,0 +1,632 @@
+﻿[
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Azeri"
+      },
+      {
+        "Lang": "en",
+        "Name": "Azeri"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "болгарский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Bulgarian"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Китайский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Chinese"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Хорватский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Croatian"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Чешский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Czech"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Датский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Danish"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Duits (DeepL NPF)"
+      },
+      {
+        "Lang": "en",
+        "Name": "Duits (DeepL NPF)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Duits (DeepL)"
+      },
+      {
+        "Lang": "en",
+        "Name": "Duits (DeepL)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Duits (Google Translate)"
+      },
+      {
+        "Lang": "en",
+        "Name": "Duits (Google Translate)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Нидерланский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Dutch"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Английский"
+      },
+      {
+        "Lang": "en",
+        "Name": "English"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Английский (американский)"
+      },
+      {
+        "Lang": "en",
+        "Name": "English (American)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Английский (Австралия)"
+      },
+      {
+        "Lang": "en",
+        "Name": "English (Australian)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Эстонский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Estonian"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Финский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Finnish"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Французский"
+      },
+      {
+        "Lang": "en",
+        "Name": "French"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Французский (Канада)"
+      },
+      {
+        "Lang": "en",
+        "Name": "French (Canada)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Немецкий"
+      },
+      {
+        "Lang": "en",
+        "Name": "German"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Немецкий (Google Переводчик EN)"
+      },
+      {
+        "Lang": "en",
+        "Name": "German (Google Translate EN)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Греческий"
+      },
+      {
+        "Lang": "en",
+        "Name": "Greek"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Hongaars (Google Translate)"
+      },
+      {
+        "Lang": "en",
+        "Name": "Hongaars (Google Translate)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Венгерский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Hungarian"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Венгерский (Google Translate EN)"
+      },
+      {
+        "Lang": "en",
+        "Name": "Hungarian (Google Translate EN)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Исландский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Icelandic"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Итальянский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Italian"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Японский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Japanese"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "корейский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Korean"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Латышский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Latvian"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Литовский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Lithuanian"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "норвежский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Norwegian"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Польский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Polish"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Португальский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Portuguese"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Португальский (Бразилия)"
+      },
+      {
+        "Lang": "en",
+        "Name": "Portuguese (Brazil)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Румынский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Romanian"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Румынский (Google Переводчик EN)"
+      },
+      {
+        "Lang": "en",
+        "Name": "Romanian (Google Translate EN)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Русский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Russian"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Cербский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Serbian"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "словенский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Slovenian"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Испанский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Spanish"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Испанский (Аргентина)"
+      },
+      {
+        "Lang": "en",
+        "Name": "Spanish (Argentina)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Испанский (Чили)"
+      },
+      {
+        "Lang": "en",
+        "Name": "Spanish (Chile)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Испанский (DeepL)"
+      },
+      {
+        "Lang": "en",
+        "Name": "Spanish (DeepL)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Испанский (Гуатамала)"
+      },
+      {
+        "Lang": "en",
+        "Name": "Spanish (Guatamala)"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Шведский"
+      },
+      {
+        "Lang": "en",
+        "Name": "Swedish"
+      }
+    ]
+  },
+  {
+    "Type": "Language",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Турецкий"
+      },
+      {
+        "Lang": "en",
+        "Name": "Turkish"
+      }
+    ]
+  }
+]

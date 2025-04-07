@@ -1,0 +1,29 @@
+<div class="inner-content full-height page-content-wrapper scroll-vertical-hidden">
+
+    <!-- HEADER -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron no-margin">
+                <div class="container-fluid" style="margin-right: 20px;">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a routerLink="/staff">Персонал</a></li>
+                        <li class="breadcrumb-item active">
+                            {{ (id ? "edit" : "Add new") | translate }} {{'employee' | translate}}
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="route-top-tabs">
+        <nav mat-tab-nav-bar>
+            <a mat-tab-link *ngFor="let tab of tabs" [routerLink]="[tab]" routerLinkActive #rla="routerLinkActive"
+                [active]="rla.isActive">
+                {{tab | translate}}
+            </a>
+        </nav>
+    </div>
+
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,18 @@
+[
+  {
+    "Name": "Default user role",
+    "NormalizedName": "default"
+  },
+  {
+    "Name": "Poweruser",
+    "NormalizedName": "poweruser"
+  },
+  {
+    "Name": "Freelancer",
+    "NormalizedName": "freelancer"
+  },
+  {
+    "Name": "Office",
+    "NormalizedName": "office"
+  }
+]

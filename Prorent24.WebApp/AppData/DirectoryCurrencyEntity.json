@@ -1,0 +1,352 @@
+﻿[
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Albanian lek - ALL"
+      },
+      {
+        "Lang": "en",
+        "Name": "Albanian lek - ALL"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Armenian dram - AMD"
+      },
+      {
+        "Lang": "en",
+        "Name": "Armenian dram - AMD"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Azerbaijani manat - AZN"
+      },
+      {
+        "Lang": "en",
+        "Name": "Azerbaijani manat - AZN"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Belarusian ruble - BYN"
+      },
+      {
+        "Lang": "en",
+        "Name": "Belarusian ruble - BYN"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Bosnia and Herzegovina convertible mark - BAM"
+      },
+      {
+        "Lang": "en",
+        "Name": "Bosnia and Herzegovina convertible mark - BAM"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Bulgarian lev - BGN"
+      },
+      {
+        "Lang": "en",
+        "Name": "Bulgarian lev - BGN"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Croatian kuna - HRK"
+      },
+      {
+        "Lang": "en",
+        "Name": "Croatian kuna - HRK"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Czech koruna - CZK"
+      },
+      {
+        "Lang": "en",
+        "Name": "Czech koruna - CZK"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Danish krone - DKK"
+      },
+      {
+        "Lang": "en",
+        "Name": "Danish krone - DKK"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Euro - EUR"
+      },
+      {
+        "Lang": "en",
+        "Name": "Euro - EUR"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Georgian lari - GEL"
+      },
+      {
+        "Lang": "en",
+        "Name": "Georgian lari - GEL"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Hungarian forint - HUF"
+      },
+      {
+        "Lang": "en",
+        "Name": "Hungarian forint - HUF"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Icelandic króna: second króna - ISK"
+      },
+      {
+        "Lang": "en",
+        "Name": "Icelandic króna: second króna - ISK"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Moldovan leu - MDL"
+      },
+      {
+        "Lang": "en",
+        "Name": "Moldovan leu - MDL"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Norwegian krone - NOK"
+      },
+      {
+        "Lang": "en",
+        "Name": "Norwegian krone - NOK"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Polish złoty - PLN"
+      },
+      {
+        "Lang": "en",
+        "Name": "Polish złoty - PLN"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pound sterling - GBP"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pound sterling - GBP"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Romanian new leu - RON"
+      },
+      {
+        "Lang": "en",
+        "Name": "Romanian new leu - RON"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Russian ruble - RUB"
+      },
+      {
+        "Lang": "en",
+        "Name": "Russian ruble - RUB"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Second Macedonian denar - MKD"
+      },
+      {
+        "Lang": "en",
+        "Name": "Second Macedonian denar - MKD"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Serbian dinar - RSD"
+      },
+      {
+        "Lang": "en",
+        "Name": "Serbian dinar - RSD"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Swedish krona - SEK"
+      },
+      {
+        "Lang": "en",
+        "Name": "Swedish krona - SEK"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Swiss franc - CHF"
+      },
+      {
+        "Lang": "en",
+        "Name": "Swiss franc - CHF"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Turkish lira - TRY"
+      },
+      {
+        "Lang": "en",
+        "Name": "Turkish lira - TRY"
+      }
+    ]
+  },
+  {
+    "Type": "Currency",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Ukrainian hryvnia - UAH"
+      },
+      {
+        "Lang": "en",
+        "Name": "Ukrainian hryvnia - UAH"
+      }
+    ]
+  }
+]

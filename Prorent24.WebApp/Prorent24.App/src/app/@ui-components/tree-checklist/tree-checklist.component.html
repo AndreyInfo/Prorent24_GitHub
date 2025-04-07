@@ -1,0 +1,54 @@
+<!-- <tree-root
+      id="tree1"
+      [nodes]="nodes"
+      [options]="options">
+    </tree-root>
+    <h3>The tree is using flexbox.<br>
+    Switch expander and checkbox with CSS 'order' attribute:</h3>
+    <tree-root
+      class="reverse"
+      id="tree2"
+      [nodes]="nodes"
+      [options]="options">
+    </tree-root>
+    <h3>Disable tri-state checkboxes</h3>
+    <tree-root
+      id="tree3"
+      [nodes]="nodes"
+      [options]="optionsDisabled">
+    </tree-root> -->
+
+<div  *ngIf="showNodes">
+    <tree-root [nodes]="nodes" [options]="options">
+        <ng-template #treeNodeWrapperTemplate let-node let-index="index">
+            <div *ngIf="nodes[index].children" class="tree-node-group-expander">
+                <span>{{nodes[index].name}}</span>
+                <svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.83896 0L3.3323 2.50667L0.825629 0L0 0.825629L3.3323 4.15792L6.66459 0.825629L5.83896 0Z"
+                        fill="#192D3E" />
+                </svg>
+            </div>
+           
+            
+            <div class="tree-node-content-without-child">
+                <div class="node-wrapper" [style.padding-left]="node.getNodePadding()" *ngFor="let item of nodes[index].children">
+                    <div class="node-content-wrapper">
+                        <input class="tree-node-checkbox" (click)="onCheck(item, $event)" type="checkbox" #Nodecheck>
+                        <span>{{item.name}}</span>
+                    </div>
+                    <!-- <tree-node-content [node]="node" [index]="index"></tree-node-content> -->
+                </div>
+                <!-- <div class="node-wrapper" [style.padding-left]="node.getNodePadding()">
+                    <div class="node-content-wrapper" [class.node-content-wrapper-active]="node.isActive"
+                        [class.node-content-wrapper-focused]="node.isFocused" (click)="node.mouseAction('click', $event)"
+                        (dblclick)="node.mouseAction('dblClick', $event)"
+                        (contextmenu)="node.mouseAction('contextMenu', $event)" (treeDrop)="node.onDrop($event)"
+                        [treeAllowDrop]="node.allowDrop" [treeDrag]="node" [treeDragEnabled]="node.allowDrag()">
+                        <tree-node-content [node]="node" [index]="index"></tree-node-content>
+                        <tree-node-expander [node]="node"></tree-node-expander>
+                    </div>
+                </div> -->
+            </div>
+        </ng-template>
+    </tree-root>
+</div>

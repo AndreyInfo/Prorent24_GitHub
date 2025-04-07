@@ -1,0 +1,184 @@
+<div class="jumbotron no-margin" style="height: 37px;">
+    <ol class="breadcrumb" style="margin-left: 5px !important;">
+        <li class="breadcrumb-item"><a
+                [routerLink]="['/contacts/edit', parentId, 'personalContacts']">{{'personalContacts' | translate}}</a>
+        </li>
+        <li class="breadcrumb-item active">{{(entity.id ? "edit" : "form.add") | translate }}
+            {{'ContactPerson' | translate}}</li>
+    </ol>
+</div>
+
+<div class="container-fixed-lg pt-3">
+    <form role="form" #form="ngForm" (ngSubmit)="submitData(form)">
+        <div class="row">
+            <div class="col-lg-9" >
+                <pgcard MinimalHeader="true" Toggle="false">
+                    <div class="pt-3" style="height:473px">
+                            <ng-template #CardTitle>
+                                {{'contact_data' | translate}}
+                            </ng-template>
+
+                            <div ngModelGroup="address">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group border-blue">
+                                            <label>{{'country' | translate}}</label>
+                                            <pg-select style="width: 100%;" name="countryId"
+                                                [(ngModel)]="entity.address.countryId" [PlaceHolder]="'Выбрать...'"
+                                                AllowClear ShowSearch>
+                                                <pg-option *ngFor="let item of countries" [Label]="item.name"
+                                                    [Value]="item.id">
+                                                </pg-option>
+                                            </pg-select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group border-blue">
+                                            <label>{{'Area' | translate}}</label>
+                                            <input type="text" placeholder="{{'Area' | translate}}" class="form-control"
+                                                id="address.region" name="region" [(ngModel)]="entity.address.region"
+                                                #city="ngModel">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group border-blue">
+                                            <label>{{'city' | translate}}</label>
+                                            <input type="text" placeholder="{{'city' | translate}}" class="form-control"
+                                                id="address.city" name="city" [(ngModel)]="entity.address.city"
+                                                #city="ngModel">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group border-blue">
+                                            <label>{{'postalcode' | translate}}</label>
+                                            <input type="text" placeholder="{{'postalcode' | translate}}"
+                                                class="form-control" id="address.postalCode" name="postalCode"
+                                                [(ngModel)]="entity.address.postalCode" #postcode="ngModel">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group border-blue">
+                                            <label>{{'Street' | translate}}</label>
+                                            <input type="text" placeholder="{{'Street' | translate}}"
+                                                class="form-control" id="address.address" name="address"
+                                                [(ngModel)]="entity.address.address" #street="ngModel">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group border-blue">
+                                            <label>{{'HouseNumber' | translate}}</label>
+                                            <input type="text" placeholder="{{'HouseNumber' | translate}}"
+                                                class="form-control" id="address.number" name="number"
+                                                [(ngModel)]="entity.address.number" #houseNumber="ngModel">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group border-blue">
+                                        <label class="label-sm">{{'phone' | translate}}</label>
+                                        <input type="text" placeholder="{{'phone' | translate}}" class="form-control"
+                                            id="phone" name="phone" [(ngModel)]="entity.phone" #phone="ngModel">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group border-blue">
+                                        <label class="label-sm">{{'mobile' | translate}}</label>
+                                        <input type="text" placeholder="{{'mobile' | translate}}" class="form-control"
+                                            id="lastName" name="mobile" [(ngModel)]="entity.mobile" #mobile="ngModel">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group border-blue">
+                                        <label class="label-sm">{{'email' | translate}}</label>
+                                        <input type="text" placeholder="{{'email' | translate}}" class="form-control"
+                                            id="email" name="email" [(ngModel)]="entity.email" #email="ngModel">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </pgcard>
+            </div>
+            <div class="col-lg-3">
+                <pgcard MinimalHeader="true" Toggle="false">
+                    <ng-template #CardTitle>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <button type="submit" class="btn btn-primary btn-xs form-save">
+                                    {{'form.save' | translate}}
+                                </button>
+                            </div>
+                            <div class="col-md-5">
+                                <a [routerLink]="['/contacts/edit', parentId, 'personalContacts']" class="link-button">
+                                    <button type="button" class="btn btn-white btn-xs mr-1 form-cancel">
+                                        {{'form.cancel' | translate}}
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </ng-template>
+                </pgcard>
+                <pgcard MinimalHeader="true" Toggle="false">
+                    <ng-template #CardTitle>
+                        {{'data' | translate}}
+                    </ng-template>
+
+                    <div class="row">
+                        <div class="col-md-12" style="padding-left: 0px;">
+                            <div class="form-group border-blue">
+                                <label>{{'Appeal' | translate}}</label>
+                                <input type="text" placeholder="{{'Appeal' | translate}}" class="form-control"
+                                    id="salutation" name="salutation" [(ngModel)]="entity.salutation"
+                                    #firstName="ngModel">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="padding-left: 0px;">
+                            <div class="form-group border-blue" [ngClass]="{'errors-submit': lastName.errors}"
+                                [class.has-error]="lastName.invalid && (lastName.dirty || lastName.touched)">
+                                <label>{{'lastname' | translate}}</label>
+                                <input type="text" placeholder="{{'lastname' | translate}}" class="form-control"
+                                    id="lastName" name="lastName" [(ngModel)]="entity.lastName" #lastName="ngModel"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="padding-left: 0px;">
+                            <div class="form-group border-blue" [ngClass]="{'errors-submit': firstName.errors}"
+                                [class.has-error]="firstName.invalid && (firstName.dirty || firstName.touched)">
+                                <label>{{'firstname' | translate}}</label>
+                                <input type="text" placeholder="{{'firstname' | translate}}" class="form-control"
+                                    id="firstName" name="firstName" [(ngModel)]="entity.firstName" #firstName="ngModel"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="padding-left: 0px;">
+                            <div class="form-group border-blue">
+                                <label>{{'middlename' | translate}}</label>
+                                <input type="text" placeholder="{{'middlename' | translate}}" class="form-control"
+                                    id="middleName" name="middleName" [(ngModel)]="entity.middleName"
+                                    #middleName="ngModel">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="padding-left: 0px;">
+                            <div class="form-group border-blue">
+                                <label>{{'Position' | translate}}</label>
+                                <input type="text" placeholder="{{'Position' | translate}}" class="form-control"
+                                    id="function" name="function" [(ngModel)]="entity.function" #function="ngModel">
+                            </div>
+                        </div>
+                    </div>
+                </pgcard>
+            </div>
+        </div>
+    </form>
+</div>

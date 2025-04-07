@@ -1,0 +1,34 @@
+<rent-doc-viewer #docViewer [documentTemplateType]="documentTemplateType" [documentId]="documentId" [entity]="entity">
+    <div class="jumbotron no-margin" style="height: 43px;">
+        <div class="container-fluid sm-p-l-0 sm-p-r-0">
+            <div class="inner" pg-parallax="">
+                <div class="container-fluid sm-p-l-0 sm-p-r-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a routerLink="../../../">{{'finance' | translate}}</a></li>
+                        <li class="breadcrumb-item active">
+                            {{documentTemplateType | translate}}
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-white p-2 border-bottom">
+        <div class="pull-right">
+            <a [href]="entity?.url" target="_blank" class="btn btn-default btn-xs link-button mr-1">
+                <i class="fa fa-file-pdf-o"></i> {{'form.download' | translate}}
+            </a>
+            <a routerLink="../../../" class="link-button">
+                <button type="button" class="btn btn-white btn-xs">
+                    {{'form.close' | translate}}
+                </button>
+            </a>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary btn-xs mr-1" (click)="updateDocument()">
+                {{'Refresh' | translate}}
+            </button>
+        </div>
+    </div>
+</rent-doc-viewer>

@@ -1,0 +1,407 @@
+<div class="inner-content full-height page-content-wrapper scroll-vertical-hidden">
+
+    <!-- HEADER -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron no-margin">
+                <div class="container-fluid" style="margin-right: 20px;">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="inner" pg-parallax>
+                                <h4>{{'Планировщик' | translate}}</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="inner filter-search" pg-parallax>
+                                <div class="input-group pl-2 pr-2 " style="padding-top: 16px;">
+                                    <input class="form-control input-sm filter-search-input" name="searchText" #searchTextVal
+                                        type="text" placeholder="Поиск..."
+                                           (keyup.enter)="onChangedFilterByText($event)">
+                                    <div class="input-group-append">
+                                        <button type="button" class="filter-search-btn" (click)="onChangedFilterByTextVal(searchTextVal.value)">
+                                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.41471 12.8294C7.89491 12.8294 9.25563 12.3203 10.3413 11.4759L13.8662 15.0008L15 13.867L11.4751 10.3421C12.3203 9.25562 12.8294 7.89491 12.8294 6.41471C12.8294 2.8778 9.95162 0 6.41471 0C2.8778 0 0 2.8778 0 6.41471C0 9.95162 2.8778 12.8294 6.41471 12.8294ZM6.41471 1.60368C9.068 1.60368 11.2257 3.76143 11.2257 6.41471C11.2257 9.068 9.068 11.2257 6.41471 11.2257C3.76143 11.2257 1.60368 9.068 1.60368 6.41471C1.60368 3.76143 3.76143 1.60368 6.41471 1.60368Z"
+                                                    fill="black" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-3.5">
+                                    <div class="switch-widget-date">
+                                        <ui-switch size="small" switchColor="#0038FF" uncheckedLabel="Период"
+                                                   checkedLabel="С/ ПО" (change)="onChangeWidjetPeriod($event)">
+                                            <span style="font-size: 13px; " *ngIf="widjetSwitchPeriod">Период</span>
+                                            <span style="font-size: 13px;" *ngIf="!widjetSwitchPeriod">С/ ПО</span>
+                                        </ui-switch>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group date switch-widget-date-form" *ngIf="!widjetSwitchPeriod">
+                                        <div class="input-group date" style="width: auto;">
+                                            <pg-datepicker class="first-datepicker" [ngModel]="filterPeriod.fromDate"
+                                                           name="from" Placeholder="C" [Format]="'DD-MM-YYYY'"
+                                                           (ngModelChange)="filterPeriod.fromDate=$event;_startValueChange();onChangedFilterByPeriod()">
+                                            </pg-datepicker>
+                                            <div class="input-group-append">
+                                                <svg width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.33325 7.5H4.99992V9.16667H3.33325V7.5ZM3.33325 10.8333H4.99992V12.5H3.33325V10.8333ZM6.66659 7.5H8.33325V9.16667H6.66659V7.5ZM6.66659 10.8333H8.33325V12.5H6.66659V10.8333ZM9.99992 7.5H11.6666V9.16667H9.99992V7.5ZM9.99992 10.8333H11.6666V12.5H9.99992V10.8333Z"
+                                                          fill="#192D3E" fill-opacity="0.6" />
+                                                    <path d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                                          fill="#192D3E" fill-opacity="0.6" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="input-group date" style="width: auto;">
+                                            <pg-datepicker class="first-datepicker-ico" class="second-datepicker"
+                                                           Placeholder="ПО" [ngModel]="filterPeriod.toDate" name="to"
+                                                           [Format]="'DD-MM-YYYY'"
+                                                           (ngModelChange)="filterPeriod.toDate=$event;_startValueChange();onChangedFilterByPeriod()">
+                                            </pg-datepicker>
+                                            <div class="input-group-append">
+                                                <svg width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.33325 7.5H4.99992V9.16667H3.33325V7.5ZM3.33325 10.8333H4.99992V12.5H3.33325V10.8333ZM6.66659 7.5H8.33325V9.16667H6.66659V7.5ZM6.66659 10.8333H8.33325V12.5H6.66659V10.8333ZM9.99992 7.5H11.6666V9.16667H9.99992V7.5ZM9.99992 10.8333H11.6666V12.5H9.99992V10.8333Z"
+                                                          fill="#192D3E" fill-opacity="0.6" />
+                                                    <path d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                                          fill="#192D3E" fill-opacity="0.6" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-group switch-widget-select-period-form" role="group"
+                                         aria-label="Basic example" *ngIf="widjetSwitchPeriod">
+                                        <pg-select class="mb-1 duration-time" style="width: 100%;" name="durationTime"
+                                                   [(ngModel)]="filterPeriod.durationTime"
+                                                   (ngModelChange)="onChangedFilterByPeriod()" [PlaceHolder]="''"
+                                                   [FirstDefault]="true">
+                                            <pg-option *ngFor="let unit of durationType | enumToArray"
+                                                       [Label]="unit | translate" [Value]="unit">
+                                            </pg-option>
+                                        </pg-select>
+                                        <input *ngIf="filterPeriod.durationTime != 'today'" type="text"
+                                               class="form-control duration-digit" name="duration"
+                                               [(ngModel)]="filterPeriod.duration" placeholder="0" numbersOnly
+                                               [minValue]="1" [maxValue]="30" (ngModelChange)="onChangedFilterByPeriod()">
+                                        <pg-select *ngIf="filterPeriod.durationTime != 'today'" class="mb-1 time-unit"
+                                                   style="width: 100%;" name="timeUnit" [(ngModel)]="filterPeriod.timeUnit"
+                                                   (ngModelChange)="onChangedFilterByPeriod()" [PlaceHolder]="''"
+                                                   [FirstDefault]="true">
+                                            <pg-option *ngFor="let unit of timeUnitExtend | enumToArray"
+                                                       [Label]="unit | translate" [Value]="unit">
+                                            </pg-option>
+                                        </pg-select>
+                                    </div>
+                                </div>
+
+                                <!--//-->
+                                <div *ngIf="!this.widjetSwitchPeriod && (this.filterPeriod.fromDate != null || this.filterPeriod.toDate != null)"
+                                     (click)="clearFilterByPeriod()" class="btn-group taskPeriodClear">
+                                    <a class="link-button form-delete ">
+                                        <svg width="10" height="12" viewBox="0 0 10 12" fill="none" style="margin-top: -4px;"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.66667 3.66669C1.35944 3.66669 1.11111 3.66669 1.11111 3.66669V10.8889C1.11111 11.5022 1.60889 12 2.22222 12H7.77778C8.39111 12 8.88889 11.5022 8.88889 10.8889V3.66669C8.88889 3.66669 8.64056 3.66669 8.33333 3.66669H1.66667ZM7.56556 2.00003L6.66667 0.888916H3.33333L2.43444 2.00003H0V3.11114H2.77778H7.22222H10V2.00003H7.56556Z"
+                                                  fill="#D66B5D" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <!--//-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 25px;">
+        <!-- CONTENT -->
+        <div class="col-md-3" style="padding-right: 10px;background: #fff">
+            <rent-crew-and-vehicles [selectMode]="'checkbox'" [checkedObserve]="true"
+                (checkedRows)="onCheckedFunctions($event)"></rent-crew-and-vehicles>
+        </div>
+        <div class="col-md-9" style="padding-right: 10px;">
+            <div>
+                <div class="container-fluid bg-white grid-controls-panel">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-xs btn-primary form-save" (click)="onPlanning()"
+                                [disabled]="(!shedulerProjects.selectedEvent.id || checkedFunctions.functions?.length === 0) || !(shedulerProjects.selectedEvent.needQuantity > 0) || checkedFunctions.type != shedulerProjects.selectedEvent.type.toLowerCase()">{{'To plan' | translate}}</button>
+                        </div>
+                        <div class="col-md-10 text-right staff-planner-info">
+                            <div>
+                                <div class="p-2 bg-complete-lighter pull-left"></div>
+                                <p class="ml-4 small m-b-0">{{'available' | translate}}</p>
+                            </div>
+                            <div>
+                                <div class="p-2 bg-danger-lighter pull-left"></div>
+                                <p class="ml-4 small m-b-0">{{'notAvailable' | translate}}</p>
+                            </div>
+                            <div>
+                                <div class="p-2 bg-info-lighter pull-left"></div>
+                                <p class="ml-4 small m-b-0">{{'unknown' | translate}}</p>
+                            </div>
+                            <div>
+                                <div class="p-2 bg-primary-lighter pull-left"></div>
+                                <p class="ml-4 small m-b-0">{{'reserved' | translate}}</p>
+                            </div>
+                            <div>
+                                <div class="p-2 bg-success-lighter pull-left"></div>
+                                <p class="ml-4 small m-b-0">{{'Invitation' | translate}}</p>
+                            </div>
+                            <div>
+                                <div class="p-2 bg-warning-lighter pull-left"></div>
+                                <p class="ml-4 small m-b-0">{{'Meeting scheduled' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="jqx-widget-container scheduler-component-container">
+                    <div class="scheduler-component-row" style="padding: 20px">
+                        <rent-scheduler-component #shedulerProjects [height]="'600px'" [heightSpec]="'Parent100Pct'"
+                            [treeEnabled]="true" [source]="shedulerProjectsSource" [startDate]="fromDate"
+                            (onScrollingX)="onScrollProjectSheduler($event)">
+                        </rent-scheduler-component>
+                    </div>
+                    <div class="scheduler-component-row" style="border-top: 10px solid #e5e5e5;padding: 20px">
+                        <rent-scheduler-component #shedulerAvailabilities [height]="'300px'"
+                            [heightSpec]="'Parent100Pct'" (onTimeRangeSelected)="onTimeRangeSelected($event)"
+                            [source]="shedulerAvailabilitiesSource" [startDate]="fromDate"
+                            [timeRangeSelected]="'Enabled'" (onScrollingX)="onScrollAvailabilitiesSheduler($event)">
+                        </rent-scheduler-component>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="jumbotron no-margin">
+                                    <div class="container-fluid">
+                                        <div class="inner" pg-parallax>
+                                            <h4>{{'CrewPlanner' | translate}}</h4>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+
+<!--   <div style="height: 100%" perfectScrollbar>
+                        <pg-collapseset Accordion="true">
+                            <pg-collapse [Title]="'Misical Tarzan'">
+                                <pg-collapseset Accordion="true">
+                                    <pg-collapse [Title]="'No time frame'">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <div class="pt-2">
+                                                    <span class="pull-right">
+                                                        <button class="btn btn no-padding btn-link">
+                                                            <i class="fa fa-close"></i>
+                                                        </button>
+                                                    </span>
+                                                    <p class="no-margin">Setup</p>
+                                                    <small><i class="fa fa-clock-o"></i> 8 hours, 0 minites</small>
+                                                </div>
+
+                                                <hr class="no-margin" />
+                                            </li>
+                                            <li>
+                                                <div class="pt-2">
+                                                    <span class="pull-right">
+                                                        <button class="btn btn no-padding btn-link">
+                                                            <i class="fa fa-close"></i>
+                                                        </button>
+                                                    </span>
+                                                    <p class="no-margin">Setup</p>
+                                                    <small><i class="fa fa-clock-o"></i> 8 hours, 0 minites</small>
+                                                </div>
+
+                                                <hr class="no-margin" />
+                                            </li>
+                                        </ul>
+                                    </pg-collapse>
+                                    <pg-collapse [Title]="'Any'">
+
+                                    </pg-collapse>
+                                </pg-collapseset>
+                            </pg-collapse>
+                            <pg-collapse [Title]="'Unknown'">
+
+                            </pg-collapse>
+                        </pg-collapseset>
+                    </div> -->
+
+
+<!-- AVAILABILITY FORM MODAL  -->
+<div bsModal #accessShedulerTimeModal="bs-modal" class="modal fade slide-right" tabindex="-1" role="dialog"
+    aria-labelledby="accessShedulerTimeModal" [config]="{backdrop: 'static'}" aria-hidden="true">
+    <div class="modal-dialog additional-columns-modal">
+        <div class="modal-content" style="box-shadow: 0px 25px 40px rgba(0, 0, 0, 0.25);border-radius: 3px;height: 50%;">
+            <button type="button" class="close folder-close" (click)="accessShedulerTimeModal.hide()"
+                aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8.75011 0L4.99956 3.74967L1.24989 0L0 1.24989L3.74967 4.99956L0 8.74923L1.24989 9.99911L4.99956 6.24945L8.75011 9.99911L10 8.74923L6.25033 4.99956L10 1.24989L8.75011 0Z"
+                        fill="#192D3E" />
+                </svg>
+            </button>
+            <div>
+                <div class="inner additional-columns-modal-header" pg-parallax>
+                    <div class="input-group mb-2">
+                        <div class="modal-header-block">
+                            {{'Availability' | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form role="form" #accessTimeForm="ngForm" (ngSubmit)="onSubmitAccessShedulerTimeData(accessTimeForm)">
+                    <input type="hidden" name="type" [(ngModel)]="staffAccess.type">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" [ngClass]="{'errors-submit-select': !staffAccess.action}">
+                                <label>{{'Action' | translate}}</label>
+                                <pg-select style="width: 100%;" [(ngModel)]="staffAccess.action" id="action"
+                                    name="action" [PlaceHolder]="''" [FirstDefault]="true" [required]="true">
+                                    <pg-option *ngFor="let action of timeEventType | enumToArray"
+                                        [Label]="action | translate" [Value]="action">
+                                    </pg-option>
+                                </pg-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group border-blue" [ngClass]="{'errors-submit-date': !staffAccess.from}">
+                                <label>{{'Since' | translate}}</label>
+                                <div class="input-group date">
+                                    <pg-datepicker [ngModel]="staffAccess.from" name="from" [ShowTime]="true"
+                                        [Format]="'DD-MM-YYYY HH:mm'" [required]="true">
+                                    </pg-datepicker>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <svg onclick="document.getElementsByName('from')[0].getElementsByTagName('input')[0].click()"
+                                                    width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                                        fill="black" fill-opacity="0.2" />
+                                                    <path
+                                                        d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                                        fill="black" fill-opacity="0.2" />
+                                                </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="padding-left: 0px;">
+                            <div class="form-group border-blue" [ngClass]="{'errors-submit-date': !staffAccess.until}">
+                                <label>{{'To' | translate}}</label>
+                                <div class="input-group date">
+                                    <pg-datepicker [ngModel]="staffAccess.until" name="until" [ShowTime]="true"
+                                        [Format]="'DD-MM-YYYY HH:mm'" [required]="true">
+                                    </pg-datepicker>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <svg onclick="document.getElementsByName('until')[0].getElementsByTagName('input')[0].click()"
+                                            width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                                fill="black" fill-opacity="0.2" />
+                                            <path
+                                                d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                                fill="black" fill-opacity="0.2" />
+                                        </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>{{'Resources' | translate}}</label>
+                                <div>
+                                    <button *ngFor="let tag of checkedFunctions.functions; let i = index;" type="button"
+                                        [(ngModel)]="tag.selected" name="selected" ngDefaultControl
+                                        class="btn btn-default btn-xs mr-1 mb-1" btnCheckbox btnCheckboxTrue="true"
+                                        btnCheckboxFalse="false">{{tag.name}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center pt-5 btn-group">
+                        <button type="submit" class="btn btn-sm btn-white folder-save-btn">
+                            {{'form.save' | translate}}
+                        </button>
+                        <button type="button" class="btn btn-white btn-xs mr-1 form-cancel" style="margin-left: 5px;"
+                            (click)="accessShedulerTimeModal.hide()">
+                            {{'form.cancel' | translate}}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- INFO MODAL  -->
+<div bsModal #shedulerInfo="bs-modal" class="modal fade stick-up" tabindex="-1" role="dialog"
+    aria-labelledby="shedulerInfo" [config]="{backdrop: 'static'}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix">
+                <button type="button" class="close" (click)="shedulerInfo.hide()" aria-hidden="true">
+                    <i class="pg pg-close fs-14"></i>
+                </button>
+                <h4 class="p-b-5"><span class="semi-bold">{{'Marking' | translate}}</span></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="m-t-0">{{'Background color' | translate}}</h4>
+                        <hr />
+                        <h6 class="m-t-2">{{'availability' | translate}}</h6>
+                        <div>
+                            <div class="p-2 bg-complete-lighter pull-left"></div>
+                            <p class="ml-4 small m-b-0">{{'available' | translate}}</p>
+                        </div>
+                        <div>
+                            <div class="p-2 bg-danger-lighter pull-left"></div>
+                            <p class="ml-4 small m-b-0">{{'notAvailable' | translate}}</p>
+                        </div>
+                        <div>
+                            <div class="p-2 bg-info-lighter pull-left"></div>
+                            <p class="ml-4 small m-b-0">{{'unknown' | translate}}</p>
+                        </div>
+                        <div>
+                            <div class="p-2 bg-primary-lighter pull-left"></div>
+                            <p class="ml-4 small m-b-0">{{'reserved' | translate}}</p>
+                        </div>
+                        <div>
+                            <div class="p-2 bg-success-lighter pull-left"></div>
+                            <p class="ml-4 small m-b-0">{{'Invitation' | translate}}</p>
+                        </div>
+                        <div>
+                            <div class="p-2 bg-warning-lighter pull-left"></div>
+                            <p class="ml-4 small m-b-0">{{'Meeting scheduled' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-xs btn-cons" (click)="shedulerInfo.hide()">
+                    {{'form.close' | translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

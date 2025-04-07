@@ -1,0 +1,267 @@
+<div class="container-fixed-lg pt-3">
+    <form role="form" #form="ngForm" (ngSubmit)="submitData(form)">
+
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <pgcard MinimalHeader="true"  Toggle="false">
+                            <ng-template #CardTitle>
+                                {{'DiscountGroups' | translate}}
+                            </ng-template>
+
+                            <span
+                                class="small hint-text">{{'This discount applies to individual items of equipment that are divided into the corresponding discount groups as soon as they are planned.' | translate}}</span>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group border-blue">
+                                        <label class="label-sm">Аренда</label>
+                                        <div class="input-group border-blue">
+                                            <input type="number" class="form-control" id="rental" name="rental"
+                                                [(ngModel)]="entity.rental" #rental="ngModel">
+                                            <div class="input-group-append" style="margin-left: 5px;">
+                                                <span class="input-group-text input-group-text-border">
+                                                    %
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group  border-blue">
+                                        <label class="label-sm">{{'sale' | translate}}</label>
+                                        <div class="input-group border-blue">
+                                            <input type="number" class="form-control" id="sales" name="sales"
+                                                [(ngModel)]="entity.sales" #sales="ngModel">
+                                            <div class="input-group-append" style="margin-left: 5px;">
+                                                <span class="input-group-text input-group-text-border">
+                                                    %
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </pgcard>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <pgcard MinimalHeader="true"  Toggle="false">
+                            <ng-template #CardTitle>
+                                {{'Discounts for the project' | translate}}
+                            </ng-template>
+
+                            <span
+                                class="small hint-text">{{'As soon as you select this contact in the project, discounts on the following components will be applied to the project.' | translate}}</span>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group  border-blue">
+                                        <label class="label-sm">{{'Discount rolling equipment' | translate}}</label>
+                                        <div class="input-group  border-blue">
+                                            <input type="number" class="form-control" id="discountRentalEquipment"
+                                                name="discountRentalEquipment"
+                                                [(ngModel)]="entity.discountRentalEquipment"
+                                                #discountRentalEquipment="ngModel">
+                                            <div class="input-group-append" style="margin-left: 5px;">
+                                                <span class="input-group-text input-group-text-border">
+                                                    %
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group  border-blue">
+                                        <label class="label-sm">{{'Discount trade equipment' | translate}}</label>
+                                        <div class="input-group  border-blue">
+                                            <input type="number" class="form-control" id="discountSaleEquipment"
+                                                name="discountSaleEquipment" [(ngModel)]="entity.discountSaleEquipment"
+                                                #discountSaleEquipment="ngModel">
+                                            <div class="input-group-append" style="margin-left: 5px;">
+                                                <span class="input-group-text input-group-text-border">
+                                                    %
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group  border-blue">
+                                        <label class="label-sm">{{'Discount for staff' | translate}}</label>
+                                        <div class="input-group  border-blue">
+                                            <input type="number" class="form-control" id="crewDiscount"
+                                                name="crewDiscount" [(ngModel)]="entity.crewDiscount"
+                                                #crewDiscount="ngModel">
+                                            <div class="input-group-append" style="margin-left: 5px;">
+                                                <span class="input-group-text input-group-text-border">
+                                                    %
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group  border-blue">
+                                        <label class="label-sm">{{'Discount on transport' | translate}}</label>
+                                        <div class="input-group  border-blue">
+                                            <input type="number" class="form-control" id="transportDiscount"
+                                                name="transportDiscount" [(ngModel)]="entity.transportDiscount"
+                                                #transportDiscount="ngModel">
+                                            <div class="input-group-append" style="margin-left: 5px;">
+                                                <span class="input-group-text input-group-text-border">
+                                                    %
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group  border-blue">
+                                        <label class="label-sm">{{'Discount from the total price' | translate}}</label>
+                                        <div class="input-group  border-blue">
+                                            <input type="number" class="form-control" id="totalDiscount"
+                                                name="totalDiscount" [(ngModel)]="entity.totalDiscount"
+                                                #totalDiscount="ngModel">
+                                            <div class="input-group-append" style="margin-left: 5px;">
+                                                <span class="input-group-text input-group-text-border">
+                                                    %
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group  border-blue">
+                                        <label class="label-sm">{{'Discount sublease (supplier)' | translate}}</label>
+                                        <div class="input-group  border-blue">
+                                            <input type="number" class="form-control" id="subhireDiscount"
+                                                name="subhireDiscount" [(ngModel)]="entity.subhireDiscount"
+                                                #subhireDiscount="ngModel">
+                                            <div class="input-group-append" style="margin-left: 5px;">
+                                                <span class="input-group-text input-group-text-border">
+                                                    %
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </pgcard>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <pgcard MinimalHeader="true"  Toggle="false">
+                    <ng-template #CardTitle>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <button type="submit" class="btn btn-primary btn-xs form-save"
+                                    [disabled]="form.invalid">
+                                    {{'form.save' | translate}}
+                                </button>
+                            </div>
+                            <div class="col-md-5">
+                                <a routerLink="/contacts" class="link-button">
+                                    <button type="button" class="btn btn-white btn-xs mr-1 form-cancel">
+                                        {{'form.cancel' | translate}}
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </ng-template>
+                </pgcard>
+                <pgcard MinimalHeader="true"  Toggle="false">
+                    <ng-template #CardTitle>
+                        {{'paymentCredentials' | translate}}
+                    </ng-template>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group  border-blue">
+                                <label>{{'Invoicing' | translate}}</label>
+                                <pg-select style="width: 100%;" name="invoiceMomentId"
+                                    [(ngModel)]="entity.invoiceMomentId" [PlaceHolder]="'Выбрать...'" AllowClear
+                                    ShowSearch>
+                                    <pg-option *ngFor="let item of invoiceMoments" [Label]="item.name"
+                                        [Value]="item.id">
+                                    </pg-option>
+                                </pg-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group  border-blue">
+                                <label>{{'Payment terms' | translate}}</label>
+                                <pg-select style="width: 100%;" name="paymentConditionId"
+                                    [(ngModel)]="entity.paymentConditionId" [PlaceHolder]="'Выбрать...'" AllowClear
+                                    ShowSearch>
+                                    <pg-option *ngFor="let item of paymentConditions" [Label]="item.name"
+                                        [Value]="item.id">
+                                    </pg-option>
+                                </pg-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group  border-blue">
+                                <label>{{'Tax system' | translate}}</label>
+                                <pg-select style="width: 100%;" name="vatSchemeId" [(ngModel)]="entity.vatSchemeId"
+                                    [PlaceHolder]="'Выбрать...'" AllowClear ShowSearch>
+                                    <pg-option *ngFor="let item of vatSchemes" [Label]="item.name" [Value]="item.id">
+                                    </pg-option>
+                                </pg-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            <div class="form-group  border-blue">
+                                <label class="label-sm">{{'Contact insurance rate' | translate}}</label>
+                                <div class="input-group">
+                                    <pg-select style="width: 100%;" [(ngModel)]="entity.contactInsurancePercentage"
+                                        id="contactInsurancePercentage" name="contactInsurancePercentage"
+                                        [PlaceHolder]="''" #contactInsurancePercentage="ngModel" [required]="true" [FirstDefault]="true">
+                                        <pg-option *ngFor="let item of booleanType | enumToArray"
+                                            [Label]="item | translate" [Value]="item">
+                                        </pg-option>
+                                    </pg-select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 46px;">
+                        <div class="col-md-12">
+                            <div class="form-group  border-blue">
+                                <label class="label-sm">{{'Insurance rate' | translate}}</label>
+                                <div class="input-group border-blue">
+                                    <input type="number" class="form-control" id="insurancePercentage"
+                                        name="insurancePercentage" [(ngModel)]="entity.insurancePercentage"
+                                        #insurancePercentage="ngModel">
+                                    <div class="input-group-append" style="margin-left: 5px;">
+                                        <span class="input-group-text input-group-text-border">
+                                            %
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </pgcard>
+            </div>
+        </div>
+    </form>
+</div>

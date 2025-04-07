@@ -1,0 +1,30 @@
+<pgcard Controls="false" Type="transparent" HeaderClass="separator" AdditionalClasses="mb-0">
+    <ng-template #CardTitle>
+        Маркировка
+    </ng-template>
+    <div class="filter-form-tags pt-2">
+        <div class="mt-2 tags-form">
+            <form role="form" #tagForm="ngForm" (ngSubmit)="submitTag(tagForm)">
+                <input type="hidden" name="entityId" [(ngModel)]="entityId" required>
+                <input type="hidden" name="entity" [(ngModel)]="entityType" required>
+                <div class="input-group">
+                    <input class="form-control input-sm input-tag" type="text" placeholder="Добавить маркировку" name="name"
+                        [(ngModel)]="tag.name" required>
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-sm btn-white" [disabled]="tagForm.invalid">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <pg-tag *ngFor="let tag of data" ColorClass="label-white" [Closable]="true" (BeforeClose)="removeTag(tag.id)">
+            <svg width="7" height="9" viewBox="0 0 7 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M7 3.62392V3.17093V0.905979C7 0.406332 6.5515 0 6 0H1C0.4485 0 0 0.406332 0 0.905979V3.17093V3.62392V9L3.5 6.88635L7 9V3.62392Z"
+                    fill="#E7A953" />
+            </svg>
+            {{tag.name}}
+        </pg-tag>
+    </div>
+</pgcard>

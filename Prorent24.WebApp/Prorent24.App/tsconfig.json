@@ -1,0 +1,39 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "downlevelIteration": true,
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "paths": {
+      "@env/*": ["src/environments/*"],
+      "@core/*": ["src/app/core/*"],
+      "@models/*": ["src/app/models/*"],
+      "@abstractions/*": ["src/app/abstractions/*"],
+      "@ui-components/*": ["src/app/@ui-components/*"],
+      "@components/*": ["src/app/components/*"],
+      "@containers/*": ["src/app/containers/*"],
+      "@endpoints/*": ["src/endpoints/*"],
+      "@endpoints": ["src/endpoints"],
+      "@services/*": ["src/app/services/*"],
+      "@helpers/*": ["src/app/shared/helpers/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@store/*": ["src/app/store/*"],
+      "@store": ["src/app/store/"]
+    },
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  }
+}

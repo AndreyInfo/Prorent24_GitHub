@@ -1,0 +1,68 @@
+<div class="jumbotron no-margin">
+    <div class="sm-p-l-0 sm-p-r-0">
+        <div class="inner" pg-parallax="">
+            <div class="container-fluid sm-p-l-0 sm-p-r-0">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="">{{'Management and accounting' | translate}}</a></li>
+                    <li class="breadcrumb-item active">{{'digitalInvoicing' | translate}}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card card-transparent">
+    <div class="card-body">
+        <form role="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <div class="row">
+                <div class="col-lg-12">
+                    <pgcard MinimalHeader="true" HeaderClass="separator">
+                        <ng-template #CardTitle>
+                            <button class="btn btn-primary btn-xs" [disabled]="form.invalid">
+                                <i class="fa fa-save"></i> {{'save' | translate}}
+                            </button>
+                        </ng-template>
+
+                        <div class="pt-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group"
+                                        [class.has-error]="identificationNumber.invalid && (identificationNumber.dirty || identificationNumber.touched)">
+                                        <label>{{'An identification number'  | translate}}</label>
+                                        <input type="text" placeholder="{{'An identification number'  | translate}}" class="form-control"
+                                            name="identificationNumber" [(ngModel)]="entity.identificationNumber"
+                                            #identificationNumber="ngModel" required>
+                                        <span class="help fs-10 pull-right">
+                                            {{'Identification number, e.g. UNP or state identification number' | translate}}
+                                        </span>
+                                    </div>
+
+                                    <div class="form-group"
+                                        [class.has-error]="identificationScheme.invalid && (identificationScheme.dirty || identificationScheme.touched)">
+                                        <label>{{'Identification scheme' | translate}}</label>
+                                        <input type="text" placeholder="{{'Identification scheme' | translate}}" class="form-control"
+                                            name="identificationScheme" [(ngModel)]="entity.identificationScheme"
+                                            #identificationScheme="ngModel" required>
+                                        <span class="help fs-10 pull-right">
+                                            {{'Identification scheme in accordance with ISO6523' | translate}}
+                                        </span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>{{'Currency code' | translate}}</label>
+                                        <pg-select style="width: 100%;" name="currency" [(ngModel)]="entity.currency" 
+                                            [PlaceHolder]="'Choose..'" AllowClear ShowSearch>
+                                            <pg-option *ngFor="let item of currency" [Label]="item.name"
+                                                [Value]="item.id">
+                                            </pg-option>
+                                        </pg-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </pgcard>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

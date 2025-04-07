@@ -1,0 +1,25 @@
+<div class="jumbotron no-margin" style="height: 48px;">
+    <div class="container-fluidcontainer-fixed-lg sm-p-l-0 sm-p-r-0">
+        <div class="inner" pg-parallax="">
+            <div class="container-fluid container-fixed-lg sm-p-l-0 sm-p-r-0">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a routerLink="/sublease">{{'Subhire' | translate}}</a></li>
+                    <li class="breadcrumb-item active">{{(id ? "edit" : "create") | translate }} {{'subleaseAct' | translate}}
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="route-top-tabs">
+    <nav mat-tab-nav-bar>
+        <a mat-tab-link *ngFor="let tab of tabs" [routerLink]="[tab]" routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive">
+            {{tab | translate}}
+        </a>
+    </nav>
+</div>
+
+<router-outlet></router-outlet>
+

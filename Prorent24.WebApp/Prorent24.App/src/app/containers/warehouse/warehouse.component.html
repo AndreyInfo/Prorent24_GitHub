@@ -1,0 +1,364 @@
+<div class="inner-content full-height page-content-wrapper scroll-vertical-hidden warehouse">
+
+    <!-- HEADER -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron no-margin">
+                <div class="container-fluid" style="margin-right: 20px;">
+                    <div class="row" style="padding-left: 20px">
+                        <div class="col-md-7">
+                            <div class="inner" pg-parallax>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        {{'Warehouse' | translate}}
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="inner filter-search" style="margin-top: 5px;" pg-parallax>
+                                <div class="input-group date" style="max-width: 340px;">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="switch-widget-date" style="padding-top: 9px;">
+                                                <ui-switch size="small" switchColor="#0038FF" uncheckedLabel="Завтра"
+                                                    checkedLabel="Новое" (change)="onChangeWidjetPeriod($event)">
+                                                    <span style="font-size: 13px; "
+                                                        *ngIf="widjetSwitchPeriod">Завтра</span>
+                                                    <span style="font-size: 13px;"
+                                                        *ngIf="!widjetSwitchPeriod">Новое</span>
+                                                </ui-switch>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="input-group date switch-widget-date-form" style="padding-top: 8px;margin-left: 10px;">
+                                                <div class="input-group date" style="width: auto;">
+                                                    <pg-datepicker class="middle-datepicker" name="dateFilter"
+                                                        [(ngModel)]="dateFilter" [Format]="'DD-MM-YYYY'"
+                                                        (ngModelChange)="changeDateFilter();">
+                                                    </pg-datepicker>
+                                                    <div class="input-group-append">
+                                                        <svg width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M3.33325 7.5H4.99992V9.16667H3.33325V7.5ZM3.33325 10.8333H4.99992V12.5H3.33325V10.8333ZM6.66659 7.5H8.33325V9.16667H6.66659V7.5ZM6.66659 10.8333H8.33325V12.5H6.66659V10.8333ZM9.99992 7.5H11.6666V9.16667H9.99992V7.5ZM9.99992 10.8333H11.6666V12.5H9.99992V10.8333Z"
+                                                                fill="#192D3E" fill-opacity="0.6" />
+                                                            <path
+                                                                d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                                                fill="#192D3E" fill-opacity="0.6" /> </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 25px;">
+        <!-- CONTENT -->
+        <div class="col-md-12" style="padding-right: 10px;">
+            <div class="pt-2 scheduler-component-container">
+                <button type="button" class="btn btn-link font-montserrat text-uppercase"
+                    (click)="isCollapsedTransport = !isCollapsedTransport" [attr.aria-expanded]="!isCollapsedTransport"
+                    aria-controls="collapseBasic">{{'crew' | translate}}
+                    <i class="ml-2 pg" [ngClass]="isCollapsedTransport ? 'pg-arrow_minimize' : 'pg-arrow_maximize'"></i>
+                </button>
+
+                <div id="collapseBasic" [collapse]="isCollapsedTransport"
+                    style="min-height: 200px;padding: 20px;border-top: 9px solid rgb(255, 255, 255);"
+                    class="scheduler-component-row">
+                    <rent-scheduler-component [startDate]="dateFilter" [source]="sheduleCrewSource">
+                    </rent-scheduler-component>
+                </div>
+            </div>
+
+            <div class="pt-2 scheduler-component-container" style="margin-top: 25px;margin-bottom: 25px;">
+                <button type="button" class="btn btn-link font-montserrat text-uppercase"
+                    (click)="isCollapsedCrew = !isCollapsedCrew" [attr.aria-expanded]="!isCollapsedCrew"
+                    aria-controls="collapseBasic">{{'Vehicles' | translate}}
+                    <i class="ml-2 pg" [ngClass]="isCollapsedCrew ? 'pg-arrow_minimize' : 'pg-arrow_maximize'"></i>
+                </button>
+
+                <div id="collapseBasic" [collapse]="isCollapsedCrew"
+                    style="min-height: 200px;padding: 20px;border-top: 9px solid rgb(255, 255, 255);"
+                    class="scheduler-component-row">
+                    <rent-scheduler-component [startDate]="dateFilter" [source]="sheduleVehiclesSource">
+                    </rent-scheduler-component>
+                </div>
+            </div>
+            <div style="min-height: 250px;">
+                <div class="row">
+                    <div class="col-md-3">
+                        <pgcard MinimalHeader="true" [AdditionalClasses]="'bg-white'">
+                            <ng-template #CardTitle>
+                                {{'To wrap up' | translate}}
+                            </ng-template>
+
+                            <div cdkDropList #packList="cdkDropList"
+                                [cdkDropListConnectedTo]="[preppedList, onlocationList]" [cdkDropListData]="tasks.pack"
+                                [id]="'pack'" (cdkDropListDropped)="drop($event)" class="dnd-container-list">
+                                <div *ngIf="tasks.pack.length == 0" class="alert alert-warning alert-dismissible">
+                                    {{'No packaging projects' | translate}}
+                                </div>
+                                <div class="dnd-card-box" *ngFor="let item of tasks.pack" [cdkDragData]="item" cdkDrag>
+                                    <div class="dnd-placeholder" *cdkDragPlaceholder></div>
+                                    <div class="card  card-white" style="height: 100%;width: 100%;">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <a routerLink="/projects/edit/{{item.id}}/data"
+                                                    class="btn btn-sm btn-link m-0 p-0">
+                                                    {{item.title}}
+                                                </a>
+                                            </div>
+                                            <div class="card-controls">
+                                                <ul>
+                                                    <li>
+                                                        <i class="fa fa-arrows text-muted"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <div class="row">
+                                                <div class="col-sm-8">
+                                                    <p class="small">{{item.resource}}</p>
+                                                    <p class="small">{{'Beginning of the planning period:' | translate}}
+                                                        <b>{{item.startPlaning | date:'short'}}</b> </p>
+                                                </div>
+                                                <div class="col-sm-4" style="padding-left: 5px;">
+                                                    <qrcode *ngIf="item.code" [ngClass]="'qrcode'" [qrdata]="item.code"
+                                                        [size]="60" [level]="'M'">
+                                                    </qrcode>
+                                                    <div class="pt-2">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12" style="display: contents;">
+                                                    <a routerLink="booking/{{item.id}}" class="link-button form-edit"
+                                                        style="margin-left: 3px;">
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M1.33333 12H10.6667C11.402 12 12 11.402 12 10.6667V1.33333C12 0.598 11.402 0 10.6667 0H1.33333C0.598 0 0 0.598 0 1.33333V5.334H4.66533V2.66667L8.66533 6L4.66533 9.33333V6.66733H0V10.6667C0 11.402 0.598 12 1.33333 12Z"
+                                                                fill="#46586D" />
+                                                        </svg>
+
+                                                        {{'Move equipment' | translate}}
+
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </pgcard>
+                    </div>
+
+                    <div class="col-md-3">
+                        <pgcard MinimalHeader="true" [AdditionalClasses]="'bg-white'">
+                            <ng-template #CardTitle>
+                                {{'Collected' | translate}}
+                            </ng-template>
+
+                            <div cdkDropList #preppedList="cdkDropList"
+                                [cdkDropListConnectedTo]="[packList, onlocationList]" [cdkDropListData]="tasks.prepped"
+                                [id]="'prepped'" (cdkDropListDropped)="drop($event)" class="dnd-container-list">
+                                <div *ngIf="tasks.prepped.length == 0" class="alert alert-warning alert-dismissible">
+                                    {{'No projects collected' | translate}}
+                                </div>
+                                <div class="dnd-card-box" *ngFor="let item of tasks.prepped" [cdkDragData]="item"
+                                    cdkDrag>
+                                    <div class="dnd-placeholder" *cdkDragPlaceholder></div>
+                                    <div class="card card-default">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <a routerLink="/projects/edit/{{item.id}}/data"
+                                                    class="btn btn-sm btn-link m-0 p-0">
+                                                    {{item.title}}
+                                                </a>
+                                            </div>
+                                            <div class="card-controls">
+                                                <ul>
+                                                    <li>
+                                                        <i class="fa fa-arrows text-muted"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <div class="row">
+                                                <div class="col-sm-8">
+                                                    <p class="small">{{item.resource}}</p>
+                                                    <p class="small">{{'Beginning of the planning period:' | translate}}
+                                                        <b>{{item.startPlaning | date:'short'}}</b> </p>
+                                                    <a routerLink="booking/{{item.id}}" class="link-button form-edit"
+                                                        style="margin-left: -7px;">
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M1.33333 12H10.6667C11.402 12 12 11.402 12 10.6667V1.33333C12 0.598 11.402 0 10.6667 0H1.33333C0.598 0 0 0.598 0 1.33333V5.334H4.66533V2.66667L8.66533 6L4.66533 9.33333V6.66733H0V10.6667C0 11.402 0.598 12 1.33333 12Z"
+                                                                fill="#46586D" />
+                                                        </svg>
+
+                                                        {{'Move equipment' | translate}}
+
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <qrcode *ngIf="item.code" [ngClass]="'qrcode'" [qrdata]="item.code"
+                                                        [size]="60" [level]="'M'">
+                                                    </qrcode>
+                                                    <div class="pt-2">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </pgcard>
+                    </div>
+
+                    <div class="col-md-3">
+                        <pgcard MinimalHeader="true" [AdditionalClasses]="'bg-white'">
+                            <ng-template #CardTitle>
+                                {{'entity.transportationtype' | translate}}
+                            </ng-template>
+
+                            <div cdkDropList #onlocationList="cdkDropList"
+                                [cdkDropListConnectedTo]="[preppedList, preppedList]"
+                                [cdkDropListData]="tasks.onLocation" [id]="'onlocation'"
+                                (cdkDropListDropped)="drop($event)" class="dnd-container-list">
+                                <div *ngIf="tasks.onLocation.length == 0" class="alert alert-warning alert-dismissible">
+                                    {{'No transport projects' | translate}}
+                                </div>
+                                <div class="dnd-card-box" *ngFor="let item of tasks.onLocation" [cdkDragData]="item"
+                                    cdkDrag>
+                                    <div class="dnd-placeholder" *cdkDragPlaceholder></div>
+                                    <div class="card card-default">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <a routerLink="/projects/edit/{{item.id}}/data"
+                                                    class="btn btn-sm btn-link m-0 p-0">
+                                                    {{item.title}}
+                                                </a>
+                                            </div>
+                                            <div class="card-controls">
+                                                <ul>
+                                                    <li>
+                                                        <i class="fa fa-arrows text-muted"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <div class="row">
+                                                <div class="col-sm-8">
+                                                    <p class="small">{{item.resource}}</p>
+                                                    <p class="small">{{'Beginning of the planning period:' | translate}}
+                                                        <b>{{item.startPlaning | date:'short'}}</b> </p>
+                                                    <a routerLink="booking/{{item.id}}" class="link-button form-edit"
+                                                        style="margin-left: -7px;">
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M1.33333 12H10.6667C11.402 12 12 11.402 12 10.6667V1.33333C12 0.598 11.402 0 10.6667 0H1.33333C0.598 0 0 0.598 0 1.33333V5.334H4.66533V2.66667L8.66533 6L4.66533 9.33333V6.66733H0V10.6667C0 11.402 0.598 12 1.33333 12Z"
+                                                                fill="#46586D" />
+                                                        </svg>
+
+                                                        {{'Move equipment' | translate}}
+
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <qrcode *ngIf="item.code" [ngClass]="'qrcode'" [qrdata]="item.code"
+                                                        [size]="60" [level]="'M'">
+                                                    </qrcode>
+                                                    <div class="pt-2">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </pgcard>
+                    </div>
+
+                    <div class="col-md-3">
+                        <pgcard MinimalHeader="true" [AdditionalClasses]="'bg-white'">
+                            <ng-template #CardTitle>
+                                {{'entity.inUse' | translate}}
+                            </ng-template>
+
+                            <div cdkDropList #inUseList="cdkDropList" [cdkDropListConnectedTo]="[]"
+                                [cdkDropListData]="tasks.inUse" [id]="'inUse'" (cdkDropListDropped)="drop($event)"
+                                class="dnd-container-list">
+                                <div class="dnd-card-box" *ngIf="tasks.inUse.length == 0"
+                                    class="alert alert-warning alert-dismissible">
+                                    {{'No projects in status - inuse' | translate}}
+                                </div>
+                                <div class="dnd-card-box" *ngFor="let item of tasks.inUse" [cdkDragData]="item" cdkDrag>
+                                    <div class="dnd-placeholder" *cdkDragPlaceholder></div>
+                                    <div class="card card-default">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <a routerLink="/projects/edit/{{item.id}}/data"
+                                                    class="btn btn-sm btn-link m-0 p-0">
+                                                    {{item.title}}
+                                                </a>
+                                            </div>
+                                            <div class="card-controls">
+                                                <ul>
+                                                    <li>
+                                                        <i class="fa fa-arrows text-muted"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <div class="row">
+                                                <div class="col-sm-8">
+                                                    <p class="small">{{item.resource}}</p>
+                                                    <p class="small">{{'Beginning of the planning period:' | translate}}
+                                                        <b>{{item.startPlaning | date:'short'}}</b> </p>
+                                                    <a routerLink="booking/{{item.id}}" class="link-button form-edit"
+                                                        style="margin-left: -7px;">
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M1.33333 12H10.6667C11.402 12 12 11.402 12 10.6667V1.33333C12 0.598 11.402 0 10.6667 0H1.33333C0.598 0 0 0.598 0 1.33333V5.334H4.66533V2.66667L8.66533 6L4.66533 9.33333V6.66733H0V10.6667C0 11.402 0.598 12 1.33333 12Z"
+                                                                fill="#46586D" />
+                                                        </svg>
+
+                                                        {{'Move equipment' | translate}}
+
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <qrcode *ngIf="item.code" [ngClass]="'qrcode'" [qrdata]="item.code"
+                                                        [size]="60" [level]="'M'">
+                                                    </qrcode>
+                                                    <div class="pt-2">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </pgcard>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

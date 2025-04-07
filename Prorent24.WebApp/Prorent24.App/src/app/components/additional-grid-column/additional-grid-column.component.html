@@ -1,0 +1,40 @@
+<div bsModal #columnModal="bs-modal" class="modal fade slide-right" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm additional-columns-modal">
+        <div class="modal-content-wrapper">
+            <div class="modal-content" style="box-shadow: 0px 25px 40px rgba(0, 0, 0, 0.25);border-radius: 3px;">
+                <button type="button" class="close folder-close" (click)="columnModal.hide()" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.75011 0L4.99956 3.74967L1.24989 0L0 1.24989L3.74967 4.99956L0 8.74923L1.24989 9.99911L4.99956 6.24945L8.75011 9.99911L10 8.74923L6.25033 4.99956L10 1.24989L8.75011 0Z"
+                            fill="#192D3E" />
+                    </svg>
+                </button>
+                <div>
+                    <div class="inner additional-columns-modal-header" pg-parallax>
+                        <div class="input-group mb-2">
+                            <div class="modal-header-block">
+                                Дополнительные данные
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body" style="margin-top:30px;">
+                    <div class="additional-column-tree">
+                        <jqxTree #columnTree [theme]="'metro'" [width]="'100%'" [hasThreeStates]="true"
+                            [source]="records" [checkboxes]="true"></jqxTree>
+                    </div>
+
+                    <div class="text-center pt-5 btn-group">
+                        <button type="submit" class="btn btn-sm btn-white folder-save-btn" (click)="addColumn()">
+                            {{'form.add' | translate}}
+                        </button>
+                        <button type="button" class="btn btn-white btn-xs mr-1 form-cancel" style="margin-left: 5px;"
+                            (click)="columnModal.hide()">
+                            {{'form.cancel' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

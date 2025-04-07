@@ -1,0 +1,30 @@
+<div class="card card-transparent">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <pgcard MinimalHeader="true" HeaderClass="separator">
+                    <ng-template #CardTitle>
+                        <button class="btn btn-primary btn-xs mr-1" (click)="saveInspectiosChanges()">
+                            <i class="fa fa-save"></i> {{'form.save' | translate}}
+                        </button>
+                        <button [routerLink]="['/configuration/settings/inspections']"
+                            class="btn btn-default btn-xs mr-1" (click)="saveInspectiosChanges()">
+                            <i class="fa fa-cog"></i> {{'SetUpPeriodicChecks' | translate}}
+                        </button>
+                        <button [routerLink]="['/maintenance/repair/create']" class="btn btn-default btn-xs mr-1"
+                            (click)="saveInspectiosChanges()">
+                            <i class="fa fa-plus"></i> {{'NewCheckForThisEquipment' | translate}}
+                        </button>
+                    </ng-template>
+
+                    <div class="pt-3 jqx-widget-child-container jqx-widget-child-container-config">
+                        <jqxGrid #dataGrid [theme]="'metro'" [width]="'100%'" [localization]="localization"
+                            [height]="'529px'" [rowsheight]="40" [source]="source" [columns]="tableSource.columns" [columnsresize]="true"
+                            [enabletooltips]="false" [editable]="true" (onCellendedit)="onChangeActive($event)">
+                        </jqxGrid>
+                    </div>
+                </pgcard>
+            </div>
+        </div>
+    </div>
+</div>

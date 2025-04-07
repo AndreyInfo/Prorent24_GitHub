@@ -1,0 +1,2312 @@
+﻿[
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Афганистан"
+      },
+      {
+        "Lang": "en",
+        "Name": "Afghanistan"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Албания"
+      },
+      {
+        "Lang": "en",
+        "Name": "Albania"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Алжир"
+      },
+      {
+        "Lang": "en",
+        "Name": "Algeria"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Андорра"
+      },
+      {
+        "Lang": "en",
+        "Name": "Andorra"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Ангола"
+      },
+      {
+        "Lang": "en",
+        "Name": "Angola"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Аргентина"
+      },
+      {
+        "Lang": "en",
+        "Name": "Argentina"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Армения"
+      },
+      {
+        "Lang": "en",
+        "Name": "Armenia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Аруба"
+      },
+      {
+        "Lang": "en",
+        "Name": "Aruba"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Австралия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Australia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Австрия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Austria"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Азербайджан"
+      },
+      {
+        "Lang": "en",
+        "Name": "Azerbaijan"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Bahamas"
+      },
+      {
+        "Lang": "en",
+        "Name": "Bahamas"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Бахрейн"
+      },
+      {
+        "Lang": "en",
+        "Name": "Bahrain"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Бангладеш"
+      },
+      {
+        "Lang": "en",
+        "Name": "Bangladesh"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Барбадос"
+      },
+      {
+        "Lang": "en",
+        "Name": "Barbados"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Беларусь"
+      },
+      {
+        "Lang": "en",
+        "Name": "Belarus"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Бельгия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Belgium"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Белиз"
+      },
+      {
+        "Lang": "en",
+        "Name": "Belize"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Бенин"
+      },
+      {
+        "Lang": "en",
+        "Name": "Benin"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Бермуды"
+      },
+      {
+        "Lang": "en",
+        "Name": "Bermuda"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Бутан"
+      },
+      {
+        "Lang": "en",
+        "Name": "Bhutan"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Боливия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Bolivia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Бонэйр, Синт-Эстатиус и Саба"
+      },
+      {
+        "Lang": "en",
+        "Name": "Bonaire, Sint Eustatius and Saba"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Босния и Герцеговина"
+      },
+      {
+        "Lang": "en",
+        "Name": "Bosnia and Herzegovina"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Бразилия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Brazil"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Бруней"
+      },
+      {
+        "Lang": "en",
+        "Name": "Brunei"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Болгария"
+      },
+      {
+        "Lang": "en",
+        "Name": "Bulgaria"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Камбоджа"
+      },
+      {
+        "Lang": "en",
+        "Name": "Cambodia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Камерун"
+      },
+      {
+        "Lang": "en",
+        "Name": "Cameroon"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Канада"
+      },
+      {
+        "Lang": "en",
+        "Name": "Canada"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Острова Кайман"
+      },
+      {
+        "Lang": "en",
+        "Name": "Cayman Islands"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Чили"
+      },
+      {
+        "Lang": "en",
+        "Name": "Chile"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "КНР (Китайская Народная Республика)"
+      },
+      {
+        "Lang": "en",
+        "Name": "China"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Колумбия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Colombia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Конго-Киншаса"
+      },
+      {
+        "Lang": "en",
+        "Name": "Congo-Kinshasa"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Конго Браззавиль"
+      },
+      {
+        "Lang": "en",
+        "Name": "Congo Brazzaville"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Коста-Рика"
+      },
+      {
+        "Lang": "en",
+        "Name": "Costa Rica"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Хорватия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Croatia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Куба"
+      },
+      {
+        "Lang": "en",
+        "Name": "Cuba"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Кюрасао"
+      },
+      {
+        "Lang": "en",
+        "Name": "Curacao"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Кипр"
+      },
+      {
+        "Lang": "en",
+        "Name": "Cyprus"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Чехия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Czech Republic"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Дания"
+      },
+      {
+        "Lang": "en",
+        "Name": "Denmark"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Доминиканская Республика"
+      },
+      {
+        "Lang": "en",
+        "Name": "Dominican Republic"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Эквадор"
+      },
+      {
+        "Lang": "en",
+        "Name": "Ecuador"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Египет"
+      },
+      {
+        "Lang": "en",
+        "Name": "Egypt"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Сальвадор"
+      },
+      {
+        "Lang": "en",
+        "Name": "El Salvador"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Эстония"
+      },
+      {
+        "Lang": "en",
+        "Name": "Estonia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Фарерские острова"
+      },
+      {
+        "Lang": "en",
+        "Name": "Faroe Islands"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Финляндия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Finland"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Франция"
+      },
+      {
+        "Lang": "en",
+        "Name": "France"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Гвиана"
+      },
+      {
+        "Lang": "en",
+        "Name": "French Guyana"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Французская Полинезия"
+      },
+      {
+        "Lang": "en",
+        "Name": "French Polynesia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Габон"
+      },
+      {
+        "Lang": "en",
+        "Name": "Gabon"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Грузия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Georgia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Германия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Germany"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Гана"
+      },
+      {
+        "Lang": "en",
+        "Name": "Ghana"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Греция"
+      },
+      {
+        "Lang": "en",
+        "Name": "Greece"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Гренада"
+      },
+      {
+        "Lang": "en",
+        "Name": "Grenada"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Гваделупа"
+      },
+      {
+        "Lang": "en",
+        "Name": "Guadeloupe"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Гватемала"
+      },
+      {
+        "Lang": "en",
+        "Name": "Guatemala"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Гвинея"
+      },
+      {
+        "Lang": "en",
+        "Name": "Guinea"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Гайана"
+      },
+      {
+        "Lang": "en",
+        "Name": "Guyana"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Гаити"
+      },
+      {
+        "Lang": "en",
+        "Name": "Haiti"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Гондурас"
+      },
+      {
+        "Lang": "en",
+        "Name": "Honduras"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Гонконг"
+      },
+      {
+        "Lang": "en",
+        "Name": "Hong Kong"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Венгрия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Hungary"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Исландия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Iceland"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Индия"
+      },
+      {
+        "Lang": "en",
+        "Name": "India"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Индонезия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Indonesia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Иран"
+      },
+      {
+        "Lang": "en",
+        "Name": "Iran"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Ирак"
+      },
+      {
+        "Lang": "en",
+        "Name": "Iraq"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Ирландия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Ireland"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Остров Мэн"
+      },
+      {
+        "Lang": "en",
+        "Name": "Isle of Man"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Израиль"
+      },
+      {
+        "Lang": "en",
+        "Name": "Israel"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Италия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Italy"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Кот-д’Ивуар"
+      },
+      {
+        "Lang": "en",
+        "Name": "Ivory Coast"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Ямайка"
+      },
+      {
+        "Lang": "en",
+        "Name": "Jamaica"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Япония"
+      },
+      {
+        "Lang": "en",
+        "Name": "Japan"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Иордания"
+      },
+      {
+        "Lang": "en",
+        "Name": "Jordan"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Казахстан"
+      },
+      {
+        "Lang": "en",
+        "Name": "Kazakhstan"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Кения"
+      },
+      {
+        "Lang": "en",
+        "Name": "Kenya"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Кувейт"
+      },
+      {
+        "Lang": "en",
+        "Name": "Kuwait"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Киргизия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Kyrgyzstan"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Лаос"
+      },
+      {
+        "Lang": "en",
+        "Name": "Laos"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Латвия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Latvia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Ливан"
+      },
+      {
+        "Lang": "en",
+        "Name": "Lebanon"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Либерия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Liberia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Лихтенштейн"
+      },
+      {
+        "Lang": "en",
+        "Name": "Liechtenstein"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Литва"
+      },
+      {
+        "Lang": "en",
+        "Name": "Lithuania"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Люксембург"
+      },
+      {
+        "Lang": "en",
+        "Name": "Luxembourg"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Макао"
+      },
+      {
+        "Lang": "en",
+        "Name": "Macau"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Македония"
+      },
+      {
+        "Lang": "en",
+        "Name": "Macedonia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Малайзия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Malaysia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Мали"
+      },
+      {
+        "Lang": "en",
+        "Name": "Mali"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Мальта"
+      },
+      {
+        "Lang": "en",
+        "Name": "Malta"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Мавритания"
+      },
+      {
+        "Lang": "en",
+        "Name": "Mauritania"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Маврикий"
+      },
+      {
+        "Lang": "en",
+        "Name": "Mauritius"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Мексика"
+      },
+      {
+        "Lang": "en",
+        "Name": "Mexico"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Молдавия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Moldavia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Монголия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Mongolia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Черногория"
+      },
+      {
+        "Lang": "en",
+        "Name": "Montenegro"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Марокко"
+      },
+      {
+        "Lang": "en",
+        "Name": "Morocco"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Мозамбик"
+      },
+      {
+        "Lang": "en",
+        "Name": "Mozambique"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Намибия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Namibia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Непал"
+      },
+      {
+        "Lang": "en",
+        "Name": "Nepal"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Нидерландские Антильские острова"
+      },
+      {
+        "Lang": "en",
+        "Name": "Netherlands Antilles"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Новая Зеландия"
+      },
+      {
+        "Lang": "en",
+        "Name": "New Zealand"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Никарагуа"
+      },
+      {
+        "Lang": "en",
+        "Name": "Nicaragua"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Нигерия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Nigeria"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Норвегия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Norway"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Оман"
+      },
+      {
+        "Lang": "en",
+        "Name": "Oman"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Пакистан"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pakistan"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Государство Палестина"
+      },
+      {
+        "Lang": "en",
+        "Name": "Palestine"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Панама"
+      },
+      {
+        "Lang": "en",
+        "Name": "Panama"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Папуа — Новая Гвинея"
+      },
+      {
+        "Lang": "en",
+        "Name": "Papua New Guinea"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Парагвай"
+      },
+      {
+        "Lang": "en",
+        "Name": "Paraguay"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Перу"
+      },
+      {
+        "Lang": "en",
+        "Name": "Peru"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Филиппины"
+      },
+      {
+        "Lang": "en",
+        "Name": "Philippines"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Польша"
+      },
+      {
+        "Lang": "en",
+        "Name": "Poland"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Португалия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Portugal"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Пуэрто-Рико"
+      },
+      {
+        "Lang": "en",
+        "Name": "Puerto Rico"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Катар"
+      },
+      {
+        "Lang": "en",
+        "Name": "Qatar"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Воссоединение"
+      },
+      {
+        "Lang": "en",
+        "Name": "Reunion"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Румыния"
+      },
+      {
+        "Lang": "en",
+        "Name": "Romania"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Россия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Russia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Сент-Винсент"
+      },
+      {
+        "Lang": "en",
+        "Name": "Saint Vincent"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Сан-Марино"
+      },
+      {
+        "Lang": "en",
+        "Name": "San Marino"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Саудовская Аравия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Saudi Arabia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Сенегал"
+      },
+      {
+        "Lang": "en",
+        "Name": "Senegal"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Сербия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Serbia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Сингапур"
+      },
+      {
+        "Lang": "en",
+        "Name": "Singapore"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Словакия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Slovakia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Словения"
+      },
+      {
+        "Lang": "en",
+        "Name": "Slovenia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "ЮАР"
+      },
+      {
+        "Lang": "en",
+        "Name": "South Africa"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Республика Корея"
+      },
+      {
+        "Lang": "en",
+        "Name": "South Korea"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Южный Судан"
+      },
+      {
+        "Lang": "en",
+        "Name": "Southern Sudan"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Испания"
+      },
+      {
+        "Lang": "en",
+        "Name": "Spain"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Шри-Ланка"
+      },
+      {
+        "Lang": "en",
+        "Name": "Sri Lanka"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Св. Мартин (Фр)"
+      },
+      {
+        "Lang": "en",
+        "Name": "St Martin (FR)"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Синт-Мартен, Нидерланды"
+      },
+      {
+        "Lang": "en",
+        "Name": "St Martin (NL)"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Судан"
+      },
+      {
+        "Lang": "en",
+        "Name": "Sudan"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Суринам"
+      },
+      {
+        "Lang": "en",
+        "Name": "Suriname"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Шпицберген"
+      },
+      {
+        "Lang": "en",
+        "Name": "Svalbard"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Швеция"
+      },
+      {
+        "Lang": "en",
+        "Name": "Sweden"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Швейцария"
+      },
+      {
+        "Lang": "en",
+        "Name": "Switzerland"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Сирия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Syria"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Китайская Республика"
+      },
+      {
+        "Lang": "en",
+        "Name": "Taiwan"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Таиланд"
+      },
+      {
+        "Lang": "en",
+        "Name": "Thailand"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Нидерланды"
+      },
+      {
+        "Lang": "en",
+        "Name": "The Netherlands"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Тринидад и Тобаго"
+      },
+      {
+        "Lang": "en",
+        "Name": "Trinidad and Tobago"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Тунис"
+      },
+      {
+        "Lang": "en",
+        "Name": "Tunisia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Турция"
+      },
+      {
+        "Lang": "en",
+        "Name": "Turkey"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Теркс и Кайкос"
+      },
+      {
+        "Lang": "en",
+        "Name": "Turks and Caicos Islands"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "США"
+      },
+      {
+        "Lang": "en",
+        "Name": "USA"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Уганда"
+      },
+      {
+        "Lang": "en",
+        "Name": "Uganda"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Украина"
+      },
+      {
+        "Lang": "en",
+        "Name": "Ukraine"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "ОАЭ"
+      },
+      {
+        "Lang": "en",
+        "Name": "United Arab Emirates"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Великобритания"
+      },
+      {
+        "Lang": "en",
+        "Name": "United Kingdom"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Уругвай"
+      },
+      {
+        "Lang": "en",
+        "Name": "Uruguay"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Узбекистан"
+      },
+      {
+        "Lang": "en",
+        "Name": "Uzbekistan"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Венесуэла"
+      },
+      {
+        "Lang": "en",
+        "Name": "Venezuela"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Вьетнам"
+      },
+      {
+        "Lang": "en",
+        "Name": "Vietnam"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Замбия"
+      },
+      {
+        "Lang": "en",
+        "Name": "Zambia"
+      }
+    ]
+  },
+  {
+    "Type": "Country",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Зимбабве"
+      },
+      {
+        "Lang": "en",
+        "Name": "Zimbabwe"
+      }
+    ]
+  }
+]

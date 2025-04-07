@@ -1,0 +1,36 @@
+<div class="card card-transparent">
+  <div class="card-header">
+    <div class="card-title"><span>{{'Additional fields' | translate}}</span></div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-12">
+        <pgcard MinimalHeader="true" HeaderClass="separator">
+          <ng-template #CardTitle>
+            <!--      <button class="btn btn-primary btn-xs mr-1" (click)="onEditRowModal()">
+                <i class="fa fa-plus"></i> {{'form.add' | translate}}
+              </button>
+              <button class="btn btn-info btn-xs mr-1" (click)="onEditRowModal(selected_entity?.id)"
+                [disabled]="!canAction">
+                <i class="fa fa-edit"></i>
+              </button>
+              <button class="btn btn-info btn-xs mr-1" (click)="onCopyRow()" [disabled]="!canAction">
+                <i class="fa fa-copy"></i>
+              </button>
+              <button class="btn btn-danger btn-xs mr-1" (click)="onDeleteRow()" [disabled]="!canAction">
+                <i class="fa fa-trash"></i>
+              </button> -->
+          </ng-template>
+          <!-- 
+            <div class="pt-3">
+              <jqxGrid #dataGrid [theme]="'metro'" [width]="'100%'" [autoheight]="true" [source]="source"
+                [columns]="tableSource.columns" [columnsresize]="true" [sortable]="true" [autoshowfiltericon]="true"
+                [enabletooltips]="false" [selectionmode]="'checkbox'" [columnsreorder]="true"
+                (onRowselect)="onRowSelect($event)" (onRowunselect)="onRowUnselect($event)">
+              </jqxGrid>
+            </div> -->
+        </pgcard>
+      </div>
+    </div>
+  </div>
+</div>

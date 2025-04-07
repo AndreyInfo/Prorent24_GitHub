@@ -1,0 +1,30 @@
+﻿[
+  {
+    "Name": "Дебетовая карточка",
+    "AccountingCode": "DC"
+  },
+  {
+    "Name": "Оплата при доставке",
+    "AccountingCode": "COD"
+  },
+  {
+    "Name": "Банковский перевод",
+    "AccountingCode": "BT"
+  },
+  {
+    "Name": "Кредитная карта",
+    "AccountingCode": "CC"
+  },
+  {
+    "Name": "Прямой дебет",
+    "AccountingCode": "DD"
+  },
+  {
+    "Name": "Наличными",
+    "AccountingCode": "CA"
+  },
+  {
+    "Name": "Bitcoin",
+    "AccountingCode": "BC"
+  }
+]

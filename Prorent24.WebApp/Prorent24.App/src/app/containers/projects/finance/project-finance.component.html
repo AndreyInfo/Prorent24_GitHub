@@ -1,0 +1,728 @@
+<div class="container-fixed-lg pt-3">
+    <div class="row">
+        <div class="col-lg-9">
+            <form role="form" class="full-height border-container" #form="ngForm" (ngSubmit)="submitData(form, false)">
+                <div>
+                    <div class="full-height" perfectScrollbar>
+                        <div>
+                            <div class="card card-default" style="margin: 0px;">
+                                <div class="card-body" style="padding: 1px;">
+                                    <div class="row">
+                                        <div class="col-md-12 controls-top" style="height: 62px;">
+                                            <div>
+                                                <a (click)="createDocument(docType.invoice)"
+                                                    class="link-button form-edit finance-link-create">
+                                                    {{'Create account' | translate}}
+                                                </a>
+                                                <a (click)="createDocument(docType.quotation)"
+                                                    class="link-button form-edit finance-link-create">
+                                                    {{'Create offer' | translate}}
+                                                </a>
+                                                <a (click)="createDocument(docType.contract)"
+                                                    class="link-button form-edit finance-link-create">
+                                                    {{'Create contract' | translate}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" *ngIf="projectFinancialCategories">
+                                        <div class="col-md-12">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover project-financial-table">
+                                                    <thead>
+                                                        <tr class="finance-table-header">
+                                                            <th class="fs-10" style="width: 100px;">
+                                                                {{'entity.category' | translate}}</th>
+                                                            <th class="text-center fs-10">
+                                                                {{'Estimated Cost' | translate}}</th>
+                                                            <th class="text-center fs-10">{{'Planned cost' | translate}}
+                                                            </th>
+                                                            <th class="text-center fs-10">{{'Actual costs' | translate}}
+                                                            </th>
+                                                            <th class="text-center fs-10">{{'Turnover' | translate}}
+                                                            </th>
+                                                            <th class="text-center fs-10" style="width: 115px;">
+                                                                {{'entity.discount' | translate}}
+                                                            </th>
+                                                            <th class="text-center fs-10">{{'Profit' | translate}}</th>
+                                                            <th class="text-center fs-10">{{'total' | translate}}</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="v-align-middle">
+                                                                <button type="button" class="btn btn-link p-0"
+                                                                    (click)="swowRentEquipmentGroups = !swowRentEquipmentGroups">
+                                                                    {{'dashboard.dry_hire' | translate}}
+                                                                    <i class="small fa"
+                                                                        [ngClass]="swowRentEquipmentGroups ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
+                                                                </button>
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ rentalCategory.estimatedCosts | currency:' ' }}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ rentalCategory.plannedCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ rentalCategory.actualCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ rentalCategory.revenue | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                <div class="form-group input-group-prepend-text m-0"
+                                                                    style="min-width: 85px;">
+                                                                    <div class="input-group border-blue">
+                                                                        <input type="text" numbersOnly [minValue]="0"
+                                                                            [maxValue]="100"
+                                                                            class="form-control input-sm text-center"
+                                                                            name="discount"
+                                                                            [(ngModel)]="rentalCategory.discount"
+                                                                            (change)="calculateByDiscount(rentalCategory)">
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text fs-12">
+                                                                                %
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ rentalCategory.profit | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                <div class="form-group input-group-prepend-text m-0"
+                                                                    style="min-width: 110px;">
+                                                                    <div class="input-group border-blue">
+                                                                        <input type="text" numbersOnly [minValue]="0"
+                                                                            class="form-control input-sm text-center"
+                                                                            name="rentalCategory.total"
+                                                                            [(ngModel)]="rentalCategory.total"
+                                                                            (change)="calculateByTotal(rentalCategory)">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text fs-12">
+                                                                                {{financialModel.currencySign}}
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <ng-container *ngIf="swowRentEquipmentGroups">
+                                                            <tr *ngFor="let item of rentalEquipmentGroups">
+                                                                <td class="v-align-middle">{{ item.name }}</td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.estimatedCosts | currency:' '}}
+                                                                    {{financialModel.currencySign}}
+                                                                </td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.plannedCosts | currency:' '}}
+                                                                    {{financialModel.currencySign}}
+                                                                </td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.actualCosts | currency:' '}}
+                                                                    {{financialModel.currencySign}}
+                                                                </td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.revenue | currency:' '}}
+                                                                    {{financialModel.currencySign}}
+                                                                </td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.discount | currency:' '}} %</td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.profit | currency:' '}}
+                                                                    {{financialModel.currencySign}}
+                                                                </td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.total | currency:' '}}
+                                                                    {{financialModel.currencySign}}
+                                                                </td>
+                                                            </tr>
+                                                        </ng-container>
+
+                                                        <tr>
+                                                            <td class="v-align-middle">
+                                                                <button type="button" class="btn btn-link p-0"
+                                                                    (click)="swowSaleEquipmentGroups = !swowSaleEquipmentGroups">
+                                                                    {{'sale' | translate}}
+                                                                    <i class="small fa"
+                                                                        [ngClass]="swowSaleEquipmentGroups ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
+                                                                </button>
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ saleCategory.estimatedCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ saleCategory.plannedCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ saleCategory.actualCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ saleCategory.revenue | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                <div class="form-group input-group-prepend-text m-0"
+                                                                    style="min-width: 85px;">
+                                                                    <div class="input-group border-blue">
+                                                                        <input type="text" numbersOnly [minValue]="0"
+                                                                            [maxValue]="100"
+                                                                            class="form-control input-sm text-center"
+                                                                            name="saleCategory.discount"
+                                                                            [(ngModel)]="saleCategory.discount"
+                                                                            (change)="calculateByDiscount(saleCategory)">
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text fs-12">
+                                                                                %
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ saleCategory.profit | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                <div class="form-group input-group-prepend-text m-0"
+                                                                    style="min-width: 110px;">
+                                                                    <div class="input-group border-blue">
+                                                                        <input type="text" numbersOnly
+                                                                            [numType]="'decimal'" [minValue]="0"
+                                                                            class="form-control input-sm text-center"
+                                                                            name="saleCategory.total"
+                                                                            [(ngModel)]="saleCategory.total"
+                                                                            (change)="calculateByTotal(saleCategory)">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text fs-12">
+                                                                                {{financialModel.currencySign}}
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <ng-container *ngIf="swowSaleEquipmentGroups">
+                                                            <tr *ngFor="let item of saleEquipmentGroups">
+                                                                <td class="v-align-middle">
+                                                                    {{ item.name }}
+                                                                </td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.estimatedCosts | currency:' '}}
+                                                                    {{financialModel.currencySign}}
+                                                                </td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.plannedCosts | currency:' '}}
+                                                                    {{financialModel.currencySign}}
+                                                                </td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.actualCosts | currency:' '}}
+                                                                    {{financialModel.currencySign}}
+                                                                </td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.revenue | currency:' '}}
+                                                                    {{financialModel.currencySign}}
+                                                                </td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.discount | currency:' '}} %
+                                                                </td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.profit | currency:' '}}
+                                                                    {{financialModel.currencySign}}
+                                                                </td>
+                                                                <td class="text-center v-align-middle">
+                                                                    {{ item.total | currency:' '}}
+                                                                    {{financialModel.currencySign}}
+                                                                </td>
+                                                            </tr>
+                                                        </ng-container>
+
+                                                        <tr>
+                                                            <td class="v-align-middle">
+                                                                {{'crew' | translate}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ crewCategory.estimatedCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ crewCategory.plannedCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ crewCategory.actualCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ crewCategory.revenue | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                <div class="form-group input-group-prepend-text m-0"
+                                                                    style="min-width: 85px;">
+                                                                    <div class="input-group border-blue">
+                                                                        <input type="text" numbersOnly [minValue]="0"
+                                                                            [maxValue]="100"
+                                                                            class="form-control input-sm text-center"
+                                                                            name="crewCategory.discount"
+                                                                            [(ngModel)]="crewCategory.discount"
+                                                                            (change)="calculateByDiscount(crewCategory)">
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text fs-12">
+                                                                                %
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ crewCategory.profit | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                <div class="form-group input-group-prepend-text m-0"
+                                                                    style="min-width: 110px;">
+                                                                    <div class="input-group border-blue">
+                                                                        <input type="text" numbersOnly
+                                                                            [numType]="'decimal'" [minValue]="0"
+                                                                            class="form-control input-sm text-center"
+                                                                            name="crewCategory.total"
+                                                                            [(ngModel)]="crewCategory.total"
+                                                                            (change)="calculateByTotal(crewCategory)">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text fs-12">
+                                                                                {{financialModel.currencySign}}
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="v-align-middle">
+                                                                {{'Vehicles' | translate}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ transportCategory.estimatedCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ transportCategory.plannedCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ transportCategory.actualCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ transportCategory.revenue | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                <div class="form-group input-group-prepend-text m-0"
+                                                                    style="min-width: 85px;">
+                                                                    <div class="input-group border-blue">
+                                                                        <input type="text" numbersOnly [minValue]="0"
+                                                                            [maxValue]="100"
+                                                                            class="form-control input-sm text-center"
+                                                                            name="transportCategory.discount"
+                                                                            [(ngModel)]="transportCategory.discount"
+                                                                            (change)="calculateByDiscount(transportCategory)">
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text fs-12">
+                                                                                %
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ transportCategory.profit | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                <div class="form-group input-group-prepend-text m-0"
+                                                                    style="min-width: 110px;">
+                                                                    <div class="input-group border-blue">
+                                                                        <input type="text" numbersOnly
+                                                                            [numType]="'decimal'" [minValue]="0"
+                                                                            class="form-control input-sm text-center"
+                                                                            name="transportCategory.total"
+                                                                            [(ngModel)]="transportCategory.total"
+                                                                            (change)="calculateByTotal(transportCategory)">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text fs-12">
+                                                                                {{financialModel.currencySign}}
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="v-align-middle">{{'additional_cost' | translate}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ additionalCosts.estimatedCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ additionalCosts.plannedCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ additionalCosts.actualCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ additionalCosts.revenue | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                <div class="form-group input-group-prepend-text m-0"
+                                                                    style="min-width: 85px;">
+                                                                    <div class="input-group border-blue">
+                                                                        <input type="text" numbersOnly [minValue]="0"
+                                                                            [maxValue]="100"
+                                                                            class="form-control input-sm text-center"
+                                                                            name="additionalCosts.discount"
+                                                                            [(ngModel)]="additionalCosts.discount"
+                                                                            (change)="calculateByDiscount(additionalCosts)">
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text fs-12">
+                                                                                %
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ additionalCosts.profit | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle">
+                                                                <div class="form-group input-group-prepend-text m-0"
+                                                                    style="min-width: 110px;">
+                                                                    <div class="input-group border-blue">
+                                                                        <input type="text" numbersOnly
+                                                                            [numType]="'decimal'" [minValue]="0"
+                                                                            class="form-control input-sm text-center"
+                                                                            name="additionalCosts.total"
+                                                                            [(ngModel)]="additionalCosts.total"
+                                                                            (change)="calculateByTotal(additionalCosts)">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text fs-12">
+                                                                                {{financialModel.currencySign}}
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="v-align-middle">
+                                                                {{'Insurance' | translate}}
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td class="text-center v-align-middle">
+                                                                {{ insuranse.revenue | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td class="text-center v-align-middle">
+                                                                <div class="form-group input-group-prepend-text m-0"
+                                                                    style="min-width: 110px;">
+                                                                    <div class="input-group border-blue">
+                                                                        <input type="text" numbersOnly
+                                                                            [numType]="'decimal'" [minValue]="0"
+                                                                            [maxValue]="100"
+                                                                            class="form-control input-sm text-center"
+                                                                            name="insuranse.total"
+                                                                            [(ngModel)]="insuranse.percentTotal"
+                                                                            (change)="calculateInsuranse(insuranse)">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text fs-12">
+                                                                                %
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr class="mt-4">
+                                                            <td class="v-align-middle bold border-bottom-0">
+                                                                {{'Total excluding taxes and deductions' | translate}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle border-bottom-0">
+                                                                {{ totalExcludeVat.estimatedCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle border-bottom-0">
+                                                                {{ totalExcludeVat.plannedCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle border-bottom-0">
+                                                                {{ totalExcludeVat.actualCosts | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle border-bottom-0">
+                                                                {{ totalExcludeVat.revenue | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle border-bottom-0">
+                                                                <div class="form-group input-group-prepend-text m-0"
+                                                                    style="min-width: 85px;">
+                                                                    <div class="input-group border-blue">
+                                                                        <input type="text" numbersOnly [minValue]="0"
+                                                                            [maxValue]="100"
+                                                                            class="form-control input-sm text-center"
+                                                                            name="totalExcludeVat.discount"
+                                                                            [(ngModel)]="totalExcludeVat.discount"
+                                                                            (change)="calculateByDiscount(totalExcludeVat)">
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text fs-12">
+                                                                                %
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center v-align-middle border-bottom-0">
+                                                                {{ totalExcludeVat.profit | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                            <td class="text-center v-align-middle border-bottom-0">
+                                                                <div class="form-group input-group-prepend-text m-0"
+                                                                    style="min-width: 110px;">
+                                                                    <div class="input-group border-blue">
+                                                                        <input type="text" numbersOnly
+                                                                            [numType]="'decimal'" [minValue]="0"
+                                                                            class="form-control input-sm text-center"
+                                                                            name="totalExcludeVat.total"
+                                                                            [(ngModel)]="totalExcludeVat.total"
+                                                                            (change)="calculateByTotal(totalExcludeVat)">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text fs-12">
+                                                                                {{financialModel.currencySign}}
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="v-align-middle bold border-bottom-0">
+                                                                {{'Taxes and deductions' | translate}}
+                                                            </td>
+                                                            <td class="border-bottom-0"></td>
+                                                            <td class="border-bottom-0"></td>
+                                                            <td class="border-bottom-0"></td>
+                                                            <td class="border-bottom-0"></td>
+                                                            <td class="border-bottom-0"></td>
+                                                            <td colspan="2"
+                                                                class="text-center v-align-middle border-bottom-0">
+                                                                <pg-select style="width: 100%;" name="vatSchemeId"
+                                                                    [(ngModel)]="entity.vatSchemeId"
+                                                                    (ngModelChange)="onChangeFinancialVat($event)"
+                                                                    [PlaceHolder]="'Выбрать...'">
+                                                                    <pg-option *ngFor="let item of vatSchemes"
+                                                                        [Label]="item.name" [Value]="item.id">
+                                                                    </pg-option>
+                                                                </pg-select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="v-align-middle bold border-bottom-0">
+                                                                {{'Total taxes and deductions' | translate}}
+                                                            </td>
+                                                            <td class="border-bottom-0"></td>
+                                                            <td class="border-bottom-0"></td>
+                                                            <td class="border-bottom-0"></td>
+                                                            <td class="border-bottom-0"></td>
+                                                            <td class="border-bottom-0"></td>
+                                                            <td class="border-bottom-0"></td>
+                                                            <td
+                                                                class="text-center v-align-middle border-bottom-0 finance-total-sum">
+                                                                {{entity.totalIncVat | currency:' '}}
+                                                                {{financialModel.currencySign}}
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        style="width: 100%; border-top: 1px dashed #dee2e6; padding-bottom: 15px; margin: 20px auto;">
+                                    </div>
+                                    <div class="row" style="background: #E5E5E5; height: 20px;width: 105%;
+                                    margin-left: -22px;">
+                                        <div class="col">
+
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 col-white" style="margin-top: 10px;">
+                                        <div class="row" style="padding: 11px;">
+                                            <div class="col-md-4">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group input-group-prepend-text">
+                                                            <label class="label-sm">{{'Deposit' | translate}}</label>
+                                                            <div class="input-group border-blue">
+                                                                <input type="text" numbersOnly [numType]="'decimal'"
+                                                                    [minValue]="0" class="form-control" id="deposit"
+                                                                    name="deposit" [(ngModel)]="entity.deposit"
+                                                                    #deposit="ngModel">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">
+                                                                        {{financialModel.currencySign}}
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>{{'Invoicing' | translate}} </label>
+                                                            <pg-select style="width: 100%;"
+                                                                [(ngModel)]="entity.invoiceMomentId"
+                                                                name="invoiceMomentId" AllowClear ShowSearch
+                                                                [PlaceHolder]="''">
+                                                                <pg-option *ngFor="let option of invoiceMoments"
+                                                                    [Label]="option.name" [Value]="option.id"
+                                                                    [Disabled]="option.disabled">
+                                                                </pg-option>
+                                                            </pg-select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>{{'Additional terms' | translate}}</label>
+                                                            <pg-select style="width: 100%;"
+                                                                [(ngModel)]="entity.additionalConditionId"
+                                                                name="additionalConditionId" [PlaceHolder]="''"
+                                                                (ngModelChange)="onChangeAdditionalCondition($event)">
+                                                                <pg-option *ngFor="let option of additionalCondition"
+                                                                    [Label]="option.name" [Value]="option.id"
+                                                                    [Disabled]="option.disabled">
+                                                                </pg-option>
+                                                            </pg-select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="row" style="margin-top: 22px;">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group border-blue">
+                                                            <textarea rows="12" class="form-control"
+                                                                id="addittionalCondition" name="addittionalCondition"
+                                                                placeholder="..."
+                                                                [(ngModel)]="entity.addittionalCondition"
+                                                                #addittionalCondition="ngModel">
+                                                                                                    </textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-3" style="padding-left: 0px;">
+            <pgcard MinimalHeader="true" Toggle="false">
+                <ng-template #CardTitle>
+                    <div class="row  border-containers">
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary btn-xs form-save"
+                                [disabled]="form.invalid">
+                                {{'form.save' | translate}}
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <a routerLink="/projects" class="link-button">
+                                <button type="button" class="btn btn-white btn-xs mr-1 form-cancel">
+                                    {{'form.cancel' | translate}}
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+            </pgcard>
+                <div class="card-body border-container">
+                    <div *ngFor="let doc of documents" class="card card-transparent mb-0">
+                        <div class="card-header separator text-uppercase">
+                            <div class="card-title">
+                                {{doc.type | translate}}
+                            </div>
+                        </div>
+                        <div class="card-body pt-2">
+                            <a (click)="createDocument(doc.type)" class="link-button form-edit finance-link-create"
+                                style="margin-left: 0px;">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.55556 14H12.4444C13.3031 14 14 13.3031 14 12.4444V1.55556C14 0.696889 13.3031 0 12.4444 0H1.55556C0.696889 0 0 0.696889 0 1.55556V12.4444C0 13.3031 0.696889 14 1.55556 14ZM3.11111 6.22222H6.22222V3.11111H7.77778V6.22222H10.8889V7.77778H7.77778V10.8889H6.22222V7.77778H3.11111V6.22222Z"
+                                        fill="#192D3E" fill-opacity="0.8" />
+                                </svg>
+                                Добавить
+                            </a>
+                            <div *ngFor="let f of doc.data" class="pb-2"
+                                style="margin-top: 11px;margin-left: 20px;">
+                                <a routerLink="documents/{{doc.type}}/{{f.id}}" style="font-size: 15px;">
+                                    <i class="fa fa-file-o"></i> {{f.name}}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- 
+<div class="inner-content full-height page-content-wrapper " style="margin-top: 10px; height: 1150px !important;">
+    <jqxSplitter #mainSplitter [theme]="'metro'" [panels]="panelOptions.mainSplitter" [width]="'100%'"
+        [height]="'100%'">
+        <div class="splitter-panel" style="margin-left: -9px;">
+
+        </div>
+        <div class="splitter-panel">
+            <div class="full-height col-white pb-5" style="margin-left: -9px;" perfectScrollbar>
+
+            </div>
+        </div>
+    </jqxSplitter>
+</div> -->

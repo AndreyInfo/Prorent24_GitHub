@@ -1,0 +1,72 @@
+[
+  {
+    "IsKey": false,
+    "Entity": "VehicleEntity",
+    "IsDisplay": true,
+    "DisplayName": "Name",
+    "ColumnGroup": "General",
+    "Order": "1"
+  },
+  {
+    "IsKey": false,
+    "Entity": "VehicleEntity",
+    "IsDisplay": true,
+    "DisplayName": "RegistrationNumber",
+    "ColumnGroup": "General",
+    "Order": "2"
+  },
+  {
+    "IsKey": false,
+    "Entity": "VehicleEntity",
+    "IsDisplay": true,
+    "DisplayName": "RegistrationNumber",
+    "ColumnGroup": "General",
+    "Order": "2"
+  },
+  {
+    "IsKey": false,
+    "Entity": "VehicleEntity",
+    "IsDisplay": true,
+    "DisplayName": "Name",
+    "ColumnGroup": "General",
+    "Order": "1"
+  },
+  {
+    "IsKey": false,
+    "Entity": "VehicleEntity",
+    "IsDisplay": true,
+    "DisplayName": "Name",
+    "ColumnGroup": "General",
+    "Order": "1"
+  },
+  {
+    "IsKey": false,
+    "Entity": "VehicleEntity",
+    "IsDisplay": true,
+    "DisplayName": "Name",
+    "ColumnGroup": "General",
+    "Order": "1"
+  },
+  {
+    "IsKey": "",
+    "Entity": "",
+    "EntityKeyType": "",
+    "IncludeType": "",
+    "IsDisplay": "",
+    "DisplayName": "",
+    "KeyType": "",
+    "ColumnGroup": "",
+    "Order": ""
+  },
+  {
+    "IsKey": "",
+    "Entity": "",
+    "EntityKeyType": "",
+    "IncludeType": "",
+    "IsDisplay": "",
+    "DisplayName": "",
+    "KeyType": "",
+    "ColumnGroup": "",
+    "Order": ""
+  }
+]

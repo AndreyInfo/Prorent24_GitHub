@@ -1,0 +1,108 @@
+<div bsModal #excelImportModal="bs-modal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"
+     aria-labelledby="excelImportModal" [config]="{backdrop: 'static'}" aria-hidden="true">
+    <div *ngIf="worksheet" class="modal-dialog modal-dialog-scrollable modal-xl" style="width: 100%">
+        <div class="modal-content">
+            <div class="modal-header clearfix ">
+                <button type="button" class="close" (click)="excelImportModal.hide()" aria-hidden="true">
+                    <i class="pg pg-close fs-14"></i>
+                </button>
+                <h4 class="p-b-5"><span class="semi-bold">{{ 'import_data' | translate }}</span></h4>
+            </div>
+            <div class="modal-body">
+                <pg-upload *ngIf="!worksheet.rows" Type="drag" [Multiple]="false" [Limit]="7" [ShowUploadList]="false"
+                           [WithCredentials]="true" (Change)="fileHandleChange($event)" extraClass="dropzone"
+                           [FileType]="xlsx"
+                           [Accept]="'.xlsx'"
+                           progressType="circle">
+                    <div class="d-flex flex-column align-items-center">
+                        <p class="bold no-margin small">Перетащите файл</p>
+                        <p class="small">или нажмите, чтобы загрузить</p>
+                    </div>
+                </pg-upload>
+
+                <div *ngIf="worksheet.rows" class="row">
+                    <div class="col-md-6">
+                        <div class="checkbox check-primary">
+                            <input type="checkbox" id="containsHeader" checked="checked" name="worksheet.containsHeader"
+                                   [(ngModel)]="worksheet.containsHeader">
+                            <label for="containsHeader">
+                                Содержит заголовок
+                            </label>
+                        </div>
+                        Обязательные колонки: <span *ngFor="let requiredField of worksheet.requiredFields" class="text-danger">{{ ('entity.' + requiredField.toLowerCase()) | translate }} </span>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Папка <span *ngIf="worksheet.folderId < 1" class="text-danger">(Выберите папку)</span></label>
+                        <div class="input-group">
+                            <input type="hidden" name="folderId" [(ngModel)]="worksheet.folderId">
+                            <input class="form-control input-sm" name="worksheet.folderName"
+                                   [(ngModel)]="worksheet.folderName" type="text" placeholder="..." disabled required>
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-sm btn-primary" (click)="showFoldersModal()">
+                                    <i class="fa fa-folder"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        Выберите столбцы данных:
+                        <table class="table table-sm table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th *ngFor="let row of worksheet.rows[0].cells; let indx = index;" scope="col">
+                                        <select style="width: 175px" class="full-width select2-hidden-accessible"
+                                                [(ngModel)]="row.entityKey" name="row.entityKey">
+                                            <option *ngFor="let item of worksheet.entities" value="{{ item.entity }}">
+                                                {{ item.entity.toLowerCase()  | translate}}
+                                            </option>
+                                        </select>
+                                        <br>
+                                        <select style="width: 175px" class="full-width select2-hidden-accessible"
+                                                [(ngModel)]="row.key" name="row.key">
+                                            <option value="-1">Не импортировать</option> <!--  [selected]="true" -->
+                                            <optgroup *ngFor="let group of worksheet.subEntities;"
+                                                      label="{{ group.groupName | translate }}">
+                                                <!-- [selected]="worksheet.columns && worksheet.columns[0] && worksheet.columns[0].cells[indx] && worksheet.columns[0].cells[indx].originalKey && item.text.toLowerCase() == worksheet.columns[0].cells[indx].originalKey.toLowerCase()"  -->
+                                                <option *ngFor="let item of group.collection" [value]="item.text" [selected]="item.text == row.key? 'selected': ''">
+                                                    {{ ('entity.' + item.text.toLowerCase()) | translate }}
+                                                    <!-- {{((worksheet.columns && worksheet.columns[0] && worksheet.columns[0].cells[indx] && worksheet.columns[0].cells[indx].originalKey)? item.text.toLowerCase() == worksheet.columns[0].cells[indx].originalKey.toLowerCase() : false)}} -->
+                                                    <span *ngIf="item.isRequiredForImport">*</span>
+                                                </option>
+                                            </optgroup>
+                                        </select>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="padding: 5px"
+                                    *ngFor="let row of worksheet.rows | slice:0:10; let currentIndx=index;">
+                                    <td [style.background-color]="worksheet.containsHeader && currentIndx == 0 ? '#ae3c3833' : ''"
+                                        style="padding: 5px" *ngFor="let cell of row.cells">
+                                        {{ cell.value }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        (Не все данные могут быть отображены)
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="modal-footer" *ngIf="worksheet.rows">
+                <button type="submit" [disabled]="worksheet.folderId < 1" class="btn btn-xs btn-primary btn-cons" (click)="import()">
+                    Импортировать
+                </button>
+                <button type="submit" class="btn btn-xs btn-default btn-cons" (click)="worksheet={}">
+                    Загрузить другой файл
+                </button>
+            </div>
+            <div class="modal-footer" *ngIf="!worksheet.rows">
+                <a href="{{urlTamplateExcel}}" class="btn btn-xs btn-primary btn-cons">
+                    Скачать шаблон
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<rent-tree-folders [entityType]="entityType" (onSelect)="setFolder($event)"></rent-tree-folders>

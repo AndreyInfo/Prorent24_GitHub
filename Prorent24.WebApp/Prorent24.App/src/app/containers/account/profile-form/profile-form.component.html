@@ -1,0 +1,397 @@
+<div class="jumbotron no-margin" style="height: 51px;">
+    <div class="container-fluid container-fixed-lg">
+        <div class="inner" pg-parallax>
+            <h4>{{'profile' | translate}}</h4>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="p-t-30 p-l-20">
+        <form role="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <input type="hidden" [(ngModel)]="entity.email" name="username">
+            <div class="row">
+                <div class="col col-white">
+                    <div class="thumbnail-wrapper d100 circular bordered b-white" style="margin: 15px;">
+                        <img *ngIf="!(user$ | async)?.profileImage" alt="Avatar" width="78px" height="55"
+                            src="assets/img/logo/logo-profile-big.jpg">
+                        <img *ngIf="(user$ | async)?.profileImage" alt="Avatar" width="78px" height="55"
+                            [src]="(user$ | async)?.profileImage">
+                    </div>
+                    <div class="col-xs-height p-l-20  p-t-40">
+                        <span class="profile-user-name">{{(user$ | async)?.name}}</span>
+                        <br>
+                        <span class="profile-user-name">{{(user$ | async)?.surname}}</span>
+                        <br>
+                        <span class="profile-user-email">{{(user$ | async)?.email}}</span>
+                        <br>
+                        <input style="display: none" type="file" (change)="onProfileImgChanged($event)"
+                            #profileImgInput>
+                        <button type="button" class="btn btn-xs btn-default profile-user-change-photo"
+                            (click)="profileImgInput.click()">
+                            Сменить фото
+                        </button>
+                    </div>
+                </div>
+                <div style="width: 19px;"></div>
+                <!-- Личные данные -->
+                <div class="col col-white">
+                    <div class="row">
+                        <div class="col block-info">
+                            <span class="block-info-mini-text">Личные данные</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default"
+                                [class.has-error]="vat.invalid && (vat.dirty || vat.touched)">
+                                <label>{{'ITN' | translate}}</label>
+                                <input type="text" placeholder="{{'ITN' | translate}}" class="form-control" id="vat"
+                                    name="vat" [(ngModel)]="entity.vat" #vat="ngModel">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default"
+                                [class.has-error]="coCNumber.invalid && (coCNumber.dirty || coCNumber.touched)">
+                                <label>{{'INILA' | translate}}</label>
+                                <input type="text" placeholder="{{'INILA' | translate}}" class="form-control"
+                                    id="coCNumber" name="coCNumber" [(ngModel)]="entity.coCNumber" #coCNumber="ngModel">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default"
+                                [class.has-error]="bankAccountNumber.invalid && (bankAccountNumber.dirty || bankAccountNumber.touched)">
+                                <label>{{'bankAccountNumber' | translate}}</label>
+                                <input type="text" placeholder="{{'bankAccountNumber' | translate}}"
+                                    class="form-control" id="bankAccountNumber" name="bankAccountNumber"
+                                    [(ngModel)]="entity.bankAccountNumber" #bankAccountNumber="ngModel">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default"
+                                [class.has-error]="companyName.invalid && (companyName.dirty || companyName.touched)">
+                                <label>{{'companyName' | translate}}</label>
+                                <input type="text" placeholder="{{'companyName' | translate}}" class="form-control"
+                                    id="companyName" name="companyName" [(ngModel)]="entity.companyName"
+                                    #companyName="ngModel" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="height: 25px;"></div>
+            <!-- Общие -->
+            <div class="row">
+                <div class="col col-white">
+                    <div class="row">
+                        <div class="col block-info">
+                            <span class="block-info-mini-text">Общие</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default"
+                                [class.has-error]="lastName.invalid && (lastName.dirty || lastName.touched)">
+                                <label class="label-sm">{{'lastName' | translate}}</label>
+                                <input type="text" placeholder="{{'lastName' | translate}}" class="form-control"
+                                    id="lastName" name="lastName" [(ngModel)]="entity.lastName" #lastName="ngModel"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default"
+                                [class.has-error]="firstName.invalid && (firstName.dirty || firstName.touched)">
+                                <label class="label-sm">{{'firstName' | translate}}</label>
+                                <input type="text" placeholder="{{'firstName' | translate}}" class="form-control"
+                                    id="firstName" name="firstName" [(ngModel)]="entity.firstName" #firstName="ngModel"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default">
+                                <label>{{'middleName' | translate}}</label>
+                                <input type="text" placeholder="{{'middleName' | translate}}" class="form-control"
+                                    id="middleName" name="middleName" [(ngModel)]="entity.middleName"
+                                    #contactPersonEmail="ngModel">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default"
+                                [class.has-error]="birthdate.invalid && (birthdate.dirty || birthdate.touched)">
+                                <label class="label-sm">{{'birthdate' | translate}}</label>
+                                <input type="date" placeholder="{{'birthdate' | translate}}" class="form-control"
+                                    id="birthdate" name="birthdate" [(ngModel)]="entity.birthdate" #birthdate="ngModel"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default">
+                                <label>{{'email' | translate}}</label>
+                                <input type="email" placeholder="ex: some@example.com" disabled class="form-control"
+                                    [value]="entity.username">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default">
+                                <label>{{'phone' | translate}}</label>
+                                <input type="text" placeholder="{{'phone' | translate}}" class="form-control" id="phone"
+                                    name="phone" [(ngModel)]="entity.phone" #phone="ngModel">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 19px;"></div>
+                <!-- Адрес проживания -->
+                <div class="col col-white">
+                    <div class="row">
+                        <div class="col block-info">
+                            <span class="block-info-mini-text">Адрес проживания</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col" style="margin-right: 14px;">
+                            <div class="form-group">
+                                <label>{{'country' | translate}}</label>
+                                <pg-select style="width: 100%;" name="countryId" [(ngModel)]="entity.countryId"
+                                    [PlaceHolder]="'Выбрать...'" AllowClear ShowSearch>
+                                    <pg-option *ngFor="let item of countries" [Label]="item.name" [Value]="item.id">
+                                    </pg-option>
+                                </pg-select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default">
+                                <label>{{'city' | translate}}</label>
+                                <input type="text" placeholder="{{'city' | translate}}" class="form-control" id="city"
+                                    name="city" [(ngModel)]="entity.city" #city="ngModel">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default">
+                                <label>{{'postalCode' | translate}}</label>
+                                <input type="text" placeholder="{{'postalCode' | translate}}" class="form-control"
+                                    id="postalCode" name="postalCode" [(ngModel)]="entity.postalCode"
+                                    #postcode="ngModel">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default">
+                                <label>{{'street' | translate}}</label>
+                                <input type="text" placeholder="{{'street' | translate}}" class="form-control"
+                                    id="address" name="address" [(ngModel)]="entity.address" #street="ngModel">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default" pgFormGroupDefault>
+                                <label>{{'houseNumber' | translate}}</label>
+                                <input type="text" placeholder="{{'houseNumber' | translate}}" class="form-control"
+                                    id="number" name="number" [(ngModel)]="entity.number" #houseNumber="ngModel">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="height: 25px;"></div>
+
+            <!-- БЕЗОПАСТНОСТЬ -->
+            <div class="row">
+                <div class="col-lg-9 col-white">
+                    <div class="row">
+                        <div class="col block-info">
+                            <span class="block-info-mini-text">Безопастность</span>
+                        </div>
+                    </div>
+
+                    <form role="form" #changePassform="ngForm" (ngSubmit)="changePassword(changePassform)">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-group form-group-default">
+                                    <label>{{'currentPassword' | translate}}</label>
+                                    <input style="max-width:295px;" type="password" class="form-control" id="password"
+                                        name="password" [(ngModel)]="changePass.password" #currentPassword="ngModel"
+                                        [disabled]="!isChangePass" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group form-group-default">
+                                    <label>{{'newPassword' | translate}}</label>
+                                    <input style="max-width:295px;" type="password" class="form-control"
+                                        id="newPassword" name="newPassword" [(ngModel)]="changePass.newPassword"
+                                        #newPassword="ngModel" [disabled]="!isChangePass" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group form-group-default">
+                                    <label>{{'confirmNewPassword' | translate}}</label>
+                                    <input style="max-width:295px;" type="password" class="form-control"
+                                        id="confirmNewPassword" name="confirmNewPassword"
+                                        [(ngModel)]="changePass.confirmNewPassword" #confirmPassword="ngModel" required
+                                        [disabled]="!isChangePass">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <button style="float: right;" *ngIf="!isChangePass"
+                                    class="btn btn-xs btn-white profile-user-change-password"
+                                    (click)="isChangePass = !isChangePass">
+                                    {{'changePassword' | translate}}
+                                </button>
+                                <button style="margin-left: 15px;" type="submit" *ngIf="isChangePass"
+                                    class="btn btn-xs btn-white profile-user-change-password"
+                                    [disabled]="changePassform.invalid">
+                                    {{'form.save_new_password' | translate}}
+                                </button>
+                                <button style="margin-left: 25px;float: right;margin-top: 27px;" class="btn btn-xs btn-white mr-2 folder-cancel-btn"
+                                    *ngIf="isChangePass" (click)="isChangePass = !isChangePass">
+                                    {{'form.cancel' | translate}}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div style="width:19px;"></div>
+
+                <div class="col col-white">
+                    <div class="row">
+                        <div class="col block-info">
+                            <span class="block-info-mini-text">Сохранение</span>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <button style="margin-top: 30px;" type="submit" class="form-add" [disabled]="form.invalid">
+                            <i class="fa fa-save"></i> {{'form.save_changes' | translate}}
+                        </button>
+                        <button style="margin-left: 25px;float: right;margin-top: 27px;" class="btn btn-xs btn-white mr-2 folder-cancel-btn">
+                            {{'form.cancel' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="card card-transparent">
+        <div class="card-body">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 
+        <div class="row">
+
+            <div class="col-lg-9">
+                
+
+                    <pgcard MinimalHeader="true" HeaderClass="separator">
+                        <ng-template #CardTitle>
+                            <button type="submit" class="btn btn-primary btn-xs" [disabled]="form.invalid">
+                                <i class="fa fa-save"></i> {{'form.save' | translate}}
+                            </button>
+                        </ng-template>
+
+
+                                   
+
+                            <pgcard MinimalHeader="true">
+                                <ng-template #CardTitle>
+                                    <i class="fa fa-2x fa-shield"></i> {{'security' | translate}}
+                                </ng-template>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                           
+                                            <div *ngIf="isChangePass">
+                                              
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label>{{'currentPassword' | translate}}</label>
+                                                                <input type="password" class="form-control"
+                                                                    id="password" name="password"
+                                                                    [(ngModel)]="changePass.password"
+                                                                    #currentPassword="ngModel" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label>{{'confirmNewPassword' | translate}}</label>
+                                                                <input type="password" class="form-control"
+                                                                    id="confirmNewPassword" name="confirmNewPassword"
+                                                                    [(ngModel)]="changePass.confirmNewPassword"
+                                                                    #confirmPassword="ngModel" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                  
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </pgcard>
+
+
+
+                            <pgcard MinimalHeader="true">
+                                <ng-template #CardTitle>
+                                    <i class="fa fa-2x fa-building-o"></i> {{'PersonalData' | translate}}
+                                </ng-template>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        
+                                    </div>
+                                   
+                                    </div>
+                                </div>
+                                
+                            </pgcard>
+
+                            <pgcard MinimalHeader="true">
+                                <ng-template #CardTitle>
+                                    <i class="fa fa-2x fa-map-marker"></i> {{'Address' | translate}}
+                                </ng-template>
+                                <div>
+                                   
+                                
+                                </div>
+                            </pgcard>
+                        </div>
+                    </pgcard>
+                </form>
+            </div>
+
+        </div> -->

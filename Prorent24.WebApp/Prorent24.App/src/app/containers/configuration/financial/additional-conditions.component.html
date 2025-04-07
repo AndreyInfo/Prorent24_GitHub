@@ -1,0 +1,98 @@
+<div class="jumbotron no-margin">
+    <div class="sm-p-l-0 sm-p-r-0">
+        <div class="inner" pg-parallax="">
+            <div class="container-fluid sm-p-l-0 sm-p-r-0">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="">{{'Management and accounting' | translate}}</a></li>
+                    <li class="breadcrumb-item active">{{'Additional terms' | translate}}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card card-transparent">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <pgcard MinimalHeader="true" HeaderClass="separator">
+                    <ng-template #CardTitle>
+                        <button class="btn btn-primary btn-xs mr-1" (click)="onEditRowModal()">
+                            <i class="fa fa-plus"></i> {{'form.add' | translate}}
+                        </button>
+                        <button class="btn btn-info btn-xs mr-1" (click)="onEditRowModal(selected_entity.id)"
+                            [disabled]="!canAction">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                        <button class="btn btn-info btn-xs mr-1" (click)="onCopyRow()" [disabled]="!canAction">
+                            <i class="fa fa-copy"></i>
+                        </button>
+                        <button class="btn btn-danger btn-xs mr-1" (click)="onDeleteRow()" [disabled]="!canAction">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </ng-template>
+
+                    <div class="pt-3">
+                        <jqxGrid #dataGrid [theme]="'metro'" [width]="'100%'" [autoheight]="true" [source]="source"
+                            [columns]="tableSource.columns" [columnsresize]="true" [sortable]="true"
+                            [autoshowfiltericon]="true" [enabletooltips]="false" [selectionmode]="'singlerow'"
+                            [columnsreorder]="true" (onRowselect)="onRowSelect($event)"
+                            (onRowdoubleclick)="onEditRowModal(selected_entity?.id)">
+                        </jqxGrid>
+                    </div>
+                </pgcard>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL STICK UP  -->
+<div bsModal #rowModal="bs-modal" class="modal fade stick-up" tabindex="-1" role="dialog" aria-labelledby="rowModal" [config]="{backdrop: 'static'}"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header clearfix ">
+                <button type="button" class="close" (click)="rowModal.hide()" aria-hidden="true">
+                    <i class="pg pg-close fs-14"></i>
+                </button>
+                <h4 class="p-b-5"><span class="semi-bold">{{'Additional' | translate}}</span> {{'condition' | translate}}</h4>
+            </div>
+            <form role="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <input type="hidden" id="id" name="id" [(ngModel)]="entity.id">
+                <div class="modal-body">
+                    <p class="small-text">
+                        {{ entity.id ? "Редактировать " : "Создать новое " }} {{'condition' | translate}}
+                    </p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" [class.has-error]="name.invalid && (name.dirty || name.touched)">
+                                <label>{{'entity.name' | translate}}</label>
+                                <input type="text" class="form-control" id="name" name="name"
+                                    placeholder="{{'entity.name' | translate}}" [(ngModel)]="entity.name"
+                                    #name="ngModel" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" [class.has-error]="text.invalid && (text.dirty || text.touched)">
+                                <label>{{'entity.text' | translate}}</label>
+                                <input type="text" class="form-control" id="text" name="text"
+                                    placeholder="{{'entity.text' | translate}}" [(ngModel)]="entity.text"
+                                    #text="ngModel" required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-xs btn-primary btn-cons" [disabled]="form.invalid">
+                        {{'form.save' | translate}}
+                    </button>
+                    <button type="button" class="btn btn-xs btn-cons" (click)="rowModal.hide()">
+                        {{'form.cancel' | translate}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

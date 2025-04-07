@@ -1,0 +1,388 @@
+<div bsModal #foldersModal="bs-modal" class="modal fade slide-left" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg folder-modal" style="max-width: 370px;max-height: 602px;left: -26% !important;">
+        <div class="modal-content-wrapper" style="background: #FFFFFF;
+        box-shadow: 0px 25px 40px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;">
+            <div class="modal-content" style="height: auto; display: block !important;">
+                <button type="button" class="close folder-close" (click)="foldersModal.hide()" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.75011 0L4.99956 3.74967L1.24989 0L0 1.24989L3.74967 4.99956L0 8.74923L1.24989 9.99911L4.99956 6.24945L8.75011 9.99911L10 8.74923L6.25033 4.99956L10 1.24989L8.75011 0Z"
+                            fill="#192D3E" />
+                    </svg>
+                </button>
+                <div>
+                    <div class="inner folder-search" pg-parallax>
+                        <div class="input-group mb-3" style="padding-top: 16px;">
+                            <div class="input-group-append">
+                                <button type="button" class="filter-search-btn">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.41471 12.8294C7.89491 12.8294 9.25563 12.3203 10.3413 11.4759L13.8662 15.0008L15 13.867L11.4751 10.3421C12.3203 9.25562 12.8294 7.89491 12.8294 6.41471C12.8294 2.8778 9.95162 0 6.41471 0C2.8778 0 0 2.8778 0 6.41471C0 9.95162 2.8778 12.8294 6.41471 12.8294ZM6.41471 1.60368C9.068 1.60368 11.2257 3.76143 11.2257 6.41471C11.2257 9.068 9.068 11.2257 6.41471 11.2257C3.76143 11.2257 1.60368 9.068 1.60368 6.41471C1.60368 3.76143 3.76143 1.60368 6.41471 1.60368Z"
+                                            fill="black" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <input class="input-sm folder-search-input" (keyup)="searchFolders($event)"
+                                name="searchFolders" type="text" placeholder="Поиск папки...">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="container-xs-height full-height" style="margin-top: -49px ;">
+                    <div class="row-xs-height">
+                        <div class="modal-body col-xs-height text-center" style="padding:0px;">
+                            <div>
+                                <div *ngIf="!editFolderMode" class="folder-form-level-0">
+                                    <img style='float: left; margin-right: 5px;'
+                                        src='../../../assets/img/icon/folder-add-level-0.png' />
+                                    <span (click)="editFolderMode = true">Добавить раздел</span>
+                                </div>
+                                <div class="folder-upsert-container-level-0" *ngIf="editFolderMode">
+                                    <form role="form" #folderForm="ngForm" (ngSubmit)="submitFolder(folderForm)">
+                                        <input type="hidden" name="moduleType" [(ngModel)]="entityType" required>
+                                        <div class="input-group pb-2">
+                                            <input class="input-sm" type="text" placeholder="Новая папка" name="name"
+                                                [(ngModel)]="folder.name" required>
+                                            <svg (click)="submitFolder(folderForm);" class="save" width="10" height="7"
+                                                viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M2.96277 5.21994L0.890028 3.1472L0 4.03723L2.96277 7L9.07275 0.890028L8.18272 0L2.96277 5.21994Z"
+                                                    fill="#0038FF" />
+                                            </svg>
+                                            <svg (click)="editFolderMode=false" class="delete" width="7" height="7"
+                                                viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.12508 0L3.49969 2.62477L0.874922 0L0 0.874923L2.62477 3.49969L0 6.12446L0.874922 6.99938L3.49969 4.37461L6.12508 6.99938L7 6.12446L4.37523 3.49969L7 0.874923L6.12508 0Z"
+                                                    fill="#D66B5D" />
+                                            </svg>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- [checkboxes]="true" -->
+                                <form role="form" #foldersForm="ngForm"
+                                    style="padding-bottom: 50px;">
+                                    <input type="hidden" name="id" [(ngModel)]="folder.id" required>
+                                    <input type="hidden" name="name" [(ngModel)]="folder.name" required>
+                                    <div class="tree folder-tree pl-2">
+                                        <jqxTree (onSelect)="select($event)" #foldersTree [theme]="'metro'"
+                                            [width]="'100%'" [height]="'450'">
+
+                                            <ul class="folder-container scroll-vertical-blue">
+                                                <li class="li-level-0" item-expanded='true'
+                                                    *ngFor="let level0 of folders; let indx_level_0 = index">
+
+                                                    <!-- LEVEL 0 -->
+
+                                                    <!-- CONTAINER PARENT VIEW ITEM  -->
+                                                    <ng-container
+                                                        *ngTemplateOutlet="patentViewTamplate;context:{ item: level0, indx:indx_level_0 }">
+                                                    </ng-container>
+
+                                                    <!-- CONTAINER PARENT EDIT ITEM  -->
+                                                    <ng-container
+                                                        *ngTemplateOutlet="patentEditTamplate;context:{ item: level0, parrentItem: level0, indx:indx_level_0 }">
+                                                    </ng-container>
+
+
+                                                    <!-- LEVEL 1 -->
+                                                    <ul *ngIf="level0.expanded" class="folder-container-children">
+                                                        <li *ngFor="let level1 of level0.items; let indx_leve_1 = index"
+                                                            item-expanded='false'>
+
+                                                            <!-- CONTAINER VIEW CHILD ITEM  -->
+                                                            <ng-container
+                                                                *ngTemplateOutlet="childViewTamplate;context:{ item: level1, parrentItem: level0, indx:indx_leve_1 }">
+                                                            </ng-container>
+
+                                                            <!-- CONTAINER EDIT CHILD ITEM  -->
+                                                            <ng-container
+                                                                *ngTemplateOutlet="childEditTamplate;context:{ item: level1, parrentItem: level0, indx:indx_leve_1}">
+                                                            </ng-container>
+
+                                                            <!-- LEVEL 2 -->
+                                                            <ul *ngIf="level1.expanded"
+                                                                class="folder-container-children">
+                                                                <li *ngFor="let level2 of level1.items; let indx_leve_2 = index"
+                                                                    item-expanded='false'>
+
+                                                                    <!-- CONTAINER VIEW CHILD ITEM  -->
+                                                                    <ng-container
+                                                                        *ngTemplateOutlet="childViewTamplate;context:{ item: level2, parrentItem: level1, indx:indx_leve_2}">
+                                                                    </ng-container>
+
+                                                                    <!-- CONTAINER EDIT CHILD ITEM  -->
+                                                                    <ng-container
+                                                                        *ngTemplateOutlet="childEditTamplate;context:{ item: level2, parrentItem: level1, indx:indx_leve_2}">
+                                                                    </ng-container>
+
+                                                                    <!-- LEVEL 3 -->
+                                                                    <ul *ngIf="level2.expanded"
+                                                                        class="folder-container-children">
+                                                                        <li *ngFor="let level3 of level2.items; let indx_leve_3 = index"
+                                                                            item-expanded='false'>
+
+                                                                            <!-- CONTAINER VIEW CHILD ITEM  -->
+                                                                            <ng-container
+                                                                                *ngTemplateOutlet="childViewTamplate;context:{ item: level3, parrentItem: level2, indx:indx_leve_3}">
+                                                                            </ng-container>
+
+                                                                            <!-- CONTAINER EDIT CHILD ITEM  -->
+                                                                            <ng-container
+                                                                                *ngTemplateOutlet="childEditTamplate;context:{ item: level3, parrentItem: level2, indx:indx_leve_3}">
+                                                                            </ng-container>
+
+                                                                            <!-- LEVEL 4 -->
+                                                                            <ul *ngIf="level3.expanded"
+                                                                                class="folder-container-children">
+                                                                                <li *ngFor="let level4 of level3.items; let indx_leve_4 = index"
+                                                                                    item-expanded='false'>
+
+                                                                                    <!-- CONTAINER VIEW CHILD ITEM  -->
+                                                                                    <ng-container
+                                                                                        *ngTemplateOutlet="childViewTamplate;context:{ item: level4, parrentItem: level3, indx:indx_leve_4}">
+                                                                                    </ng-container>
+
+                                                                                    <!-- CONTAINER EDIT CHILD ITEM  -->
+                                                                                    <ng-container
+                                                                                        *ngTemplateOutlet="childEditTamplate;context:{ item: level4, parrentItem: level3, indx:indx_leve_4}">
+                                                                                    </ng-container>
+
+                                                                                    <!-- LEVEL 5 -->
+                                                                                    <ul *ngIf="level4.expanded"
+                                                                                        class="folder-container-children">
+                                                                                        <li *ngFor="let level5 of level4.items;let indx_leve_5 = index"
+                                                                                            item-expanded='false'>
+
+                                                                                            <!-- CONTAINER VIEW CHILD ITEM  -->
+                                                                                            <ng-container
+                                                                                                *ngTemplateOutlet="childViewTamplate;context:{ item: level5, parrentItem: level4, indx:indx_leve_5, lastLevel:true}">
+                                                                                            </ng-container>
+
+                                                                                            <!-- CONTAINER EDIT CHILD ITEM  -->
+                                                                                            <ng-container
+                                                                                                *ngTemplateOutlet="childEditTamplate;context:{ item: level5, parrentItem: level4, indx:indx_leve_5}">
+                                                                                            </ng-container>
+
+                                                                                        </li>
+
+                                                                                        <!-- CONTAINER ADD CHILD ITEM FOR LEVEL 5  -->
+                                                                                        <ng-container
+                                                                                            *ngTemplateOutlet="childAddTamplate;context:{ item: level4, parrentItem: level4}">
+                                                                                        </ng-container>
+
+                                                                                    </ul>
+                                                                                </li>
+
+                                                                                <!-- CONTAINER ADD CHILD ITEM FOR LEVEL 4  -->
+                                                                                <ng-container
+                                                                                    *ngTemplateOutlet="childAddTamplate;context:{ item: level3, parrentItem: level3}">
+                                                                                </ng-container>
+
+                                                                            </ul>
+                                                                        </li>
+
+                                                                        <!-- CONTAINER ADD CHILD ITEM FOR LEVEL 3  -->
+                                                                        <ng-container
+                                                                            *ngTemplateOutlet="childAddTamplate;context:{ item: level2, parrentItem: level2}">
+                                                                        </ng-container>
+
+                                                                    </ul>
+                                                                </li>
+
+                                                                <!-- CONTAINER ADD CHILD ITEM FOR LEVEL 1  -->
+                                                                <ng-container
+                                                                    *ngTemplateOutlet="childAddTamplate;context:{ item: level1, parrentItem: level1}">
+                                                                </ng-container>
+
+                                                            </ul>
+                                                        </li>
+
+                                                        <!-- CONTAINER ADD CHILD ITEM FOR LEVEL 0  -->
+                                                        <ng-container
+                                                            *ngTemplateOutlet="childAddTamplate;context:{ item: level0, parrentItem: level0}">
+                                                        </ng-container>
+
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </jqxTree>
+                                    </div>
+                                    <div class="text-center pt-5 folder-actions" style="margin-left: 18px;">
+                                        <button (click)="selectFolder(true)" type="button"
+                                            class="btn btn-xs mr-2 folder-save-btn">
+                                            Сохранить
+                                        </button>
+                                        <button style="margin-left: 20px;"
+                                        type="button"
+                                            class="btn btn-xs btn-white mr-2 folder-cancel-btn"
+                                            (click)="selectFolder(false)">
+                                            {{'form.cancel' | translate}}
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--TAMPLATES-->
+
+<!-- PARENT VIEW -->
+<ng-template #patentViewTamplate let-item="item" let-indx="indx">
+    <div class="folder-level-0" *ngIf="item && (item.edit!=true || item.id != folder.id)">
+        <input class="folder-check-box" [checked]="showCheckBox ? item.checked : selectedFolder.id == item.id" (click)="onCheckLevel0(item, $event)"
+            type="checkbox">
+        <span (click)="item.expanded ? item.expanded=false : item.expanded = true" data-toggle="tooltip"
+            data-placement="top"
+            title="{{item.text}}">{{ (item.text.length > 17) ? (item.text | slice:0:17) + '...' : item.text }}</span>
+        <svg *ngIf="item.expanded" width="7" height="5" viewBox="0 0 7 5" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.83896 0L3.3323 2.50667L0.825629 0L0 0.825629L3.3323 4.15792L6.66459 0.825629L5.83896 0Z"
+                fill="#192D3E" />
+        </svg>
+        <span>--</span>
+        <svg *ngIf="!item.expanded" width="7" height="5" viewBox="0 0 7 5" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M0.826078 4.15771L3.33274 1.65105L5.83941 4.15771L6.66504 3.33209L3.33274 -0.000209623L0.000448299 3.33209L0.826078 4.15771Z"
+                fill="#192D3E" />
+        </svg>
+
+        <!-- edit -->
+        <svg (click)="onEditFolder(parrentItem,item);" width="10" height="10" viewBox="0 0 10 10" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M0 5.18993V6.9892H1.79928L6.77667 2.019L4.9774 0.219727L0 5.18993ZM0 8.78848H9.59614V9.98799H0V8.78848Z"
+                fill="#192D3E" />
+        </svg>
+
+        <!-- delete -->
+        <svg (click)="deleteFolder(item,parrentItem)" width="7" height="7" viewBox="0 0 7 7" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M6.12508 0L3.49969 2.62477L0.874922 0L0 0.874923L2.62477 3.49969L0 6.12446L0.874922 6.99938L3.49969 4.37461L6.12508 6.99938L7 6.12446L4.37523 3.49969L7 0.874923L6.12508 0Z"
+                fill="#D66B5D" />
+        </svg>
+
+        <!-- add -->
+        <svg (click)="onAddFolder(item); item.childAdd=true;item.expanded = true" width="8" height="8" viewBox="0 0 8 8"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.2 0H2.8V2.7948H0V5.1948H2.8V7.9896H5.2V5.1948H8V2.7948H5.2V0Z" fill="#CCCCCC" />
+        </svg>
+    </div>
+</ng-template>
+
+<!-- PARENT EDIT -->
+<ng-template #patentEditTamplate let-item="item" let-indx="indx">
+    <div *ngIf="item && item.edit==true && item.id == folder.id" class="folder-form-child">
+        <img class="folder" src="../../../assets/img/icon/folder-opened.png" />
+        <input type="text" placeholder="Новая папка" name="name" [(ngModel)]="folder.name" required>
+        <svg (click)="onSubmitChildFolder(folder,item,parrentItem);" class="save" width="10" height="7"
+            viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.96277 5.21994L0.890028 3.1472L0 4.03723L2.96277 7L9.07275 0.890028L8.18272 0L2.96277 5.21994Z"
+                fill="#0038FF" />
+        </svg>
+        <svg (click)="item.edit = false" class="delete" width="7" height="7" viewBox="0 0 7 7" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M6.12508 0L3.49969 2.62477L0.874922 0L0 0.874923L2.62477 3.49969L0 6.12446L0.874922 6.99938L3.49969 4.37461L6.12508 6.99938L7 6.12446L4.37523 3.49969L7 0.874923L6.12508 0Z"
+                fill="#D66B5D" />
+        </svg>
+    </div>
+</ng-template>
+
+<!-- CHILD VIEW -->
+<ng-template #childViewTamplate let-item="item" let-indx="indx" let-parrentItem="parrentItem" let-lastLevel="lastLevel">
+    <div *ngIf="item && (item.edit!=true || item.id != folder.id)">
+        <div *ngIf="showCheckBox" class="checkbox check-primary check-box-folder" style="margin:0px; float: left;">
+            <input type="checkbox" id="{{item.id}}" checked="checked" name="checked" [(ngModel)]="item.checked" (click)="onCheckLevel0(item, $event)">
+            <label for="{{item.id}}"></label>
+        </div>
+        <img style='float: left; margin-right: 5px;'
+            [src]="item.expanded ? '../../../assets/img/icon/folder-opened.png' : '../../../assets/img/icon/folder-closed.png'" />
+        <span [ngClass]="{ 'selected-folder': selectedFolder.id == item.id }" (click)="treeFolderOnSelect(item)"
+            item-title="true" data-toggle="tooltip" data-placement="top"
+            title="{{item.text}}">{{ (item.text.length > 17) ? (item.text | slice:0:17) + '...' : item.text }}</span>
+        <!-- closed row -->
+        <svg *ngIf="item.expanded" width="7" height="5" viewBox="0 0 7 5" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.83896 0L3.3323 2.50667L0.825629 0L0 0.825629L3.3323 4.15792L6.66459 0.825629L5.83896 0Z"
+                fill="#192D3E" />
+        </svg>
+
+        <!-- opened row -->
+        <svg *ngIf="!item.expanded" width="7" height="5" viewBox="0 0 7 5" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M0.826078 4.15771L3.33274 1.65105L5.83941 4.15771L6.66504 3.33209L3.33274 -0.000209623L0.000448299 3.33209L0.826078 4.15771Z"
+                fill="#192D3E" />
+        </svg>
+
+        <!-- edit -->
+        <svg (click)="onEditFolder(parrentItem,item);" width="10" height="10" viewBox="0 0 10 10" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M0 5.18993V6.9892H1.79928L6.77667 2.019L4.9774 0.219727L0 5.18993ZM0 8.78848H9.59614V9.98799H0V8.78848Z"
+                fill="#192D3E" />
+        </svg>
+
+        <!-- delete -->
+        <svg (click)="deleteFolder(item,parrentItem)" width="7" height="7" viewBox="0 0 7 7" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M6.12508 0L3.49969 2.62477L0.874922 0L0 0.874923L2.62477 3.49969L0 6.12446L0.874922 6.99938L3.49969 4.37461L6.12508 6.99938L7 6.12446L4.37523 3.49969L7 0.874923L6.12508 0Z"
+                fill="#D66B5D" />
+        </svg>
+
+        <!-- add -->
+        <svg *ngIf="!lastLevel" (click)="onAddFolder(item)" width="8" height="8" viewBox="0 0 8 8" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.2 0H2.8V2.7948H0V5.1948H2.8V7.9896H5.2V5.1948H8V2.7948H5.2V0Z" fill="#CCCCCC" />
+        </svg>
+    </div>
+</ng-template>
+
+<!-- CHILD ADD -->
+<ng-template #childAddTamplate let-item="item" let-parrentItem="parrentItem">
+    <li class="folder-form-child" *ngIf="item.childAdd">
+        <img class="folder" src="../../../assets/img/icon/folder-opened.png" />
+        <input type="text" placeholder="Новая папка" name="name" [(ngModel)]="folder.name" required>
+        <svg (click)="onSubmitChildFolder(folder,item,parrentItem);" class="save" width="10" height="7"
+            viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.96277 5.21994L0.890028 3.1472L0 4.03723L2.96277 7L9.07275 0.890028L8.18272 0L2.96277 5.21994Z"
+                fill="#0038FF" />
+        </svg>
+        <svg (click)="item.childAdd = false" class="delete" width="7" height="7" viewBox="0 0 7 7" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M6.12508 0L3.49969 2.62477L0.874922 0L0 0.874923L2.62477 3.49969L0 6.12446L0.874922 6.99938L3.49969 4.37461L6.12508 6.99938L7 6.12446L4.37523 3.49969L7 0.874923L6.12508 0Z"
+                fill="#D66B5D" />
+        </svg>
+    </li>
+</ng-template>
+
+<!-- CHILD EDIT -->
+<ng-template #childEditTamplate let-item="item" let-indx="indx" let-parrentItem="parrentItem">
+    <div *ngIf="item && item.edit==true && item.id == folder.id" class="folder-form-child">
+        <img class="folder" src="../../../assets/img/icon/folder-opened.png" />
+        <input type="text" placeholder="Новая папка" name="name" [(ngModel)]="folder.name" required>
+        <svg (click)="onSubmitChildFolder(folder,item,parrentItem);" class="save" width="10" height="7"
+            viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.96277 5.21994L0.890028 3.1472L0 4.03723L2.96277 7L9.07275 0.890028L8.18272 0L2.96277 5.21994Z"
+                fill="#0038FF" />
+        </svg>
+        <svg (click)="onCancellFolder(item)" class="delete" width="7" height="7" viewBox="0 0 7 7" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M6.12508 0L3.49969 2.62477L0.874922 0L0 0.874923L2.62477 3.49969L0 6.12446L0.874922 6.99938L3.49969 4.37461L6.12508 6.99938L7 6.12446L4.37523 3.49969L7 0.874923L6.12508 0Z"
+                fill="#D66B5D" />
+        </svg>
+    </div>
+</ng-template>

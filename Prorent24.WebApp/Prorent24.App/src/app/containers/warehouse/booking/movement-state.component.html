@@ -1,0 +1,137 @@
+<div class="card card-transparent full-height pb-105">
+    <div class="card-header border-bottom bokking-navigation">
+        <div class="card-title font-weight-bold">
+            {{title}}
+        </div>
+        <div class="card-controls">
+            <ng-content></ng-content>
+        </div>
+    </div>
+    <div class="full-height pb-5" perfectScrollbar>
+        <div *ngFor="let data of collection" class="pt-2 pr-2">
+            <pgcard MinimalHeader="true" [AdditionalClasses]="'mb-0'">
+                <ng-template #CardTitle>
+                    {{data.groupName}}
+                </ng-template>
+                <div class="pt-2">
+                    <div [id]="data.movementStatus" class="">
+                        <div *ngIf="data.equipments.length == 0" class="alert alert-warning alert-dismissible">
+                            {{'There is no data' | translate}}
+                        </div>
+                        <!-- EQUIPMENTS -->
+                        <div class="dnd-card-box" *ngFor="let equipment of data.equipments; let i = index;">
+                            <div class="card card-default bg-light">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <label class="label label-success mr-2 fs-12">{{equipment.totalQuantity}}
+                                        </label>
+                                        <i class="fa"
+                                            [ngClass]="equipment.equipmentType == 'kit' ? 'fa-cubes' : ''"></i>
+                                        {{equipment.equipmentName}}
+                                    </div>
+                                    <div class="card-controls">
+                                        <ul>
+                                            <li>
+                                                <button class="btn btn-link"
+                                                    (click)="moveEvent({index: i, from: currentCollectionState, to: nextCollectionState, newState: newState, equipment: equipment})">
+
+                                                    <svg [ngStyle]="{'transform': side === 'right' ? 'rotate(-180deg)' : '' }" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.89176 2.10825L14.2925 8.50902L1.00457e-06 8.50902L7.43882e-07 11.491L14.2925 11.491L7.89175 17.8918L10 20L20 10L10 2.94047e-06L7.89176 2.10825Z"
+                                                            fill="white" />
+                                                    </svg>
+                                                    <!-- <i class="fa"
+                                                        [ngClass]="side === 'right' ? 'fa-arrow-left' : 'fa-arrow-right'"></i> -->
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body pb-0">
+                                    <div *ngIf="equipment.equipmentType == 'item'">
+                                        <div class="inline mr-2">
+                                            <div class="inline">
+                                                <div class="input-group" style="width: 75px;"
+                                                    [ngClass]="selectedQuantity.errors ? 'has-error':''">
+                                                    <input class="form-control input-sm" type="number"
+                                                        (keypress)="onlyDigits($event)"
+                                                        [range]="[1, equipment.limitQuantity]"
+                                                        [(ngModel)]="equipment.selectedQuantity" name="selectedQuantity"
+                                                        #selectedQuantity="ngModel">
+                                                    <div class="pl-1 pr-1">
+                                                        <span class="fs-20 hint-text">/</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="inline">
+                                                <label
+                                                    class="label label-default mr-2 fs-12">{{equipment.limitQuantity}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SUB EQUIPMENTS -->
+                                    <div class="pt-2">
+                                        <div *ngFor="let sub_equipment of equipment.kitCaseEquipments; let i_sub = index;"
+                                            class="card card-default bg-light">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    {{sub_equipment.equipmentName}}
+                                                </div>
+                                                <div class="card-controls">
+                                                    <ul>
+                                                        <li>
+                                                            <button class="btn btn-link"
+                                                                (click)="moveEvent({index: i_sub, from: currentCollectionState, to: nextCollectionState, newState: newState, equipment: sub_equipment, kit: equipment, kitIndex: i})">
+
+                                                                <svg [ngStyle]="{'transform': side === 'right' ? 'rotate(-180deg)' : '' }" width="20" height="20" viewBox="0 0 20 20"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M7.89176 2.10825L14.2925 8.50902L1.00457e-06 8.50902L7.43882e-07 11.491L14.2925 11.491L7.89175 17.8918L10 20L20 10L10 2.94047e-06L7.89176 2.10825Z"
+                                                                        fill="white" />
+                                                                </svg>
+
+                                                                <!-- <i class="fa"
+                                                                    [ngClass]="side === 'right' ? 'fa-arrow-left' : 'fa-arrow-right'"></i> -->
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="card-body pb-2">
+                                                <div>
+                                                    <div class="inline mr-2">
+                                                        <div class="inline">
+                                                            <div class="input-group" style="width: 75px;"
+                                                                [ngClass]="selectedQuantity.errors ? 'has-error':''">
+                                                                <input class="form-control input-sm" type="number"
+                                                                    [(ngModel)]="sub_equipment.selectedQuantity"
+                                                                    name="selectedQuantity"
+                                                                    (keypress)="onlyDigits($event)"
+                                                                    [range]="[1, sub_equipment.limitQuantity]"
+                                                                    #selectedQuantity="ngModel">
+                                                                <div class="pl-1 pr-1">
+                                                                    <span class="fs-20 hint-text">/</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="inline">
+                                                            <label
+                                                                class="label label-default mr-2 fs-12">{{sub_equipment.limitQuantity}}
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </pgcard>
+        </div>
+    </div>
+</div>

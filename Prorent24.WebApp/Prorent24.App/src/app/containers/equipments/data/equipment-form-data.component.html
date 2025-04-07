@@ -1,0 +1,581 @@
+<div class="container-fixed-lg pt-3">
+    <form role="form" #form="ngForm" (ngSubmit)="submitData(form, true, true, 1)">
+        <input type="hidden" name="id" [(ngModel)]="entity.id">
+        <div class="row">
+            <div class="col-lg-8">
+
+                <!-- DATA -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <pgcard MinimalHeader="true" Toggle="false">
+                            <ng-template #CardTitle>
+                                {{'data' | translate}}
+                            </ng-template>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>{{'folder' | translate}} <span class="text-danger">*</span></label>
+                                        <div class="input-group border-blue"
+                                            [ngClass]="{'errors-submit': !entity.folderId}">
+                                            <input type="hidden" name="folderId" [(ngModel)]="entity.folderId" required>
+                                            <input class="form-control folder-input" name="folderName"
+                                                style="border-top-left-radius: 8px;border-bottom-left-radius: 8px;border-top-right-radius: 0px !important;border-bottom-right-radius: 0px  !important"
+                                                [(ngModel)]="entity.folderName" type="text" placeholder="..." disabled
+                                                required>
+                                            <div class="input-group-append">
+                                                <button type="button" class="btn btn-sm btn-primary folder-btn"
+                                                    style="border-top-right-radius: 8px;border-bottom-right-radius: 8px"
+                                                    (click)="foldersModal.showFolders()">
+                                                    <svg width="16" height="14" viewBox="0 0 16 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M14.1023 1.5H7.04618L5.78967 0.21975C5.65203 0.07875 5.46432 0 5.26926 0H2.3249C1.51299 0 0.852722 0.67275 0.852722 1.5V12C0.852722 12.8273 1.51299 13.5 2.3249 13.5H14.1023C14.9142 13.5 15.5745 12.8273 15.5745 12V3C15.5745 2.17275 14.9142 1.5 14.1023 1.5Z"
+                                                            fill="#192D3E" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue" [ngClass]="{'errors-submit': !entity.name}"
+                                        [class.has-error]="name.invalid && (name.dirty || name.touched)">
+                                        <label class="label-sm">
+                                            {{'entity.name' | translate}} <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text" placeholder="{{'entity.name' | translate}}"
+                                            class="form-control" id="name" name="name" [(ngModel)]="entity.name"
+                                            #name="ngModel" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue">
+                                        <label class="label-sm">{{'entity.code' | translate}}</label>
+                                        <input type="text"
+                                            placeholder="{{'Automatically generated if not filled' | translate}}"
+                                            class="form-control" id="code" name="code" [(ngModel)]="entity.code"
+                                            #code="ngModel">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue">
+                                        <label>{{'settypegrid' | translate}} <span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <pg-select style="width: 100%;" [(ngModel)]="entity.setType" id="setType"
+                                                name="setType" [PlaceHolder]="''"
+                                                (ngModelChange)="changeEqType($event)">
+                                                <pg-option *ngFor="let item of setType | enumToArray"
+                                                    [Label]="item | translate" [Value]="item">
+                                                </pg-option>
+                                            </pg-select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue">
+                                        <label>{{'status' | translate}} <span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <pg-select style="width: 100%;" [(ngModel)]="entity.supplyType"
+                                                id="supplyType" name="supplyType" [PlaceHolder]="''">
+                                                <pg-option *ngFor="let item of supplyType | enumToArray"
+                                                    [Label]="item | translate" [Value]="item">
+                                                </pg-option>
+                                            </pg-select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="entity.setType == setType.kit">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group border-blue">
+                                            <label>{{'enterQuantityManually' | translate}}</label>
+                                            <div class="input-group border-blue">
+                                                <input type="text" class="form-control" id="quantity" name="quantity"
+                                                    [(ngModel)]="entity.quantity" placeholder="1" #quantity="ngModel"
+                                                    numbersOnly disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="entity.setType != setType.kit">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group border-blue">
+                                            <label>{{'enterQuantityManually' | translate}}</label>
+                                            <div class="input-group border-blue">
+                                                <div class="input-group-prepend">
+                                                    <pg-select style="width: 400px;" [(ngModel)]="entity.quantityMode"
+                                                        id="quantityMode" name="quantityMode" [PlaceHolder]="''">
+                                                        <pg-option *ngFor="let item of quantityModeType | enumToArray"
+                                                            [Label]="item | translate" [Value]="item">
+                                                        </pg-option>
+                                                    </pg-select>
+                                                </div>
+                                                <input style="margin-left: 10px;margin-top: -1px;"
+                                                    [ngClass]="{'errors-submit': !entity.quantity}"
+                                                    *ngIf="entity.quantityMode == quantityModeType.enterQuantityManually"
+                                                    type="text" class="form-control" id="quantity" name="quantity"
+                                                    [(ngModel)]="entity.quantity" placeholder="0" numbersOnly
+                                                    [minValue]="0" #quantity="ngModel" required>
+                                            </div>
+                                            <span *ngIf="entity.quantityMode != quantityModeType.enterQuantityManually"
+                                                class="help fs-10">
+                                                {{'Use total number of serial numbers as total equipment' | translate}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group border-blue">
+                                            <label class="label-sm">{{'entity.locationinwarehouse' | translate}}</label>
+                                            <input type="text"
+                                                placeholder="{{'entity.locationinwarehouse' | translate}}"
+                                                class="form-control" id="locationInWarehouse" name="locationInWarehouse"
+                                                [(ngModel)]="entity.locationInWarehouse" #locationInWarehouse="ngModel">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group border-blue">
+                                            <label class="label-sm">{{'entity.storage' | translate}}</label>
+                                            <input type="text" placeholder="{{'entity.storage' | translate}}"
+                                                class="form-control" id="storage" name="storage"
+                                                [(ngModel)]="entity.storage" #storage="ngModel">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group border-blue">
+                                            <label class="label-sm">{{'entity.transportationtype' | translate}}</label>
+                                            <div class="input-group">
+                                                <pg-select style="width: 100%;" [(ngModel)]="entity.transportationType"
+                                                    id="transportationType" name="transportationType" [PlaceHolder]="''"
+                                                    [FirstDefault]="true">
+                                                    <pg-option *ngFor="let item of transportationType | enumToArray"
+                                                        [Label]="item | translate" [Value]="item">
+                                                    </pg-option>
+                                                </pg-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group border-blue">
+                                            <label class="label-sm">{{'kit' | translate}}</label>
+                                            <div class="input-group">
+                                                <pg-select style="width: 100%;" [(ngModel)]="entity.kitType"
+                                                    id="kitType" name="kitType" [PlaceHolder]="''"
+                                                    [FirstDefault]="true">
+                                                    <pg-option *ngFor="let item of kitType | enumToArray"
+                                                        [Label]="item | translate" [Value]="item">
+                                                    </pg-option>
+                                                </pg-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="checkbox check-primary">
+                                            <input type="checkbox" id="maintenanceRequired" checked="checked"
+                                                name="maintenanceRequired" [(ngModel)]="entity.maintenanceRequired">
+                                            <label for="maintenanceRequired">
+                                                {{'Maintenance required' | translate}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </pgcard>
+                    </div>
+                </div>
+
+                <!-- DETAILS -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <pgcard MinimalHeader="true" Toggle="false">
+                            <ng-template #CardTitle>
+                                {{ 'detail' | translate }}
+                            </ng-template>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="checkbox check-primary">
+                                        <input type="checkbox" id="displayInPlanner" checked="checked"
+                                            name="displayInPlanner" [(ngModel)]="entity.displayInPlanner">
+                                        <label for="displayInPlanner">
+                                            {{ 'displayinplanner' | translate }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group border-blue">
+                                        <label class="label-sm">{{ 'entity.measuringunit' | translate }}</label>
+                                        <input type="text" placeholder="" class="form-control" id="measuringUnit"
+                                            name="measuringUnit" [(ngModel)]="entity.measuringUnit"
+                                            #measuringUnit="ngModel">
+                                        <!-- <pg-select style="width: 100%;" [(ngModel)]="entity.measuringUnit"
+                                            name="measuringUnit" [PlaceHolder]="''" ShowSearch [FirstDefault]="true">
+                                            <pg-option *ngFor="let item of measuringUnits" [Label]="item.name"
+                                                [Value]="item.key">
+                                            </pg-option>
+                                        </pg-select> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue">
+                                        <label>{{'entity.brand' | translate}}</label>
+                                        <input type="text" placeholder="{{'entity.brand' | translate}}"
+                                            class="form-control" id="brand" name="brand" [(ngModel)]="entity.brand"
+                                            #name="ngModel">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue">
+                                        <label>{{'producerCode' | translate}}</label>
+                                        <input type="text" placeholder="{{'producerCode' | translate}}"
+                                            class="form-control" id="producerCode" name="producerCode"
+                                            [(ngModel)]="entity.producerCode" #name="ngModel">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue">
+                                        <label>{{'entity.model' | translate}}</label>
+                                        <input type="text" placeholder="{{'entity.model' | translate}}"
+                                            class="form-control" id="model" name="model" [(ngModel)]="entity.model"
+                                            #name="ngModel">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue">
+                                        <label>{{'entity.colour' | translate}}</label>
+
+                                        <input type="text" placeholder="{{'entity.colour' | translate}}"
+                                            class="form-control" id="colour" name="colour" [(ngModel)]="entity.colour"
+                                            #name="ngModel">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue">
+                                        <label>{{'remark' | translate}}</label>
+                                        <textarea rows="10" class="form-control" id="internalRemark"
+                                            name="internalRemark" placeholder="..." [(ngModel)]="entity.internalRemark">
+                                                </textarea>
+                                        <span class="help fs-10">{{'Mark on the waybill' | translate}}</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue">
+                                        <label>{{'externalremark' | translate}}</label>
+                                        <textarea rows="10" class="form-control" id="externalRemark"
+                                            name="externalRemark" placeholder="..." [(ngModel)]="entity.externalRemark">
+                                                    </textarea>
+                                        <span
+                                            class="help fs-10">{{'Note on rates, bills and contracts' | translate}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </pgcard>
+                    </div>
+                </div>
+
+                <!-- PROPERTIES -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <pgcard *ngIf="entity.setType != setType.kit" MinimalHeader="true" Toggle="false">
+                            <ng-template #CardTitle>
+                                {{'Characteristic' | translate}}
+                            </ng-template>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue" [class.has-error]="length.errors">
+                                        <label class="label-sm">{{'length' | translate}}</label>
+                                        <div class="input-group border-blue">
+                                            <input type="number" placeholder="0" class="form-control" id="length"
+                                                name="length" [(ngModel)]="entity.length" #length="ngModel" numbersOnly
+                                                [numType]="'decimal'" [min]="0.00">
+                                            <div class="input-group-append" style="margin-left: 10px;">
+                                                <pg-select style="width: 65px;" id="lengthUnit" name="lengthUnit"
+                                                    [PlaceHolder]="'Выбрать...'" [(ngModel)]="entity.lengthUnit"
+                                                    [FirstDefault]="true">
+                                                    <pg-option *ngFor="let item of lenghtUnits | enumToArray"
+                                                        [Label]="item | translate" [Value]="item">
+                                                    </pg-option>
+                                                </pg-select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group border-blue" [class.has-error]="height.errors">
+                                        <label class="label-sm">{{'height' | translate}}</label>
+                                        <div class="input-group border-blue">
+                                            <input type="number" placeholder="0" class="form-control" id="height"
+                                                name="height" [(ngModel)]="entity.height" #height="ngModel" numbersOnly
+                                                [numType]="'decimal'" [min]="0.00">
+                                            <div class="input-group-append" style="margin-left: 10px;">
+                                                <pg-select style="width: 65px;" id="heightUnit" name="heightUnit"
+                                                    [PlaceHolder]="'Выбрать...'" [(ngModel)]="entity.heightUnit"
+                                                    [FirstDefault]="true">
+                                                    <pg-option *ngFor="let item of lenghtUnits | enumToArray"
+                                                        [Label]="item | translate" [Value]="item">
+                                                    </pg-option>
+                                                </pg-select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group border-blue" [class.has-error]="width.errors">
+                                        <label class="label-sm">{{'width' | translate}}</label>
+                                        <div class="input-group border-blue">
+                                            <input type="number" placeholder="0" class="form-control" id="width"
+                                                name="width" [(ngModel)]="entity.width" #width="ngModel" numbersOnly
+                                                [numType]="'decimal'" [min]="0.00">
+                                            <div class="input-group-append" style="margin-left: 10px;">
+                                                <pg-select style="width: 65px;" id="widthUnit" name="widthUnit"
+                                                    [PlaceHolder]="'Выбрать...'" [(ngModel)]="entity.widthUnit"
+                                                    [FirstDefault]="true">
+                                                    <pg-option *ngFor="let item of lenghtUnits | enumToArray"
+                                                        [Label]="item | translate" [Value]="item">
+                                                    </pg-option>
+                                                </pg-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue" [class.has-error]="volume.errors">
+                                        <label class="label-sm">{{'volume' | translate}}</label>
+                                        <div class="input-group border-blue">
+                                            <input type="number" placeholder="0" class="form-control" id="volume"
+                                                name="volume" [(ngModel)]="entity.volume" #volume="ngModel" numbersOnly
+                                                [numType]="'decimal'" [min]="0.00">
+                                            <div class="input-group-append" style="margin-left: -5px;">
+                                                <i (click)="calcVolume()" class="fa fa-calculator" style="
+                                                    position: relative;
+                                                    top: 12px;
+                                                    left: -17px;
+                                                    cursor: pointer;
+                                            "></i>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text input-group-text-border">
+                                                    м<sup>3</sup>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group border-blue" [class.has-error]="weight.errors">
+                                        <label class="label-sm">{{'weight' | translate}}</label>
+                                        <div class="input-group border-blue">
+                                            <input type="number" placeholder="0" class="form-control" id="weight"
+                                                name="weight" [(ngModel)]="entity.weight" #weight="ngModel" numbersOnly
+                                                [numType]="'decimal'" [min]="0.00">
+                                            <div class="input-group-append" style="margin-left: 10px;">
+                                                <pg-select style="width: 65px;" id="weightUnit" name="weightUnit"
+                                                    [PlaceHolder]="'Выбрать...'" [(ngModel)]="entity.weightUnit"
+                                                    [FirstDefault]="true">
+                                                    <pg-option *ngFor="let item of weightUnit | enumToArray"
+                                                        [Label]="item | translate" [Value]="item">
+                                                    </pg-option>
+                                                </pg-select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group border-blue" [class.has-error]="power.errors">
+                                        <label class="label-sm">{{'power' | translate}}</label>
+                                        <div class="input-group border-blue">
+                                            <input type="number" placeholder="0" class="form-control" id="power"
+                                                name="power" [(ngModel)]="entity.power" #power="ngModel" numbersOnly
+                                                [numType]="'decimal'" [min]="0.00">
+                                            <div class="input-group-append" style="margin-left: 10px;">
+                                                <span class="input-group-text input-group-text-border">
+                                                    Вт
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue" [class.has-error]="current.errors">
+                                        <label class="label-sm">{{'current' | translate}}</label>
+                                        <div class="input-group border-blue">
+                                            <input type="number" placeholder="0" class="form-control" id="current"
+                                                name="current" [(ngModel)]="entity.current" #current="ngModel"
+                                                numbersOnly [numType]="'decimal'" [min]="0.00">
+                                            <div class="input-group-append" style="margin-left: 10px;">
+                                                <span class="input-group-text input-group-text-border">
+                                                    A
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group border-blue">
+                                        <label class="label-sm">{{'powerconnector' | translate}}</label>
+                                        <input type="text" class="form-control" id="powerConnector"
+                                            name="powerConnector" [(ngModel)]="entity.powerConnector"
+                                            #powerConnector="ngModel">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                </div>
+                            </div>
+                            <div *ngIf="entity.setType == setType.item" class="row">
+                                <div class="col-md-12">
+                                    <div class="checkbox check-primary">
+                                        <input type="checkbox" id="surfaceItem" checked="checked" name="surfaceItem"
+                                            [(ngModel)]="entity.surfaceItem">
+                                        <label for="surfaceItem">
+                                            {{'Shipping Dimensions' | translate}}
+                                        </label>
+                                    </div>
+                                    <span
+                                        class="help fs-10">{{'The price of an element is calculated per square meter (width x height). Dimensions are entered in each project.' | translate}}</span>
+                                </div>
+                            </div>
+                        </pgcard>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div>
+                    <div class="row">
+                        <div class="col-lg-12 ">
+                            <pgcard MinimalHeader="true" Toggle="false">
+                                <ng-template #CardTitle>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <button type="submit" class="btn btn-primary btn-xs form-save">
+                                                {{'form.save_changes' | translate}}
+                                            </button>
+                                        </div>
+                                        <div class="col-4">
+                                            <a routerLink="/equipments" class="link-button">
+                                                <button type="button" class="btn btn-white btn-xs mr-1 form-cancel">
+                                                    {{'form.cancel' | translate}}
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </pgcard>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <pgcard MinimalHeader="true" Toggle="false">
+                                <ng-template #CardTitle>
+                                    {{'finance' | translate}}
+                                </ng-template>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group border-blue">
+                                            <label>{{'Discount group' | translate}}</label>
+                                            <pg-select style="width: 100%;" [(ngModel)]="entity.discountGroupId"
+                                                name="discountGroupId" [PlaceHolder]="''" ShowSearch
+                                                [FirstDefault]="true">
+                                                <pg-option *ngFor="let item of discountGroups" [Label]="item.name"
+                                                    [Value]="item.id">
+                                                </pg-option>
+                                            </pg-select>
+                                        </div>
+                                        <!-- <div class="form-group border-blue">
+                                            <label>Групповой фактор</label>
+                                            <pg-select style="width: 100%;" [(ngModel)]="entity.factorGroupId"
+                                                name="discountGroupId" [PlaceHolder]="''" ShowSearch>
+                                                <pg-option *ngFor="let item of factorGroups" [Label]="item.name" [Value]="item.id">
+                                                </pg-option>
+                                            </pg-select>
+                                        </div> -->
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group border-blue" [class.has-error]="rentalPrice.errors">
+                                            <label class="label-sm">{{'rentalPrice' | translate}}</label>
+                                            <input type="number" placeholder="0" class="form-control" id="rentalPrice"
+                                                name="rentalPrice" #rentalPrice="ngModel"
+                                                [(ngModel)]="entity.rentalPrice" numbersOnly [numType]="'decimal'"
+                                                [min]="0" #rentalPrice="ngModel">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group border-blue" [class.has-error]="subhirePrice.errors">
+                                            <label class="label-sm">{{'subhirePrice' | translate}}</label>
+                                            <input type="number" placeholder="0" class="form-control" id="subhirePrice"
+                                                name="subhirePrice" [(ngModel)]="entity.subhirePrice"
+                                                #subhirePrice="ngModel" numbersOnly [numType]="'decimal'" [min]="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group border-blue" [class.has-error]="newPrice.errors">
+                                            <label class="label-sm">{{'newprice' | translate}}</label>
+                                            <input type="number" placeholder="0" class="form-control" id="newPrice"
+                                                name="newPrice" [(ngModel)]="entity.newPrice" #newPrice="ngModel"
+                                                numbersOnly [numType]="'decimal'" [min]="0">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group border-blue" [class.has-error]="marginPrice.errors">
+                                            <label class="label-sm">{{'marginprice' | translate}}</label>
+                                            <input type="number" placeholder="0" class="form-control" id="marginPrice"
+                                                name="marginPrice" [(ngModel)]="entity.marginPrice"
+                                                #marginPrice="ngModel" numbersOnly [numType]="'decimal'" [min]="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group border-blue">
+                                            <label>{{'Taxation' | translate}}</label>
+                                            <pg-select style="width: 100%;" [(ngModel)]="entity.vatClassId"
+                                                name="vatClassId" [PlaceHolder]="''" ShowSearch>
+                                                <pg-option *ngFor="let item of vatTypes" [Label]="item.name"
+                                                    [Value]="item.id">
+                                                </pg-option>
+                                            </pg-select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </pgcard>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<rent-tree-folders [entityType]="entityType" (onSelect)="setFolder($event)"></rent-tree-folders>

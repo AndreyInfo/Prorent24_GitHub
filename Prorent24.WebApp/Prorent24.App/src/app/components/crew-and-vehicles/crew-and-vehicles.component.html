@@ -1,0 +1,10 @@
+<div class="mini-tab-nav">
+    <mat-tab-group mat-align-tabs="center" animationDuration="0ms" style="height: 100%;" (selectedTabChange)="changeTabEvent($event)">
+        <mat-tab label="Персонал">
+            <rent-crew-group (doubleClickRow)="doubleClickRowEvent($event)" [selectMode]="selectMode" [checkedObserve]="checkedObserve" (checkedRows)="checkedRowsEvent($event)"></rent-crew-group>
+        </mat-tab>
+        <mat-tab label="Транспорт">
+            <rent-vehicles-group (doubleClickRow)="doubleClickRowEvent($event)" [selectMode]="selectMode" [checkedObserve]="checkedObserve" (checkedRows)="checkedRowsEvent($event)"></rent-vehicles-group>
+        </mat-tab>
+    </mat-tab-group>
+</div>

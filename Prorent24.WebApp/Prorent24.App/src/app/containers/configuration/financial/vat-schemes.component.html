@@ -1,0 +1,203 @@
+<div class="jumbotron no-margin" style="height: 100px;">
+    <div class="sm-p-l-0 sm-p-r-0">
+        <div class="inner" pg-parallax="">
+            <div class="container-fluid sm-p-l-0 sm-p-r-0">
+                <br>
+                <div>
+                    <span class="config-nav-route-first" style="padding-right: 34px;">{{'account' | translate}}</span>
+                    <svg style="margin-top: -8px;" width="9" height="15" viewBox="0 0 9 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M-5.74444e-07 1.85825L5.42578 7.5L-8.12264e-08 13.1418L1.78711 15L9 7.5L1.78711 -7.8117e-08L-5.74444e-07 1.85825Z"
+                            fill="black" fill-opacity="0.2" />
+                    </svg>
+                    <span class="config-nav-route-second"
+                        style="padding-left: 34px;">{{'VatSchemes' | translate}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="height: 91%;">
+    <div class="col-lg-2.5">
+        <app-configuration-menu></app-configuration-menu>
+    </div>
+    <div style="width: 21px;"></div>
+    <div class="col">
+        <pgcard MinimalHeader="true">
+            <ng-template #CardTitle>
+                <div style="display: -webkit-inline-box;">
+                    <button class="btn btn-white btn-xs form-save" (click)="overrideOnEditRowModal()">
+                        {{'form.add' | translate}}
+                        <i class="fa fa-plus"></i>
+                    </button>
+                    <a *ngIf="canAction" (click)="overrideOnEditRowModal(selected_entity.id)"
+                        class="link-button form-edit" style="font-size: 12px;line-height: 37px;">
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 5.18993V6.9892H1.79928L6.77667 2.019L4.9774 0.219727L0 5.18993ZM0 8.78848H9.59614V9.98799H0V8.78848Z"
+                                fill="#192D3E" />
+                        </svg>
+                        {{'form.edit' | translate}}
+
+                    </a>
+                    <a *ngIf="canAction" (click)="changeRemoveArrayMode()" class="link-button form-delete"
+                        style="line-height: 37px;">
+                        <svg width="10" height="12" viewBox="0 0 10 12" fill="none" style="margin-top: -4px;"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.66667 3.66669C1.35944 3.66669 1.11111 3.66669 1.11111 3.66669V10.8889C1.11111 11.5022 1.60889 12 2.22222 12H7.77778C8.39111 12 8.88889 11.5022 8.88889 10.8889V3.66669C8.88889 3.66669 8.64056 3.66669 8.33333 3.66669H1.66667ZM7.56556 2.00003L6.66667 0.888916H3.33333L2.43444 2.00003H0V3.11114H2.77778H7.22222H10V2.00003H7.56556Z"
+                                fill="#D66B5D" />
+                        </svg>
+                        <span style="margin-left: 11px;">{{'delete' | translate}}</span>
+                    </a>
+                </div>
+                <div *ngIf="removeArrayMode">
+                    <button class="btn btn-danger btn-xs mr-1" [disabled]="!canAction" (click)="onDeleteRows()">
+                        <i class="fa fa-trash"></i> {{'Confirm' | translate}}
+                    </button>
+                    <button class="btn btn-white btn-xs mr-1" (click)="changeRemoveArrayMode()">
+                        {{'form.cancel' | translate}}
+                    </button>
+                </div>
+            </ng-template>
+
+            <div class="pt-3 jqx-widget-child-container  jqx-widget-child-container-config">
+                <jqxGrid #dataGrid [theme]="'metro'" [width]="'100%'" [height]="'529px'"  [rowsheight]="40" [source]="source"
+                    [columns]="tableSource.columns" [columnsresize]="true" [sortable]="true" [autoshowfiltericon]="true"
+                    [enabletooltips]="false" [selectionmode]="selectMode" [columnsreorder]="true"
+                    (onRowselect)="onRowSelect($event)"
+                    (onRowdoubleclick)="overrideOnEditRowModal(selected_entity?.id);">
+                </jqxGrid>
+            </div>
+        </pgcard>
+    </div>
+</div>
+
+<!-- MODAL STICK UP  -->
+<div bsModal #rowModal="bs-modal" class="modal fade slide-right" tabindex="-1" role="dialog" aria-labelledby="rowModal"
+    [config]="{backdrop: 'static'}" aria-hidden="true">
+    <div class="modal-dialog additional-columns-modal"
+        style="max-width: 710px;width: 710px !important;top: 1% !important;left: 45% !important;">
+        <div class="modal-content"
+            style="box-shadow: 0px 25px 40px rgba(0, 0, 0, 0.25);border-radius: 3px;height: auto;">
+            <div>
+                <div class="inner additional-columns-modal-header" pg-parallax>
+                    <div class="input-group mb-2">
+                        <div class="modal-header-block">
+                            {{'Systems' | translate}} {{'taxation' | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form role="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <input type="hidden" id="id" name="id" [(ngModel)]="entity.id">
+                <div class="modal-body" style="margin-top:30px;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" [class.has-error]="name.invalid && (name.dirty || name.touched)">
+                                <input type="text" class="form-control input-without-border" id="name" name="name"
+                                    placeholder="{{'entity.name' | translate}}" [(ngModel)]="entity.name"
+                                    #name="ngModel" required />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="radio radio-success vat-schemes-checkbox">
+                                <input type="radio" [(ngModel)]="entity.type" checked="checked" value="Rates"
+                                    name="type" id="VatSchemeType.rates">
+                                <label [ngClass]="{'vat-schemes-checkbox-selected': entity.type == 'Rates' }" for="VatSchemeType.rates">{{ 'rates' | translate }}</label>
+
+                                <input type="radio" [(ngModel)]="entity.type" value="FixedRate" name="type"
+                                    id="VatSchemeType.fixedRate">
+                                <label [ngClass]="{'vat-schemes-checkbox-selected': entity.type == 'FixedRate' }" for="VatSchemeType.fixedRate">{{ 'fixedRate' | translate }}</label>
+
+                                <input type="radio" [(ngModel)]="entity.type" value="VatReverseCharge" name="type"
+                                    id="VatSchemeType.vatReverseCharge">
+                                <label [ngClass]="{'vat-schemes-checkbox-selected': entity.type == 'VatReverseCharge' }" for="VatSchemeType.vatReverseCharge">{{ 'vatReverseCharge' | translate }}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div id="detailedTable_wrapper" class="dataTables_wrapper no-footer">
+                                <table class="table table-condensed dataTable no-footer vat-schemes-table" id="detailedTable"
+                                    role="grid">
+                                    <thead>
+                                        <tr role="row">
+                                            <th *ngIf="entity.type =='Rates'" style="width:25%" class="sorting_disabled"
+                                                rowspan="1" colspan="1">
+                                                {{ ('vatClass').toLowerCase() | translate }}</th>
+                                            <th style="width:25%;color: #2c2c2c" class="sorting_disabled" rowspan="1"
+                                                colspan="1">
+                                                {{ 'rate' | translate }}</th>
+                                            <th style="width: 221px;color: #2c2c2c;" class="sorting_disabled"
+                                                rowspan="1" colspan="1">
+                                                {{ 'accountingcode' | translate }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Container Rates -->
+                                        <ng-container *ngIf="entity.type =='Rates'">
+                                            <tr *ngFor="let item of rates" role="row" class="odd">
+                                                <td class="v-align-middle">
+                                                    {{ item.vatClass?.name }}
+                                                </td>
+                                                <td class="v-align-middle border-blue">
+                                                    <input type="number" min="0" class="form-control"
+                                                        name="rate_{{item.vatClass?.id}}" [(ngModel)]="item.rate"
+                                                        numbersOnly [numType]="'decimal'" #name="ngModel" />
+                                                </td>
+                                                <td class="v-align-middle border-blue">
+                                                    <input type="text" class="form-control" id="item.vatClass?.id"
+                                                        name="accountingCode" [(ngModel)]="item.accountingCode"
+                                                        #name="ngModel" />
+                                                </td>
+                                            </tr>
+                                        </ng-container>
+
+                                        <!-- Container FixedRate -->
+                                        <ng-container *ngIf="entity.type =='FixedRate'">
+                                            <tr role="row" class="odd">
+                                                <td class="v-align-middle border-blue">
+                                                    <input type="number" min="0" class="form-control" name="rate"
+                                                        numbersOnly [numType]="'decimal'" [(ngModel)]="fixedRate.rate"
+                                                        #name="ngModel" />
+                                                </td>
+                                                <td class="v-align-middle border-blue">
+                                                    <input type="text" class="form-control" name="accountingCode"
+                                                        [(ngModel)]="fixedRate.accountingCode" #name="ngModel" />
+                                                </td>
+                                            </tr>
+                                        </ng-container>
+
+                                        <!-- Container VatReverseCharge -->
+                                        <ng-container *ngIf="entity.type =='VatReverseCharge'">
+                                            <tr role="row" class="odd">
+                                                <td class="v-align-middle border-blue">
+                                                    {{ vatReverseCharge.rate }} %
+                                                </td>
+                                                <td class="v-align-middle border-blue">
+                                                    <input type="text" class="form-control" name="accountingCode"
+                                                        [(ngModel)]="vatReverseCharge.accountingCode" #name="ngModel" />
+                                                </td>
+                                            </tr>
+                                        </ng-container>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center pt-5 btn-group">
+                        <button [disabled]="form.invalid" type="button" (click)="overrideOnSubmit(form)"
+                            class="btn btn-sm btn-white folder-save-btn">
+                            {{'form.save' | translate}}
+                        </button>
+                        <button type="button" class="btn btn-white btn-xs mr-1 form-cancel" style="margin-left: 5px;"
+                            (click)="rowModal.hide()">
+                            {{'form.cancel' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

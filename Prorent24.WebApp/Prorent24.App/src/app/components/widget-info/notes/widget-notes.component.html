@@ -1,0 +1,103 @@
+<pgcard Controls="false" Type="transparent" HeaderClass="separator" AdditionalClasses="mb-0">
+    <ng-template #CardTitle>
+        Примечания
+    </ng-template>
+    <div class="pt-2">
+        <ul class="list-unstyled mb-0 filter-form-notes">
+            <li *ngFor="let n of data; let i = index" class="small">
+                <svg (click)="editNote(n)" width="10" height="12" viewBox="0 0 10 12" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.19714 0L8.99654 1.79946L7.625 3.17095L5.8256 1.37149L7.19714 0Z" fill="#192D3E"
+                        fill-opacity="0.5" />
+                    <path
+                        d="M0 7.18993V8.9892H1.79928L6.77667 4.019L4.9774 2.21973L0 7.18993ZM0 10.7885H9.59614V11.988H0V10.7885Z"
+                        fill="#192D3E" fill-opacity="0.5" />
+                </svg>
+                <span class="hint fs-10"><i class="fa"
+                        [ngClass]="n.confidential === 'everyone' ? 'fa-eye': 'fa-eye-slash'"></i>
+                </span>
+                <span>{{n.text}}</span>
+            </li>
+        </ul>
+        <div class="text-left mt-2 filter-form-controls-notes">
+            <button class="btn btn-xs btn-white" (click)="editNote()">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1.55556 14H12.4444C13.3031 14 14 13.3031 14 12.4444V1.55556C14 0.696889 13.3031 0 12.4444 0H1.55556C0.696889 0 0 0.696889 0 1.55556V12.4444C0 13.3031 0.696889 14 1.55556 14ZM3.11111 6.22222H6.22222V3.11111H7.77778V6.22222H10.8889V7.77778H7.77778V10.8889H6.22222V7.77778H3.11111V6.22222Z"
+                        fill="#192D3E" fill-opacity="0.8" />
+                </svg>
+                <span>{{'form.add' | translate}}</span>
+            </button>
+        </div>
+    </div>
+</pgcard>
+
+<!-- MODAL NOTES  -->
+<div bsModal #noteModal="bs-modal" class="modal fade slide-right" [config]="{backdrop: 'static'}" aria-hidden="true">
+    <div class="modal-dialog task-modal">
+        <div class="modal-content"
+            style="box-shadow: 0px 25px 40px rgba(0, 0, 0, 0.25);border-radius: 3px;height: 87% !important;">
+            <button type="button" class="close folder-close" (click)="noteModal.hide()" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8.75011 0L4.99956 3.74967L1.24989 0L0 1.24989L3.74967 4.99956L0 8.74923L1.24989 9.99911L4.99956 6.24945L8.75011 9.99911L10 8.74923L6.25033 4.99956L10 1.24989L8.75011 0Z"
+                        fill="#192D3E" />
+                </svg>
+            </button>
+            <div>
+                <div class="inner additional-columns-modal-header" pg-parallax>
+                    <div class="input-group mb-2">
+                        <div class="modal-header-block">
+                            {{ note.id ? "Редактировать " : "Создать новое " }} примечание
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form role="form" #form="ngForm" (ngSubmit)="submitNote(form)">
+                <input type="hidden" name="id" [(ngModel)]="note.id">
+                <input type="hidden" name="referenceId" [(ngModel)]="entityId">
+                <div class="modal-body">
+                    <p class="small-text">
+
+                    </p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group border-blue">
+                                <label>Конфиденциальность</label>
+                                <pg-select style="width: 100%;" [(ngModel)]="note.confidential" name="confidential"
+                                    [PlaceHolder]="''" AllowClear ShowSearch [required]="true" [FirstDefault]="true">
+                                    <pg-option *ngFor="let confidential of confidentialType | enumToArray"
+                                        [Label]="confidential | translate" [Value]="confidential">
+                                    </pg-option>
+                                </pg-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group border-blue">
+                                <label>Примечание</label>
+                                <textarea rows="8" class="form-control" id="text" name="text" placeholder="..."
+                                    [(ngModel)]="note.text" #remark="ngModel" required>
+                                            </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" [ngStyle]="{'padding': note.id ? '3px' : '41px' }">
+                    <button type="submit" class="btn btn-sm btn-white folder-save-btn">
+                        {{'form.save' | translate}}
+                    </button>
+                    <button type="button" class="btn btn-white btn-xs mr-1 form-cancel" style="margin-left: 5px;"
+                        (click)="noteModal.hide()">
+                        {{'form.cancel' | translate}}
+                    </button>
+                    <button *ngIf="note.id" (click)="deleteNote(note.id)" type="button" class="btn btn-danger btn-xs mr-1" style="margin-left: 5px;padding: 5px;">
+                        {{'form.delete' | translate}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿[
+  {
+    "Name": "100% оплата",
+    "Text": "100% оплата",
+    "AfterAgreement": 0,
+    "BeforeFirstDay": 100,
+    "Afterwards": 0
+  },
+  {
+    "Name": "Оплата при доставке",
+    "Text": "Оплата при доставке",
+    "AfterAgreement": 0,
+    "BeforeFirstDay": 100,
+    "Afterwards": 0
+  },
+  {
+    "Name": "Момент выставления инвойса",
+    "Text": "Момент выставления инвойса",
+    "AfterAgreement": 0,
+    "BeforeFirstDay": 0,
+    "Afterwards": 100
+  },
+  {
+    "Name": "После соглашения",
+    "Text": "После соглашения",
+    "AfterAgreement": 100,
+    "BeforeFirstDay": 0,
+    "Afterwards": 0
+  }
+]

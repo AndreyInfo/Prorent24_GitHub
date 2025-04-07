@@ -1,0 +1,369 @@
+<div class="row" style="margin-bottom: 25px;margin-top: 25px;">
+    <!-- CONTENT -->
+    <div class="col-md-4" style="padding-right: 10px;">
+        <rent-equipments-catalog (onAddRow)="addRow($event)"></rent-equipments-catalog>
+    </div>
+    <div class="col-md-8" style="padding-right: 10px;">
+        <div class="border-container">
+            <div class="container-fluid bg-white grid-controls-panel">
+                <div class="pull-right" style="line-height: 33px;">
+                    <button class="btn btn-xs btn-white ml-1 text-font" (click)="showAdditionalFieldsModal()"
+                        matTooltip="{{'Add columns' | translate}}">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.2 11.9999H8.4C9.0624 11.9999 9.6 11.4623 9.6 10.7999V3.5999C9.6 2.9375 9.0624 2.3999 8.4 2.3999H1.2C0.5376 2.3999 0 2.9375 0 3.5999V10.7999C0 11.4623 0.5376 11.9999 1.2 11.9999ZM2.4 6.5999H4.2V4.7999H5.4V6.5999H7.2V7.7999H5.4V9.5999H4.2V7.7999H2.4V6.5999Z"
+                                fill="#192D3E" />
+                            <path d="M10.7996 0H3.59961V1.2H10.7996V8.4H11.9996V1.2C11.9996 0.5382 11.4614 0 10.7996 0Z"
+                                fill="#192D3E" />
+                        </svg>
+                        Добавить столбцы
+                    </button>
+                </div>
+                <div *ngIf="!removeArrayMode" style="display: flex;">
+                    <button class="btn btn-primary btn-xs form-save" (click)="addGroup()">
+                        {{'Add group' | translate}}
+                        <i class="fa fa-plus"></i>
+                    </button>
+                    <a *ngIf="canAction" (click)="onEditModal(selected_entity?.id)" class="link-button form-edit"
+                        style="font-size: 12px;line-height: 37px;">
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 5.18993V6.9892H1.79928L6.77667 2.019L4.9774 0.219727L0 5.18993ZM0 8.78848H9.59614V9.98799H0V8.78848Z"
+                                fill="#192D3E" />
+                        </svg>
+                        {{'form.edit' | translate}}
+
+                    </a>
+                    <a *ngIf="canAction" (click)="changeRemoveArrayMode()" class="link-button form-delete"
+                        style="line-height: 37px;">
+                        <svg width="10" height="12" viewBox="0 0 10 12" fill="none" style="margin-top: -4px;"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.66667 3.66669C1.35944 3.66669 1.11111 3.66669 1.11111 3.66669V10.8889C1.11111 11.5022 1.60889 12 2.22222 12H7.77778C8.39111 12 8.88889 11.5022 8.88889 10.8889V3.66669C8.88889 3.66669 8.64056 3.66669 8.33333 3.66669H1.66667ZM7.56556 2.00003L6.66667 0.888916H3.33333L2.43444 2.00003H0V3.11114H2.77778H7.22222H10V2.00003H7.56556Z"
+                                fill="#D66B5D" />
+                        </svg>
+                        <span style="margin-left: 11px;">{{'delete' | translate}}</span>
+                    </a>
+                </div>
+                <div *ngIf="removeArrayMode">
+                    <button class="btn btn-danger btn-xs mr-1" [disabled]="!canAction" (click)="deleteRows()">
+                        <i class="fa fa-trash"></i> {{'Confirm' | translate}}
+                    </button>
+                    <button class="btn btn-white btn-xs mr-1" (click)="changeRemoveArrayMode()">
+                        {{'form.cancel' | translate}}
+                    </button>
+                </div>
+                <!-- <div>
+                    <button class="btn btn-white btn-xs mr-1" (click)="loadShoratges()">
+                        {{'form.load' | translate}}
+                    </button>
+                </div> -->
+            </div>
+            <div class="jqx-widget-container jqxWidgetContainerProjectEquipment">
+                <jqxTreeGrid #treeGrid [theme]="'metro'" [localization]="localization" [width]="'100%'"
+                    [height]="'753px'" [source]="source" [columns]="tableSource.columns" [selectionMode]="selectMode"
+                    [hierarchicalCheckboxes]="true" [checkboxes]="true" [sortable]="true" [columnsReorder]="true"
+                    [scrollBarSize]="5" (onRowSelect)="onRowSelect($event, false, false)"
+                    (onRowDoubleClick)="onEditModal(selected_entity?.id)" [columnsResize]="true">
+                </jqxTreeGrid>
+            </div>
+        </div>
+    </div>
+</div>
+<rent-additional-grid-column [entity]="tableEntityType" (onAddColumn)="onAddColumnsSubData(parentId,$event)">
+</rent-additional-grid-column>
+
+
+<!-- <div class="container-fixed-lg pt-3" style="height: 700px;">
+    <jqxSplitter #mainSplitter [theme]="'metro'" [width]="'100%'" [height]="'100%'" [panels]="
+        [{  size: 250, min: 200 }, { size: '100%', collapsible: false }]">
+        <div class="splitter-panel">
+
+        </div>
+        <div class="splitter-panel">
+            <div class="full-height pb-43">
+                <div class="container-fluid bg-white p-2">
+                  
+               
+            </div>
+        </div>
+    </jqxSplitter>
+
+</div> -->
+
+<!-- MODAL STICK UP  -->
+<div bsModal #rowModal="bs-modal" class="modal fade slide-right" tabindex="-1" role="dialog" aria-labelledby="rowModal"
+    [config]="{backdrop: 'static'}" aria-hidden="true">
+    <div class="modal-dialog additional-columns-modal">
+        <div class="modal-content" style="box-shadow: 0px 25px 40px rgba(0, 0, 0, 0.25);border-radius: 3px;">
+            <button type="button" class="close folder-close" (click)="rowModal.hide()" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8.75011 0L4.99956 3.74967L1.24989 0L0 1.24989L3.74967 4.99956L0 8.74923L1.24989 9.99911L4.99956 6.24945L8.75011 9.99911L10 8.74923L6.25033 4.99956L10 1.24989L8.75011 0Z"
+                        fill="#192D3E" />
+                </svg>
+            </button>
+            <div>
+                <div class="inner additional-columns-modal-header" pg-parallax>
+                    <div class="input-group mb-2">
+                        <div class="modal-header-block">
+                            {{'equipments' | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form role="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <input type="hidden" id="id" name="id" [(ngModel)]="entity.id">
+                <input type="hidden" id="equipmentId" name="equipmentId" [(ngModel)]="entity.equipmentId">
+                <div class="modal-body">
+                    <p class="small-text">
+                        {{entity.equipmentName}}
+                    </p>
+                    <div class="row">
+                        <div class="col-md-12" style="padding-left: 0px;padding-right: 0px;">
+                            <div class="form-group border-blue" [ngClass]="{'errors-submit': price.errors}"
+                                [class.has-error]="price.invalid && (price.dirty || price.touched) || price.errors">
+                                <label class="label-sm">{{'Unit price' | translate}}</label>
+                                <input type="text" placeholder="" class="form-control" id="price" name="price"
+                                    [(ngModel)]="entity.price" #price="ngModel" numbersOnly [numType]="'decimal'"
+                                    required [min]="0">
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="padding-left: 0px;padding-right: 0px;">
+                            <div class="form-group border-blue" [ngClass]="{'errors-submit': quantity.errors}"
+                                [class.has-error]="quantity.invalid && (quantity.dirty || quantity.touched) || quantity.errors">
+                                <label class="label-sm">{{'enterQuantityManually' | translate}}</label>
+                                <input type="text" placeholder="" class="form-control" id="quantity" name="quantity"
+                                    [(ngModel)]="entity.quantity" #quantity="ngModel" numbersOnly [minValue]="1"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="padding-left: 0px;padding-right: 0px;">
+                            <div class="form-group">
+                                <label class="label-sm">{{'discount' | translate}}</label>
+                                <div class="input-group border-blue input-group-prepend-text"
+                                    [class.has-error]="discount.errors">
+                                    <input type="text" placeholder="0" class="form-control" id="discount"
+                                        name="discount" [(ngModel)]="entity.discount" #discount="ngModel" numbersOnly
+                                        [numType]="'decimal'" [range]="[0, 100]">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            %
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="padding-left: 0px;padding-right: 0px;">
+                            <div class="form-group border-blue" [ngClass]="{'errors-submit': factor.errors}"
+                                [class.has-error]="factor.invalid && (factor.dirty || factor.touched) || factor.errors">
+                                <label class="label-sm">{{'factor' | translate}}</label>
+                                <input type="text" placeholder="" class="form-control" id="factor" name="factor"
+                                    [(ngModel)]="entity.factor" #factor="ngModel" numbersOnly [numType]="'decimal'"
+                                    required [min]="0" [minValue]="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="padding-left: 0px;padding-right: 0px;">
+                            <div class="form-group">
+                                <label>{{'vatclass' | translate}}</label>
+                                <pg-select style="width: 100%;" [(ngModel)]="entity.vatClassId" name="vatClassId"
+                                    [PlaceHolder]="''" ShowSearch>
+                                    <pg-option *ngFor="let item of vatTypes" [Label]="item.name" [Value]="item.id">
+                                    </pg-option>
+                                </pg-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="padding-left: 0px;padding-right: 0px;">
+                            <div class="form-group border-blue">
+                                <label>{{'description' | translate}}</label>
+                                <textarea rows="8" class="form-control" id="remark" name="remark" placeholder="..."
+                                    [(ngModel)]="entity.remark">
+                                                        </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center pt-5 btn-group">
+                        <button type="submit" class="btn btn-sm btn-white folder-save-btn" [disabled]="form.invalid">
+                            {{'form.save' | translate}}
+                        </button>
+                        <button type="button" class="btn btn-white btn-xs mr-1 form-cancel" style="margin-left: 5px;"
+                            (click)="rowModal.hide()">
+                            {{'form.cancel' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL EQUIPMENT GROUP -->
+<div bsModal #groupModal="bs-modal" class="modal fade slide-right" tabindex="1" role="dialog"
+    aria-labelledby="groupModal" [config]="{backdrop: 'static'}" aria-hidden="true">
+    <div class="modal-dialog group-modal">
+        <div class="modal-content">
+            <div>
+                <div class="inner group-modal-header" pg-parallax>
+                    <div class="input-group mb-2">
+                        <div class="modal-header-block">
+                            {{ (group.id ? "edit" : "form.create") | translate }} {{'the group' | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form role="form" #groupForm="ngForm" (ngSubmit)="submitGroup(groupForm)">
+                <input type="hidden" id="id" name="id" [(ngModel)]="group.id">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12" style="padding-left: 0px;">
+                            <div class="form-group border-blue"
+                                [class.has-error]="name.invalid && (name.dirty || name.touched)"
+                                [ngClass]="{'errors-submit': name.errors}">
+                                <label class="label-sm">{{'Group name' | translate}} <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" placeholder="{{'Group name' | translate}}" class="form-control"
+                                    id="name" name="name" [(ngModel)]="group.groupName" #name="ngModel" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group m-0">
+                                <label class="m-0">{{'periodofuse' | translate}} <span
+                                        class="text-danger">*</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="padding-left: 0px;padding-right: 0px;">
+                            <div class="form-group border-blue">
+                                <label>{{'from' | translate}}</label>
+                                <div class="input-group date">
+                                    <pg-datepicker Placeholder="Начало" [ngModel]="group.startUsePeriod"
+                                        name="startUsePeriod" [ShowTime]="true" [Format]="'DD-MM-YYYY HH:mm'"
+                                        [required]="true">
+                                    </pg-datepicker>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <svg onclick="document.getElementsByName('startUsePeriod')[0].getElementsByTagName('input')[0].click()"
+                                                width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                                    fill="black" fill-opacity="0.2" />
+                                                <path
+                                                    d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                                    fill="black" fill-opacity="0.2" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="padding-left: 0px;">
+                            <div class="form-group border-blue">
+                                <label>{{'The ending' | translate}}</label>
+                                <div class="input-group date">
+                                    <pg-datepicker Placeholder="Окончание" [ngModel]="group.endUsePeriod"
+                                        name="endUsePeriod" [ShowTime]="true" [Format]="'DD-MM-YYYY HH:mm'"
+                                        [required]="true">
+                                    </pg-datepicker>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <svg onclick="document.getElementsByName('endUsePeriod')[0].getElementsByTagName('input')[0].click()"
+                                                width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                                    fill="black" fill-opacity="0.2" />
+                                                <path
+                                                    d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                                    fill="black" fill-opacity="0.2" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group m-0">
+                                <label class="m-0">{{'planning period' | translate}} <span
+                                        class="text-danger">*</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="padding-left: 0px;">
+                            <div class="form-group border-blue">
+                                <label>{{'from' | translate}}</label>
+                                <div class="input-group date">
+                                    <pg-datepicker Placeholder="Начало" [ngModel]="group.startPlanPeriod"
+                                        name="startPlanPeriod" [ShowTime]="true" [Format]="'DD-MM-YYYY HH:mm'"
+                                        [required]="true">
+                                    </pg-datepicker>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <svg onclick="document.getElementsByName('startPlanPeriod')[0].getElementsByTagName('input')[0].click()"
+                                                width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                                    fill="black" fill-opacity="0.2" />
+                                                <path
+                                                    d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                                    fill="black" fill-opacity="0.2" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="padding-left: 0px;">
+                            <div class="form-group border-blue">
+                                <label>{{'The ending' | translate}}</label>
+                                <div class="input-group date">
+                                    <pg-datepicker Placeholder="Окончание" [ngModel]="group.endPlanPeriod"
+                                        name="endPlanPeriod" [ShowTime]="true" [Format]="'DD-MM-YYYY HH:mm'"
+                                        [required]="true">
+                                    </pg-datepicker>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <svg onclick="document.getElementsByName('endPlanPeriod')[0].getElementsByTagName('input')[0].click()"
+                                                width="15" height="17" viewBox="0 0 15 17" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.33337 7.5H5.00004V9.16667H3.33337V7.5ZM3.33337 10.8333H5.00004V12.5H3.33337V10.8333ZM6.66671 7.5H8.33337V9.16667H6.66671V7.5ZM6.66671 10.8333H8.33337V12.5H6.66671V10.8333ZM10 7.5H11.6667V9.16667H10V7.5ZM10 10.8333H11.6667V12.5H10V10.8333Z"
+                                                    fill="black" fill-opacity="0.2" />
+                                                <path
+                                                    d="M1.66667 16.6667H13.3333C14.2525 16.6667 15 15.9192 15 15V5V3.33333C15 2.41417 14.2525 1.66667 13.3333 1.66667H11.6667V0H10V1.66667H5V0H3.33333V1.66667H1.66667C0.7475 1.66667 0 2.41417 0 3.33333V5V15C0 15.9192 0.7475 16.6667 1.66667 16.6667ZM13.3333 5L13.3342 15H1.66667V5H13.3333Z"
+                                                    fill="black" fill-opacity="0.2" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center pt-5 btn-group">
+                        <button type="submit" class="btn btn-sm btn-white folder-save-btn"
+                            [disabled]="groupForm.invalid">
+                            {{ 'form.save' | translate }}
+                        </button>
+                        <button type="button" class="btn btn-white btn-xs mr-1 form-cancel" style="margin-left: 5px;"
+                            (click)="groupModal.hide()">
+                            {{'form.cancel' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5966 @@
+﻿[
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Amsterdam"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Amsterdam"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Warsaw"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Warsaw"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Dublin"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Dublin"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Oslo"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Oslo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Berlin"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Berlin"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Brussels"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Brussels"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Stockholm"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Stockholm"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Helsinki"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Helsinki"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Budapest"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Budapest"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Copenhagen"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Copenhagen"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/London"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/London"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Atlantic/Reykjavik"
+      },
+      {
+        "Lang": "en",
+        "Name": "Atlantic/Reykjavik"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Curacao"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Curacao"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Aruba"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Aruba"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Johannesburg"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Johannesburg"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Nairobi"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Nairobi"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Vienna"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Vienna"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/New_York"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/New_York"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Paramaribo"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Paramaribo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Chicago"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Chicago"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Los_Angeles"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Los_Angeles"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Vancouver"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Vancouver"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Australia/Sydney"
+      },
+      {
+        "Lang": "en",
+        "Name": "Australia/Sydney"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Australia/Perth"
+      },
+      {
+        "Lang": "en",
+        "Name": "Australia/Perth"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Auckland"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Auckland"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Australia/Darwin"
+      },
+      {
+        "Lang": "en",
+        "Name": "Australia/Darwin"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Australia/Brisbane"
+      },
+      {
+        "Lang": "en",
+        "Name": "Australia/Brisbane"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Australia/Adelaide"
+      },
+      {
+        "Lang": "en",
+        "Name": "Australia/Adelaide"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Denver"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Denver"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Anchorage"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Anchorage"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Nicosia"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Nicosia"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Istanbul"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Istanbul"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Madrid"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Madrid"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Lisbon"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Lisbon"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Paris"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Paris"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Prague"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Prague"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Riga"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Riga"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Vilnius"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Vilnius"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Tallinn"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Tallinn"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Rome"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Rome"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Dubai"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Dubai"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Skopje"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Skopje"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Shanghai"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Shanghai"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Almaty"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Almaty"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Beirut"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Beirut"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Mexico_City"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Mexico_City"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Ljubljana"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Ljubljana"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Bratislava"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Bratislava"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Jerusalem"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Jerusalem"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Zagreb"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Zagreb"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Abidjan"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Abidjan"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Accra"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Accra"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Addis_Ababa"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Addis_Ababa"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Algiers"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Algiers"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Asmara"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Asmara"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Bamako"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Bamako"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Bangui"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Bangui"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Banjul"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Banjul"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Bissau"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Bissau"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Blantyre"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Blantyre"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Brazzaville"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Brazzaville"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Bujumbura"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Bujumbura"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Cairo"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Cairo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Casablanca"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Casablanca"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Ceuta"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Ceuta"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Conakry"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Conakry"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Dakar"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Dakar"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Dar_es_Salaam"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Dar_es_Salaam"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Djibouti"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Djibouti"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Douala"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Douala"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/El_Aaiun"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/El_Aaiun"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Freetown"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Freetown"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Gaborone"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Gaborone"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Harare"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Harare"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Kampala"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Kampala"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Khartoum"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Khartoum"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Kigali"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Kigali"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Kinshasa"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Kinshasa"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Lagos"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Lagos"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Libreville"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Libreville"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Lome"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Lome"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Luanda"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Luanda"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Lubumbashi"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Lubumbashi"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Lusaka"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Lusaka"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Malabo"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Malabo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Maputo"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Maputo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Maseru"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Maseru"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Mbabane"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Mbabane"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Mogadishu"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Mogadishu"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Monrovia"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Monrovia"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Ndjamena"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Ndjamena"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Niamey"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Niamey"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Nouakchott"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Nouakchott"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Ouagadougou"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Ouagadougou"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Porto-Novo"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Porto-Novo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Sao_Tome"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Sao_Tome"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Tripoli"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Tripoli"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Tunis"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Tunis"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Windhoek"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Windhoek"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Adak"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Adak"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Anguilla"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Anguilla"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Antigua"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Antigua"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Araguaina"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Araguaina"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Argentina/Buenos_Aires"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Argentina/Buenos_Aires"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Argentina/Catamarca"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Argentina/Catamarca"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Argentina/Cordoba"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Argentina/Cordoba"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Argentina/Jujuy"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Argentina/Jujuy"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Argentina/La_Rioja"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Argentina/La_Rioja"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Argentina/Mendoza"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Argentina/Mendoza"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Argentina/Rio_Gallegos"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Argentina/Rio_Gallegos"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Argentina/Salta"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Argentina/Salta"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Argentina/San_Juan"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Argentina/San_Juan"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Argentina/San_Luis"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Argentina/San_Luis"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Argentina/Tucuman"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Argentina/Tucuman"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Argentina/Ushuaia"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Argentina/Ushuaia"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Asuncion"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Asuncion"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Atikokan"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Atikokan"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Bahia"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Bahia"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Bahia_Banderas"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Bahia_Banderas"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Barbados"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Barbados"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Belem"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Belem"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Belize"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Belize"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Blanc-Sablon"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Blanc-Sablon"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Boa_Vista"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Boa_Vista"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Bogota"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Bogota"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Boise"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Boise"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Cambridge_Bay"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Cambridge_Bay"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Campo_Grande"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Campo_Grande"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Cancun"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Cancun"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Caracas"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Caracas"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Cayenne"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Cayenne"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Cayman"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Cayman"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Chihuahua"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Chihuahua"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Costa_Rica"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Costa_Rica"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Cuiaba"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Cuiaba"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Danmarkshavn"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Danmarkshavn"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Dawson"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Dawson"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Dawson_Creek"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Dawson_Creek"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Detroit"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Detroit"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Dominica"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Dominica"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Edmonton"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Edmonton"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Eirunepe"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Eirunepe"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/El_Salvador"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/El_Salvador"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Fortaleza"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Fortaleza"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Glace_Bay"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Glace_Bay"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Godthab"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Godthab"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Goose_Bay"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Goose_Bay"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Grand_Turk"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Grand_Turk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Grenada"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Grenada"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Guadeloupe"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Guadeloupe"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Guatemala"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Guatemala"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Guayaquil"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Guayaquil"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Guyana"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Guyana"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Halifax"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Halifax"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Havana"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Havana"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Hermosillo"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Hermosillo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Indiana/Indianapolis"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Indiana/Indianapolis"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Indiana/Knox"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Indiana/Knox"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Indiana/Marengo"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Indiana/Marengo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Indiana/Petersburg"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Indiana/Petersburg"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Indiana/Tell_City"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Indiana/Tell_City"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Indiana/Vevay"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Indiana/Vevay"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Indiana/Vincennes"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Indiana/Vincennes"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Indiana/Winamac"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Indiana/Winamac"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Inuvik"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Inuvik"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Iqaluit"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Iqaluit"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Jamaica"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Jamaica"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Juneau"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Juneau"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Kentucky/Louisville"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Kentucky/Louisville"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Kentucky/Monticello"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Kentucky/Monticello"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/La_Paz"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/La_Paz"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Lima"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Lima"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Maceio"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Maceio"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Managua"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Managua"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Manaus"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Manaus"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Marigot"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Marigot"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Martinique"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Martinique"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Matamoros"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Matamoros"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Mazatlan"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Mazatlan"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Menominee"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Menominee"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Merida"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Merida"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Miquelon"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Miquelon"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Moncton"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Moncton"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Monterrey"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Monterrey"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Montevideo"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Montevideo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Montserrat"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Montserrat"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Nassau"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Nassau"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Nipigon"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Nipigon"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Nome"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Nome"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Noronha"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Noronha"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/North_Dakota/Center"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/North_Dakota/Center"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/North_Dakota/New_Salem"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/North_Dakota/New_Salem"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Ojinaga"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Ojinaga"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Panama"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Panama"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Pangnirtung"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Pangnirtung"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Phoenix"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Phoenix"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Port-au-Prince"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Port-au-Prince"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Porto_Velho"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Porto_Velho"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Port_of_Spain"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Port_of_Spain"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Puerto_Rico"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Puerto_Rico"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Rainy_River"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Rainy_River"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Rankin_Inlet"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Rankin_Inlet"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Recife"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Recife"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Regina"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Regina"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Resolute"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Resolute"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Rio_Branco"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Rio_Branco"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Santarem"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Santarem"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Santa_Isabel"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Santa_Isabel"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Santiago"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Santiago"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Santo_Domingo"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Santo_Domingo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Sao_Paulo"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Sao_Paulo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Scoresbysund"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Scoresbysund"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/St_Barthelemy"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/St_Barthelemy"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/St_Johns"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/St_Johns"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/St_Kitts"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/St_Kitts"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/St_Lucia"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/St_Lucia"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/St_Thomas"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/St_Thomas"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/St_Vincent"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/St_Vincent"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Swift_Current"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Swift_Current"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Tegucigalpa"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Tegucigalpa"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Thule"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Thule"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Thunder_Bay"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Thunder_Bay"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Tijuana"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Tijuana"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Toronto"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Toronto"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Tortola"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Tortola"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Whitehorse"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Whitehorse"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Winnipeg"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Winnipeg"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Yakutat"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Yakutat"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Yellowknife"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Yellowknife"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Antarctica/Casey"
+      },
+      {
+        "Lang": "en",
+        "Name": "Antarctica/Casey"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Antarctica/Davis"
+      },
+      {
+        "Lang": "en",
+        "Name": "Antarctica/Davis"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Antarctica/DumontDUrville"
+      },
+      {
+        "Lang": "en",
+        "Name": "Antarctica/DumontDUrville"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Antarctica/Macquarie"
+      },
+      {
+        "Lang": "en",
+        "Name": "Antarctica/Macquarie"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Antarctica/Mawson"
+      },
+      {
+        "Lang": "en",
+        "Name": "Antarctica/Mawson"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Antarctica/McMurdo"
+      },
+      {
+        "Lang": "en",
+        "Name": "Antarctica/McMurdo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Antarctica/Palmer"
+      },
+      {
+        "Lang": "en",
+        "Name": "Antarctica/Palmer"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Antarctica/Rothera"
+      },
+      {
+        "Lang": "en",
+        "Name": "Antarctica/Rothera"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Antarctica/Syowa"
+      },
+      {
+        "Lang": "en",
+        "Name": "Antarctica/Syowa"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Antarctica/Vostok"
+      },
+      {
+        "Lang": "en",
+        "Name": "Antarctica/Vostok"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Arctic/Longyearbyen"
+      },
+      {
+        "Lang": "en",
+        "Name": "Arctic/Longyearbyen"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Aden"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Aden"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Amman"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Amman"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Anadyr"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Anadyr"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Aqtau"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Aqtau"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Aqtobe"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Aqtobe"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Ashgabat"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Ashgabat"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Baghdad"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Baghdad"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Bahrain"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Bahrain"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Baku"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Baku"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Bangkok"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Bangkok"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Bishkek"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Bishkek"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Brunei"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Brunei"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Choibalsan"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Choibalsan"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Colombo"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Colombo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Damascus"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Damascus"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Dhaka"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Dhaka"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Dili"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Dili"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Dushanbe"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Dushanbe"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Gaza"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Gaza"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Hong_Kong"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Hong_Kong"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Hovd"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Hovd"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Ho_Chi_Minh"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Ho_Chi_Minh"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Irkutsk"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Irkutsk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Jakarta"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Jakarta"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Jayapura"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Jayapura"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Kabul"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Kabul"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Kamchatka"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Kamchatka"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Karachi"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Karachi"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Kathmandu"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Kathmandu"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Kolkata"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Kolkata"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Krasnoyarsk"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Krasnoyarsk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Kuala_Lumpur"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Kuala_Lumpur"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Kuching"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Kuching"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Kuwait"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Kuwait"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Macau"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Macau"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Magadan"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Magadan"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Makassar"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Makassar"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Manila"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Manila"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Muscat"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Muscat"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Novokuznetsk"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Novokuznetsk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Novosibirsk"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Novosibirsk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Omsk"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Omsk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Oral"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Oral"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Phnom_Penh"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Phnom_Penh"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Pontianak"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Pontianak"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Pyongyang"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Pyongyang"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Qatar"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Qatar"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Qyzylorda"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Qyzylorda"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Rangoon"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Rangoon"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Riyadh"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Riyadh"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Sakhalin"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Sakhalin"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Samarkand"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Samarkand"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Seoul"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Seoul"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Singapore"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Singapore"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Taipei"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Taipei"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Tashkent"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Tashkent"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Tbilisi"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Tbilisi"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Tehran"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Tehran"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Thimphu"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Thimphu"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Tokyo"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Tokyo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Ulaanbaatar"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Ulaanbaatar"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Urumqi"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Urumqi"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Vientiane"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Vientiane"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Vladivostok"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Vladivostok"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Yakutsk"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Yakutsk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Yekaterinburg"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Yekaterinburg"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Yerevan"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Yerevan"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Atlantic/Azores"
+      },
+      {
+        "Lang": "en",
+        "Name": "Atlantic/Azores"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Atlantic/Bermuda"
+      },
+      {
+        "Lang": "en",
+        "Name": "Atlantic/Bermuda"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Atlantic/Canary"
+      },
+      {
+        "Lang": "en",
+        "Name": "Atlantic/Canary"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Atlantic/Cape_Verde"
+      },
+      {
+        "Lang": "en",
+        "Name": "Atlantic/Cape_Verde"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Atlantic/Faroe"
+      },
+      {
+        "Lang": "en",
+        "Name": "Atlantic/Faroe"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Atlantic/Madeira"
+      },
+      {
+        "Lang": "en",
+        "Name": "Atlantic/Madeira"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Atlantic/South_Georgia"
+      },
+      {
+        "Lang": "en",
+        "Name": "Atlantic/South_Georgia"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Atlantic/Stanley"
+      },
+      {
+        "Lang": "en",
+        "Name": "Atlantic/Stanley"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Atlantic/St_Helena"
+      },
+      {
+        "Lang": "en",
+        "Name": "Atlantic/St_Helena"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Australia/Broken_Hill"
+      },
+      {
+        "Lang": "en",
+        "Name": "Australia/Broken_Hill"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Australia/Currie"
+      },
+      {
+        "Lang": "en",
+        "Name": "Australia/Currie"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Australia/Eucla"
+      },
+      {
+        "Lang": "en",
+        "Name": "Australia/Eucla"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Australia/Hobart"
+      },
+      {
+        "Lang": "en",
+        "Name": "Australia/Hobart"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Australia/Lindeman"
+      },
+      {
+        "Lang": "en",
+        "Name": "Australia/Lindeman"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Australia/Lord_Howe"
+      },
+      {
+        "Lang": "en",
+        "Name": "Australia/Lord_Howe"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Australia/Melbourne"
+      },
+      {
+        "Lang": "en",
+        "Name": "Australia/Melbourne"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Andorra"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Andorra"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Athens"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Athens"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Belgrade"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Belgrade"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Bucharest"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Bucharest"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Chisinau"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Chisinau"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Gibraltar"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Gibraltar"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Guernsey"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Guernsey"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Isle_of_Man"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Isle_of_Man"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Jersey"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Jersey"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Kaliningrad"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Kaliningrad"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Kiev"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Kiev"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Luxembourg"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Luxembourg"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Malta"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Malta"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Mariehamn"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Mariehamn"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Minsk"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Minsk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Monaco"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Monaco"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Moscow"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Moscow"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Podgorica"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Podgorica"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Samara"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Samara"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/San_Marino"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/San_Marino"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Sarajevo"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Sarajevo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Simferopol"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Simferopol"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Sofia"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Sofia"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Tirane"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Tirane"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Uzhgorod"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Uzhgorod"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Vaduz"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Vaduz"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Vatican"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Vatican"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Volgograd"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Volgograd"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Zaporozhye"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Zaporozhye"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Zurich"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Zurich"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Indian/Antananarivo"
+      },
+      {
+        "Lang": "en",
+        "Name": "Indian/Antananarivo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Indian/Chagos"
+      },
+      {
+        "Lang": "en",
+        "Name": "Indian/Chagos"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Indian/Christmas"
+      },
+      {
+        "Lang": "en",
+        "Name": "Indian/Christmas"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Indian/Cocos"
+      },
+      {
+        "Lang": "en",
+        "Name": "Indian/Cocos"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Indian/Comoro"
+      },
+      {
+        "Lang": "en",
+        "Name": "Indian/Comoro"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Indian/Kerguelen"
+      },
+      {
+        "Lang": "en",
+        "Name": "Indian/Kerguelen"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Indian/Mahe"
+      },
+      {
+        "Lang": "en",
+        "Name": "Indian/Mahe"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Indian/Maldives"
+      },
+      {
+        "Lang": "en",
+        "Name": "Indian/Maldives"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Indian/Mauritius"
+      },
+      {
+        "Lang": "en",
+        "Name": "Indian/Mauritius"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Indian/Mayotte"
+      },
+      {
+        "Lang": "en",
+        "Name": "Indian/Mayotte"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Indian/Reunion"
+      },
+      {
+        "Lang": "en",
+        "Name": "Indian/Reunion"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Apia"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Apia"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Chatham"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Chatham"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Chuuk"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Chuuk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Easter"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Easter"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Efate"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Efate"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Enderbury"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Enderbury"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Fakaofo"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Fakaofo"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Fiji"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Fiji"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Funafuti"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Funafuti"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Galapagos"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Galapagos"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Gambier"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Gambier"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Guadalcanal"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Guadalcanal"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Guam"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Guam"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Honolulu"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Honolulu"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Johnston"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Johnston"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Kiritimati"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Kiritimati"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Kosrae"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Kosrae"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Kwajalein"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Kwajalein"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Majuro"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Majuro"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Marquesas"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Marquesas"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Midway"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Midway"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Nauru"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Nauru"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Niue"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Niue"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Norfolk"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Norfolk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Noumea"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Noumea"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Pago_Pago"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Pago_Pago"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Palau"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Palau"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Pitcairn"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Pitcairn"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Pohnpei"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Pohnpei"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Port_Moresby"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Port_Moresby"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Rarotonga"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Rarotonga"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Saipan"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Saipan"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Tahiti"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Tahiti"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Tarawa"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Tarawa"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Tongatapu"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Tongatapu"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Wake"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Wake"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Wallis"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Wallis"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Africa/Juba"
+      },
+      {
+        "Lang": "en",
+        "Name": "Africa/Juba"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Metlakatla"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Metlakatla"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/North_Dakota/Beulah"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/North_Dakota/Beulah"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Sitka"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Sitka"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Creston"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Creston"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Fort_Nelson"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Fort_Nelson"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Kralendijk"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Kralendijk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "America/Lower_Princes"
+      },
+      {
+        "Lang": "en",
+        "Name": "America/Lower_Princes"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Antarctica/Troll"
+      },
+      {
+        "Lang": "en",
+        "Name": "Antarctica/Troll"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Atyrau"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Atyrau"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Barnaul"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Barnaul"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Chita"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Chita"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Khandyga"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Khandyga"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Srednekolymsk"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Srednekolymsk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Tomsk"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Tomsk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Ust-Nera"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Ust-Nera"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Astrakhan"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Astrakhan"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Kirov"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Kirov"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Saratov"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Saratov"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Ulyanovsk"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Ulyanovsk"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Famagusta"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Famagusta"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Hebron"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Hebron"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Asia/Yangon"
+      },
+      {
+        "Lang": "en",
+        "Name": "Asia/Yangon"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Europe/Busingen"
+      },
+      {
+        "Lang": "en",
+        "Name": "Europe/Busingen"
+      }
+    ]
+  },
+  {
+    "Type": "TimeZone",
+    "IsActive": true,
+    "Locs": [
+      {
+        "Lang": "ru",
+        "Name": "Pacific/Bougainville"
+      },
+      {
+        "Lang": "en",
+        "Name": "Pacific/Bougainville"
+      }
+    ]
+  }
+]

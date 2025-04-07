@@ -1,0 +1,101 @@
+<ul class="menu-items p-t-25" [perfectScrollbar]="config" [disabled]="isPerfectScrollbarDisabled">
+    <li *ngFor="let item of menuItems" [class.open]="item.toggle ==='open'" [routerLinkActiveOptions]="{exact: false}"
+        routerLinkActive="active" #rla="routerLinkActive">
+        <a href="javascript:;" *ngIf="item.submenu;else singleLink" (click)="toggleNavigationSub($event,item)"
+            [class.detailed]="item.details" style="padding-top: 15px;">
+            <span class="title">{{ item.label}}
+                <pg-menu-icon *ngIf="item.submenu && item.id == 19" [IconType]="item.iconType"
+                    [IconName]="item.toggle =='open' ? 'arrow-closed' : 'arrow-open'" [ExtraClass]="item.thumbNailClass"
+                    style="cursor: pointer;margin-top: -31px;float: right;;margin-right: -29px">
+                </pg-menu-icon>
+                <pg-menu-icon *ngIf="item.submenu  && item.id != 19" [IconType]="item.iconType"
+                    [IconName]="item.toggle =='open' ? 'arrow-closed' : 'arrow-open'" [ExtraClass]="item.thumbNailClass"
+                    style="cursor: pointer;margin-top: -11px;float: right;">
+                </pg-menu-icon>
+            </span>
+            <span *ngIf="item.details" class="details">{{item.details}}</span>
+        </a>
+        <ng-template #singleLink>
+            <a *ngIf="item.id != 14" [routerLink]="[item.routerLink]" [class.detailed]="item.details"
+                style="padding-top: 15px;">
+                <span class="title">{{ item.label }}</span>
+                <span *ngIf="item.details" class="details">{{item.details}}</span>
+            </a>
+            <a id="toggle-menu" (click)="toggleNavigation(item)" *ngIf="item.id == 14" [class.detailed]="item.details"
+                style="padding-top: 15px;cursor: pointer;">
+                <span *ngIf="item.id == 14" class="overlay-text">{{ item.label }}</span>
+                <span *ngIf="item.details" class="details">{{item.details}}</span>
+            </a>
+            <a *ngIf="item.externalLink" href="{{item.externalLink}}" [attr.target]="item.target"
+                [class.detailed]="item.details" style="padding-top: 15px;">
+                <span class="title">{{ item.label }}</span>
+                <span *ngIf="item.details" class="details">{{item.details}}</span>
+            </a>
+        </ng-template>
+        <!-- onmouseover="document.getElementById('toggle-menu').click()" -->
+        <pg-menu-icon (click)="closeSideBar()" (mouseenter)="onCloudMenu($event, item)"
+            *ngIf="!openedSideBar && item.id != 14 && item.iconType" [routerLink]="[item.routerLink]"
+            [IconType]="item.iconType" [IconName]="item.iconName" [ExtraClass]="item.thumbNailClass"
+            [ngClass]="rla.isActive ? 'acvtive-nav-blue' : ''" style="cursor: pointer;"
+            [style.float]="openedSideBar ? 'left' : 'right'"
+            [ngStyle]="{'margin-right':openedSideBar ? '0px' : '14px'}"></pg-menu-icon>
+        <pg-menu-icon *ngIf="openedSideBar && item.id != 14 && item.iconType" [routerLink]="[item.routerLink]"
+            [IconType]="item.iconType" [IconName]="item.iconName" [ExtraClass]="item.thumbNailClass"
+            [ngClass]="rla.isActive ? 'acvtive-nav-blue' : ''" style="cursor: pointer;"
+            [style.float]="openedSideBar ? 'left' : 'right'"
+            [ngStyle]="{'margin-right':openedSideBar ? '0px' : '14px'}"></pg-menu-icon>
+        <pg-menu-icon *ngIf="item.id == 14" (click)="toggleNavigation(item)" [IconType]="item.iconType"
+            [IconName]="item.iconName" [ExtraClass]="item.thumbNailClass"
+            [ngClass]="rla.isActive ? 'acvtive-nav-blue' : ''" style="cursor: pointer;margin-top: 10px;"
+            [ngStyle]="{'margin-right':openedSideBar ? '0px' : '12px'}"
+            [style.float]="openedSideBar ? 'left' : 'right'">
+        </pg-menu-icon>
+        <ul class="sub-menu" *ngIf="item.submenu" [@toggleHeight]="item.toggle"
+            [ngStyle]="{'padding': item.toggle ==='open' ? '18px 0 10px 0' : '0px 0 0px 0' }"
+            [ngClass]="{'sub-menu-pop':openedSideBar}">
+
+            <li class="sub-menu-li" *ngFor="let child of item.submenu" [class.open]="child.toggle ==='open'"
+                [routerLinkActiveOptions]="{exact: false}" routerLinkActive="active" #rla="routerLinkActive"
+                style="line-height: 20px;">
+                <a href="javascript:;" *ngIf="child.submenu;else singleLinkChild"
+                    (click)="toggleNavigationSub($event,item)"><span class="title">{{ child.label }}</span>
+                    <span *ngIf="child.submenu" class=" arrow" [class.open]="item.toggle ==='open'"></span>
+                </a>
+                <ng-template #singleLinkChild>
+                    <a *ngIf="child.routerLink" [routerLink]="[child.routerLink]"><span class="sub-menu-text"
+                            [ngStyle]="{'opacity' : getOpacity(child.routerLink)}">{{ child.label }}</span>
+                    </a>
+                    <a *ngIf="child.externalLink" href="{{ child.externalLink }}" [attr.target]="item.target"><span
+                            class="title">{{ child.label }}</span>
+                    </a>
+
+                    <pg-menu-icon *ngIf="child.iconType" [IconType]="child.iconType" [IconName]="child.iconName">
+                    </pg-menu-icon>
+                </ng-template>
+                <ul class="sub-menu" *ngIf="child.submenu" [@toggleHeight]="child.toggle">
+                    <li *ngFor="let lvl2 of child.submenu">
+                        <a *ngIf="lvl2.routerLink" [routerLink]="[lvl2.routerLink]"><span
+                                class="title active">{{ lvl2.label }}</span>
+                            <span *ngIf="lvl2.submenu" class=" arrow" [class.open]="lvl2.toggle"></span>
+                        </a>
+                        <a *ngIf="lvl2.externalLink" [routerLink]="[lvl2.externalLink]"><span
+                                class="title">{{ item.label }}</span></a>
+                        <pg-menu-icon *ngIf="lvl2.iconType" [IconType]="lvl2.iconType" [IconName]="lvl2.iconName">
+                        </pg-menu-icon>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<context-menu>
+    <ng-template contextMenuItem let-item (execute)="onCloudMenuClick($event)">
+        <span *ngIf="item.submenu" style="display: inline-grid;margin-left: -17px;margin-right: -17px;">
+            <a *ngFor="let submenu of item.submenu" [routerLink]="[submenu.routerLink]">{{submenu.label}}</a>
+        </span>
+        <span *ngIf="!item.submenu">
+            {{ item.label }}
+        </span>
+    </ng-template>
+</context-menu>

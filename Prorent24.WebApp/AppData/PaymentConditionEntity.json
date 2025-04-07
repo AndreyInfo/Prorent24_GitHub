@@ -1,0 +1,14 @@
+﻿[
+  {
+    "Name": "14 дней",
+    "TextOnInvoice": "14 дней после даты выставления счета",
+    "AccountingCode": "14",
+    "TermInDays": 14
+  },
+  {
+    "Name": "30 дней",
+    "TextOnInvoice": "30 дней после даты выставления счета",
+    "AccountingCode": "30",
+    "TermInDays": 30
+  }
+]

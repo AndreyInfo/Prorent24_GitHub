@@ -1,0 +1,261 @@
+<div class="jumbotron no-margin">
+    <div class="sm-p-l-0 sm-p-r-0">
+        <div class="inner" pg-parallax="">
+            <div class="container-fluid sm-p-l-0 sm-p-r-0">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="">{{'Customer relations' | translate}}</a></li>
+                    <li class="breadcrumb-item"><a routerLink="/configuration/communication/blanks">{{'Blanks' | translate}}</a></li>
+                    <li class="breadcrumb-item active">{{'Create blank' | translate}}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card card-transparent">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <form role="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+                    <input type="hidden" name="id" [(ngModel)]="entity.id">
+                    <pgcard MinimalHeader="true" HeaderClass="separator">
+                        <ng-template #CardTitle>
+                            <a routerLink="/configuration/communication/blanks" class="link-button">
+                                <button type="button" class="btn btn-white btn-xs mr-1">
+                                    {{'form.cancel' | translate}}
+                                </button>
+                            </a>
+                            <button type="submit" class="btn btn-primary btn-xs" [disabled]="form.invalid">
+                                <i class="fa fa-save"></i> {{'form.save' | translate}}
+                            </button>
+                        </ng-template>
+
+                        <div class="pt-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group"
+                                        [class.has-error]="name.invalid && (name.dirty || name.touched)">
+                                        <label class="label-sm">{{'entity.name' | translate}}</label>
+                                        <input type="text" placeholder="{{'entity.name' | translate}}"
+                                            class="form-control" id="name" name="name" [(ngModel)]="entity.name"
+                                            #name="ngModel" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <pgcard MinimalHeader="true">
+                                <ng-template #CardTitle>
+                                    {{'Options' | translate}}
+                                </ng-template>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>{{'pageSize' | translate}}</label>
+                                            <pg-select style="width: 100%;" name="pageSize"
+                                                [(ngModel)]="entity.pageSize" [PlaceHolder]="'Choose...'" [required]="true">
+                                                <pg-option *ngFor="let pageSize of pageSizeType | enumToArray"
+                                                    [Label]="pageSize | translate" [Value]="pageSize">
+                                                </pg-option>
+                                            </pg-select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label-sm">{{'Page width' | translate}}</label>
+                                            <div class="input-group">
+                                                <input type="number" placeholder="0" class="form-control" id="pageWidth"
+                                                    name="pageWidth" [(ngModel)]="entity.pageWidth" #seats="ngModel">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        cm
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label-sm">{{'Page height' | translate}}</label>
+                                            <div class="input-group">
+                                                <input type="number" placeholder="0" class="form-control"
+                                                    id="pageHeight" name="pageHeight" [(ngModel)]="entity.pageHeight"
+                                                    #seats="ngModel">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        cm
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label-sm">{{'Indentation from above' | translate}}</label>
+                                            <div class="input-group">
+                                                <input type="number" placeholder="0" class="form-control" id="topMargin"
+                                                    name="topMargin" [(ngModel)]="entity.topMargin" #seats="ngModel">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        cm
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label-sm">{{'Indent from the bottom' | translate}}</label>
+                                            <div class="input-group">
+                                                <input type="number" placeholder="0" class="form-control"
+                                                    id="bottomMargin" name="bottomMargin"
+                                                    [(ngModel)]="entity.bottomMargin" #seats="ngModel">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        cm
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label-sm">{{'Left margin' | translate}}</label>
+                                            <div class="input-group">
+                                                <input type="number" placeholder="0" class="form-control"
+                                                    id="leftMargin" name="leftMargin" [(ngModel)]="entity.leftMargin"
+                                                    #seats="ngModel">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        cm
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label-sm">{{'Indent on the right' | translate}}</label>
+                                            <div class="input-group">
+                                                <input type="number" placeholder="0" class="form-control"
+                                                    id="rightMargin" name="rightMargin" [(ngModel)]="entity.rightMargin"
+                                                    #seats="ngModel">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        cm
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="checkbox check-primary">
+                                            <input type="checkbox" id="pageNumbers" checked="checked" name="pageNumbers"
+                                                [(ngModel)]="entity.pageNumbers">
+                                            <label for="pageNumbers">
+                                                {{'Leave the first page blank' | translate}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </pgcard>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checkbox check-primary">
+                                        <input type="checkbox" id="showAtInvoices" checked="checked"
+                                            name="showAtInvoices" [(ngModel)]="entity.showAtInvoices">
+                                        <label for="showAtInvoices">
+                                            {{'showatinvoices' | translate}}
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox check-primary">
+                                        <input type="checkbox" id="showAtQuotations" checked="checked"
+                                            name="showAtQuotations" [(ngModel)]="entity.showAtQuotations">
+                                        <label for="showAtQuotations">
+                                            {{'showatquotations' | translate}}
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox check-primary">
+                                        <input type="checkbox" id="displayAtContracts" checked="checked"
+                                            name="displayAtContracts" [(ngModel)]="entity.displayAtContracts">
+                                        <label for="displayAtContracts">
+                                            {{'showatcontracts' | translate}}
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox check-primary">
+                                        <input type="checkbox" id="showAtSubhireSlips" checked="checked"
+                                            name="showAtSubhireSlips" [(ngModel)]="entity.showAtSubhireSlips">
+                                        <label for="showAtSubhireSlips">
+                                            {{'Show sublease receipts' | translate}}
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox check-primary">
+                                        <input type="checkbox" id="showAtReminders" checked="checked"
+                                            name="showAtReminders" [(ngModel)]="entity.showAtReminders">
+                                        <label for="showAtReminders">
+                                            {{'Show in reminders' | translate}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checkbox check-primary">
+                                        <input type="checkbox" id="showAtCrewMemberSlips" checked="checked"
+                                            name="showAtCrewMemberSlips" [(ngModel)]="entity.showAtCrewMemberSlips">
+                                        <label for="showAtCrewMemberSlips">
+                                            {{'Display employee receipts' | translate}}
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox check-primary">
+                                        <input type="checkbox" id="showAtTransportSlips" checked="checked"
+                                            name="showAtTransportSlips" [(ngModel)]="entity.showAtTransportSlips">
+                                        <label for="showAtTransportSlips">
+                                            {{'Show in transport receipts' | translate}}
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox check-primary">
+                                        <input type="checkbox" id="showOnEquipmentSlips" checked="checked"
+                                            name="showOnEquipmentSlips" [(ngModel)]="entity.showOnEquipmentSlips">
+                                        <label for="showOnEquipmentSlips">
+                                            {{'Show equipment invoice' | translate}}
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox check-primary">
+                                        <input type="checkbox" id="showAtRepairSlips" checked="checked"
+                                            name="showAtRepairSlips" [(ngModel)]="entity.showAtRepairSlips">
+                                        <label for="showAtRepairSlips">
+                                            {{'Show in repair receipts' | translate}}
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox check-primary">
+                                        <input type="checkbox" id="showAtOtherSlips" checked="checked"
+                                            name="showAtOtherSlips" [(ngModel)]="entity.showAtOtherSlips">
+                                        <label for="showAtOtherSlips">
+                                            {{'showatotherslips' | translate}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </pgcard>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+<div class="inner-content full-height page-content-wrapper scroll-vertical-hidden">
+
+    <!-- HEADER -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron no-margin">
+                <div class="container-fluid" style="margin-right: 20px;">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="inner" pg-parallax>
+                                <h4>{{'Contacts' | translate}}</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="inner filter-search" pg-parallax>
+                                <div class="input-group pl-2 pr-2 " style="padding-top: 16px;">
+                                    <input class="form-control input-sm filter-search-input" name="searchText" #searchTextVal
+                                        type="text" placeholder="Поиск..."
+                                        (keyup.enter)="onChangedFilterByText($event)">
+                                    <div class="input-group-append">
+                                        <button type="button" class="filter-search-btn" (click)="onChangedFilterByTextVal(searchTextVal.value)">
+                                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.41471 12.8294C7.89491 12.8294 9.25563 12.3203 10.3413 11.4759L13.8662 15.0008L15 13.867L11.4751 10.3421C12.3203 9.25562 12.8294 7.89491 12.8294 6.41471C12.8294 2.8778 9.95162 0 6.41471 0C2.8778 0 0 2.8778 0 6.41471C0 9.95162 2.8778 12.8294 6.41471 12.8294ZM6.41471 1.60368C9.068 1.60368 11.2257 3.76143 11.2257 6.41471C11.2257 9.068 9.068 11.2257 6.41471 11.2257C3.76143 11.2257 1.60368 9.068 1.60368 6.41471C1.60368 3.76143 3.76143 1.60368 6.41471 1.60368Z"
+                                                    fill="black" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="switch-widget">
+                                <span class="switch-widget-title">Виджет</span>
+                                <ui-switch uncheckedLabel="ВЫКЛ." checkedLabel="ВКЛ."
+                                    (change)="onChangeWidjetSwitch($event)">
+                                    <span *ngIf="widjetSwitchState">ВКЛ</span>
+                                    <span *ngIf="!widjetSwitchState">ВЫКЛ.</span>
+                                </ui-switch>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 25px;">
+        <!-- CONTENT -->
+        <div [ngClass]="{'col-md-9': widjetSwitchState, 'col-md-12': !widjetSwitchState}" style="padding-right: 10px;">
+            <!-- GRID -->
+            <div>
+                <div class="container-fluid bg-white grid-controls-panel">
+
+                    <!--Кнопка Столбцы по умолчанию-->
+                    <div class="pull-right" style="line-height: 33px;">
+                        <button class="btn btn-xs btn-white ml-1 text-font" (click)="setDefaultColumns()"
+                                matTooltip="{{'Reset a set of columns to basic settings' | translate}}">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />
+                            </svg>
+                            Столбцы по умолчанию
+                        </button>
+                    </div>
+
+                    <div class="pull-right" style="line-height: 33px;">
+                        <button class="btn btn-xs btn-white ml-1 text-font" (click)="showAdditionalFieldsModal()"
+                                matTooltip="{{'Add columns' | translate}}">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.2 11.9999H8.4C9.0624 11.9999 9.6 11.4623 9.6 10.7999V3.5999C9.6 2.9375 9.0624 2.3999 8.4 2.3999H1.2C0.5376 2.3999 0 2.9375 0 3.5999V10.7999C0 11.4623 0.5376 11.9999 1.2 11.9999ZM2.4 6.5999H4.2V4.7999H5.4V6.5999H7.2V7.7999H5.4V9.5999H4.2V7.7999H2.4V6.5999Z"
+                                      fill="#192D3E" />
+                                <path d="M10.7996 0H3.59961V1.2H10.7996V8.4H11.9996V1.2C11.9996 0.5382 11.4614 0 10.7996 0Z"
+                                      fill="#192D3E" />
+                            </svg>
+                            Добавить столбцы
+                        </button>
+                    </div>
+                    <div *ngIf="!removeArrayMode" style="display: flex;">
+                        <button *ngIf="gridPermission.edit" class="btn btn-primary btn-xs form-save"
+                                routerLink="create">
+                            {{'form.add' | translate}}
+                            <i class="fa fa-plus"></i>
+                        </button>
+                        <a *ngIf="gridPermission.edit && canAction" routerLink="edit/{{selected_entity?.id}}"
+                           class="link-button form-edit" style="font-size: 12px;line-height: 37px;">
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 5.18993V6.9892H1.79928L6.77667 2.019L4.9774 0.219727L0 5.18993ZM0 8.78848H9.59614V9.98799H0V8.78848Z"
+                                      fill="#192D3E" />
+                            </svg>
+                            {{'form.edit' | translate}}
+
+                        </a>
+                        <a *ngIf="gridPermission.delete && canAction" (click)="changeRemoveArrayMode()"
+                           class="link-button form-delete" style="line-height: 37px;">
+                            <svg width="10" height="12" viewBox="0 0 10 12" fill="none" style="margin-top: -4px;"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.66667 3.66669C1.35944 3.66669 1.11111 3.66669 1.11111 3.66669V10.8889C1.11111 11.5022 1.60889 12 2.22222 12H7.77778C8.39111 12 8.88889 11.5022 8.88889 10.8889V3.66669C8.88889 3.66669 8.64056 3.66669 8.33333 3.66669H1.66667ZM7.56556 2.00003L6.66667 0.888916H3.33333L2.43444 2.00003H0V3.11114H2.77778H7.22222H10V2.00003H7.56556Z"
+                                      fill="#D66B5D" />
+                            </svg>
+                            <span style="margin-left: 11px;">{{'delete' | translate}}</span>
+                        </a>
+                    </div>
+                    <div *ngIf="removeArrayMode">
+                        <button class="btn btn-danger btn-xs mr-1" [disabled]="!canAction" (click)="onDeleteRows()">
+                            <i class="fa fa-trash"></i> {{'form.confirm' | translate}}
+                        </button>
+                        <button class="btn btn-white btn-xs mr-1" (click)="changeRemoveArrayMode()">
+                            {{'form.cancel' | translate}}
+                        </button>
+                    </div>
+                </div>
+                <div class="jqx-widget-container jqxWidgetContainerContacts">
+                    <jqxGrid #dataGrid [theme]="'metro'" [localization]="localization" [width]="'100%'"
+                        [height]="'450px'" [source]="source" [columns]="tableSource.columns" [columnsresize]="true"
+                        [sortable]="true" [filterable]="true" [scrollbarsize]="5" [rowsheight]="45" [groupable]="false"
+                        [autoshowfiltericon]="true" [enabletooltips]="false" [selectionmode]="selectMode"
+                        [columnsreorder]="true" (onRowselect)="onRowSelect($event, true)"
+                        (onRowdoubleclick)="openEditForm()">
+                    </jqxGrid>
+                </div>
+            </div>
+            <!-- FILTERS -->
+            <div class="row">
+                <div class="col-md-12">
+                    <rent-filter-panel [entityType]="entityType" (onChanged)="onChangedFilter($event)">
+                    </rent-filter-panel>
+                </div>
+            </div>
+        </div>
+        <!-- DETAILS PANEL -->
+        <div *ngIf="widjetSwitchState" class="col-md-3" style="padding-left: 10px;">
+            <rent-widget-info [entityType]="entityType" [entityId]="selected_entity?.id" [data]="selected_entity_full">
+            </rent-widget-info>
+        </div>
+    </div>
+    <rent-additional-grid-column [entity]="tableEntityType" (onAddColumn)="onAddColumns($event)">
+    </rent-additional-grid-column>
+</div>

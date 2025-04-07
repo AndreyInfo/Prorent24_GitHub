@@ -1,0 +1,22 @@
+<div class="jumbotron no-margin">
+    <div class="container-fluid container-fixed-lg sm-p-l-0 sm-p-r-0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a
+                    [routerLink]="['/equipments/edit', parentId, 'serialNumbers']">{{'serialNumbers' | translate}}</a>
+            </li>
+            <li class="breadcrumb-item active">{{( id ? "edit" : "create") | translate }} {{'Serialnumber' | translate}}
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="route-top-tabs">
+    <nav mat-tab-nav-bar>
+        <a mat-tab-link *ngFor="let tab of tabs" [routerLink]="[tab]" routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive">
+            {{tab | translate}}
+        </a>
+    </nav>
+</div>
+
+<router-outlet></router-outlet>

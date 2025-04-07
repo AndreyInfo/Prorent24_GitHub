@@ -1,0 +1,519 @@
+<div class="full-height booking-container">
+    <div class="jumbotron no-margin">
+        <div class="container-fluid" style="margin-right: 20px;">
+            <div class="row" style="padding-left: 20px">
+                <div class="col-md-7">
+                    <div class="inner" pg-parallax>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a routerLink="/warehouse">{{'Warehouse' | translate}}</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="row filter-search">
+                        <div class="col-sm-12 text-right">
+                            <div class="booking-select-status">
+                                <pg-select style="width: 240px;" [(ngModel)]="selectedBookingStep"
+                                    name="selectedBookingStep" [PlaceHolder]="''">
+                                    <pg-option *ngFor="let item of movementStep | enumToArray"
+                                        [Label]="item | translate" [Value]="item">
+                                    </pg-option>
+                                </pg-select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+    <div class="inner" pg-parallax="">
+        <div class="container-fluid sm-p-l-0 sm-p-r-0">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/warehouse">{{'Warehouse' | translate}}</a></li>
+                <li class="breadcrumb-item active">{{bookings.projectName}}
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="container-fluid bg-white p-2 border-bottom">
+
+    </div>
+</div> -->
+    <!-- <div class="full-height">
+ss
+    </div> -->
+    <div class="row controls-eqiepment">
+        <div class="col-md-6">
+            <div class="form-group scaner">
+                <input type="text" class="form-control input-without-border" id="scanCode" name="scanCode"
+                    placeholder="{{'scaner' | translate}}" [(ngModel)]="scanCode" (keyup.enter)="scaningCode()" />
+            </div>
+        </div>
+        <div class="col-md-6 text-right">
+            <button class="btn btn-xs btn-white ml-1 text-font"
+                style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); border: none;
+                padding-top: 13px;"
+                ng-reflect-message="Скачать накладную" aria-describedby="cdk-describedby-message-2"
+                cdk-describedby-host=""><svg fill="none" height="12" viewBox="0 0 15 12" width="15"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 9L10.5 5.25H8.25V0H6.75V5.25H4.5L7.5 9Z" fill="#192D3E"></path>
+                    <path
+                        d="M13.5 10.5H1.5V5.25H0V10.5C0 11.3273 0.67275 12 1.5 12H13.5C14.3273 12 15 11.3273 15 10.5V5.25H13.5V10.5Z"
+                        fill="#192D3E"></path>
+                </svg> Скачать накладную </button>
+        </div>
+    </div>
+    <div class="full-height booking-blocks">
+        <ng-template [ngTemplateOutlet]="loadTemplate(selectedBookingStep)">
+        </ng-template>
+    </div>
+</div>
+
+<ng-template #pack_packed>
+    <div class="row full-height">
+        <div class="col-sm-6 border-right full-height pr-0">
+            <rent-movement-state class="full-height" [title]="'Склад'" [side]="'left'" [collection]="bookings.data.pack"
+                [currentCollectionState]="'pack'" [nextCollectionState]="'packed'" [newState]="'packed'"
+                (move)="move($event)">
+                <ul>
+                    <!--  <li>
+                        <button class="btn btn-xs btn-default">
+                            <i class="fa fa-plus"></i> Добавить оборудование
+                        </button>
+                    </li> -->
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="moveAll('pack', 'packed', 'packed')">
+                            {{'Collect all' | translate}}
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.18423e-07 4.72827L7.92115 4.72827L5.0467 7.60271L5.8146 8.37061L10 4.1852L5.8146 -0.000200638L5.0467 0.767695L7.92115 3.64214L4.13376e-07 3.64214L3.18423e-07 4.72827Z"
+                                    fill="#475765" />
+                            </svg>
+
+                        </button>
+                    </li>
+                </ul>
+            </rent-movement-state>
+        </div>
+        <div class="col-sm-6 full-height pr-2">
+            <rent-movement-state class="full-height" [title]="'Собрано'" [side]="'right'"
+                [collection]="bookings.data.packed" [currentCollectionState]="'packed'" [nextCollectionState]="'pack'"
+                [newState]="'pack'" (move)="move($event)">
+                <ul>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="moveAll('packed', 'pack', 'pack')">
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 3.64234H2.07885L4.9533 0.767894L4.1854 0L0 4.1854L4.1854 8.37081L4.9533 7.60291L2.07885 4.72847H10V3.64234Z"
+                                    fill="#475765" />
+                            </svg>
+                            {{'All to the warehouse' | translate}}
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="nextStep(movementStep.packed_transportation)">
+                            {{'Next step' | translate}}
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.18423e-07 4.72827L7.92115 4.72827L5.0467 7.60271L5.8146 8.37061L10 4.1852L5.8146 -0.000200638L5.0467 0.767695L7.92115 3.64214L4.13376e-07 3.64214L3.18423e-07 4.72827Z"
+                                    fill="#475765" />
+                            </svg>
+
+                        </button>
+                    </li>
+                </ul>
+            </rent-movement-state>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #packed_transportation>
+    <div class="row full-height">
+        <div class="col-sm-6 border-right full-height pr-0">
+            <rent-movement-state class="full-height" [title]="'Собрано'" [side]="'left'"
+                [collection]="bookings.data.packed" [currentCollectionState]="'packed'"
+                [nextCollectionState]="'transportation'" [newState]="'transportation'" (move)="move($event)">
+                <ul>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="nextStep(movementStep.pack_packed)">
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 3.64234H2.07885L4.9533 0.767894L4.1854 0L0 4.1854L4.1854 8.37081L4.9533 7.60291L2.07885 4.72847H10V3.64234Z"
+                                    fill="#475765" />
+                            </svg>
+                            {{'Previous step' | translate}}
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-xs btn-default"
+                            (click)="moveAll('packed', 'transportation', 'transportation')">
+                            {{'All for transportation' | translate}}
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.18423e-07 4.72827L7.92115 4.72827L5.0467 7.60271L5.8146 8.37061L10 4.1852L5.8146 -0.000200638L5.0467 0.767695L7.92115 3.64214L4.13376e-07 3.64214L3.18423e-07 4.72827Z"
+                                    fill="#475765" />
+                            </svg>
+
+                        </button>
+                    </li>
+                </ul>
+            </rent-movement-state>
+        </div>
+        <div class="col-sm-6 full-height pl-0">
+            <rent-movement-state class="full-height" [title]="'Транспортировка'" [side]="'right'"
+                [collection]="bookings.data.transportation" [currentCollectionState]="'transportation'"
+                [nextCollectionState]="'packed'" [newState]="'packed'" (move)="move($event)">
+                <ul>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="moveAll('transportation', 'packed', 'packed')">
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 3.64234H2.07885L4.9533 0.767894L4.1854 0L0 4.1854L4.1854 8.37081L4.9533 7.60291L2.07885 4.72847H10V3.64234Z"
+                                    fill="#475765" />
+                            </svg>
+                            {{'All to build' | translate}}
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="nextStep(movementStep.transportation_mounting)">
+                            {{'Next step' | translate}}
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.18423e-07 4.72827L7.92115 4.72827L5.0467 7.60271L5.8146 8.37061L10 4.1852L5.8146 -0.000200638L5.0467 0.767695L7.92115 3.64214L4.13376e-07 3.64214L3.18423e-07 4.72827Z"
+                                    fill="#475765" />
+                            </svg>
+
+                        </button>
+                    </li>
+                </ul>
+            </rent-movement-state>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #transportation_mounting>
+    <div class="row full-height">
+        <div class="col-sm-6 border-right full-height pr-0">
+            <rent-movement-state class="full-height" [title]="'Транспортировка'" [side]="'left'"
+                [collection]="bookings.data.transportation" [currentCollectionState]="'transportation'"
+                [nextCollectionState]="'mounting'" [newState]="'mounting'" (move)="move($event)">
+                <ul>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="nextStep(movementStep.packed_transportation)">
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 3.64234H2.07885L4.9533 0.767894L4.1854 0L0 4.1854L4.1854 8.37081L4.9533 7.60291L2.07885 4.72847H10V3.64234Z"
+                                    fill="#475765" />
+                            </svg>
+                            {{'Previous step' | translate}}
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-xs btn-default"
+                            (click)="moveAll('transportation', 'mounting', 'mounting')">
+                            {{'All for installation' | translate}}
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.18423e-07 4.72827L7.92115 4.72827L5.0467 7.60271L5.8146 8.37061L10 4.1852L5.8146 -0.000200638L5.0467 0.767695L7.92115 3.64214L4.13376e-07 3.64214L3.18423e-07 4.72827Z"
+                                    fill="#475765" />
+                            </svg>
+
+                        </button>
+                    </li>
+                </ul>
+            </rent-movement-state>
+        </div>
+        <div class="col-sm-6 full-height pl-0">
+            <rent-movement-state class="full-height" [title]="'Монтаж'" [side]="'right'"
+                [collection]="bookings.data.mounting" [currentCollectionState]="'mounting'"
+                [nextCollectionState]="'transportation'" [newState]="'transportation'" (move)="move($event)">
+                <ul>
+                    <li>
+                        <button class="btn btn-xs btn-default"
+                            (click)="moveAll('mounting', 'transportation', 'transportation')">
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 3.64234H2.07885L4.9533 0.767894L4.1854 0L0 4.1854L4.1854 8.37081L4.9533 7.60291L2.07885 4.72847H10V3.64234Z"
+                                    fill="#475765" />
+                            </svg>
+                            {{'All for transportation' | translate}}
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="nextStep(movementStep.mounting_inuse)">
+                            {{'Next step' | translate}}
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.18423e-07 4.72827L7.92115 4.72827L5.0467 7.60271L5.8146 8.37061L10 4.1852L5.8146 -0.000200638L5.0467 0.767695L7.92115 3.64214L4.13376e-07 3.64214L3.18423e-07 4.72827Z"
+                                    fill="#475765" />
+                            </svg>
+
+                        </button>
+                    </li>
+                </ul>
+            </rent-movement-state>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #mounting_inuse>
+    <div class="row full-height">
+        <div class="col-sm-6 border-right full-height pr-0">
+            <rent-movement-state class="full-height" [title]="'Монтаж'" [side]="'left'"
+                [collection]="bookings.data.mounting" [currentCollectionState]="'mounting'"
+                [nextCollectionState]="'inUse'" [newState]="'inUse'" (move)="move($event)">
+                <ul>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="nextStep(movementStep.transportation_mounting)">
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 3.64234H2.07885L4.9533 0.767894L4.1854 0L0 4.1854L4.1854 8.37081L4.9533 7.60291L2.07885 4.72847H10V3.64234Z"
+                                    fill="#475765" />
+                            </svg>
+                            {{'Previous step' | translate}}
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="moveAll('mounting', 'inUse', 'inUse')">
+                            {{'All to work' | translate}}
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.18423e-07 4.72827L7.92115 4.72827L5.0467 7.60271L5.8146 8.37061L10 4.1852L5.8146 -0.000200638L5.0467 0.767695L7.92115 3.64214L4.13376e-07 3.64214L3.18423e-07 4.72827Z"
+                                    fill="#475765" />
+                            </svg>
+
+                        </button>
+                    </li>
+                </ul>
+            </rent-movement-state>
+        </div>
+        <div class="col-sm-6 full-height pl-0">
+            <rent-movement-state class="full-height" [title]="'В работе'" [side]="'right'"
+                [collection]="bookings.data.inUse" [currentCollectionState]="'inUse'" [nextCollectionState]="'mounting'"
+                [newState]="'mounting'" (move)="move($event)">
+                <ul>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="moveAll('inUse', 'mounting', 'mounting')">
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 3.64234H2.07885L4.9533 0.767894L4.1854 0L0 4.1854L4.1854 8.37081L4.9533 7.60291L2.07885 4.72847H10V3.64234Z"
+                                    fill="#475765" />
+                            </svg>
+                            {{'All for installation' | translate}}
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="nextStep(movementStep.inuse_dismantling)">
+                            {{'Next step' | translate}}
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.18423e-07 4.72827L7.92115 4.72827L5.0467 7.60271L5.8146 8.37061L10 4.1852L5.8146 -0.000200638L5.0467 0.767695L7.92115 3.64214L4.13376e-07 3.64214L3.18423e-07 4.72827Z"
+                                    fill="#475765" />
+                            </svg>
+
+                        </button>
+                    </li>
+                </ul>
+            </rent-movement-state>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #inuse_dismantling>
+    <div class="row full-height">
+        <div class="col-sm-6 border-right full-height pr-0">
+            <rent-movement-state class="full-height" [title]="'В работе'" [side]="'left'"
+                [collection]="bookings.data.inUse" [currentCollectionState]="'inUse'"
+                [nextCollectionState]="'dismantling'" [newState]="'dismantling'" (move)="move($event)">
+                <ul>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="nextStep(movementStep.mounting_inuse)">
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 3.64234H2.07885L4.9533 0.767894L4.1854 0L0 4.1854L4.1854 8.37081L4.9533 7.60291L2.07885 4.72847H10V3.64234Z"
+                                    fill="#475765" />
+                            </svg>
+                            {{'Previous step' | translate}}
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="moveAll('inUse', 'dismantling', 'dismantling')">
+                            {{'Everything to dismantle' | translate}}
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.18423e-07 4.72827L7.92115 4.72827L5.0467 7.60271L5.8146 8.37061L10 4.1852L5.8146 -0.000200638L5.0467 0.767695L7.92115 3.64214L4.13376e-07 3.64214L3.18423e-07 4.72827Z"
+                                    fill="#475765" />
+                            </svg>
+
+                        </button>
+                    </li>
+                </ul>
+            </rent-movement-state>
+        </div>
+        <div class="col-sm-6 full-height pl-0">
+            <rent-movement-state class="full-height" [title]="'Демонтаж'" [side]="'right'"
+                [collection]="bookings.data.dismantling" [currentCollectionState]="'dismantling'"
+                [nextCollectionState]="'inUse'" [newState]="'inUse'" (move)="move($event)">
+                <ul>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="moveAll('dismantling', 'inUse', 'inUse')">
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 3.64234H2.07885L4.9533 0.767894L4.1854 0L0 4.1854L4.1854 8.37081L4.9533 7.60291L2.07885 4.72847H10V3.64234Z"
+                                    fill="#475765" />
+                            </svg>
+                            {{'All to work' | translate}}
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="nextStep(movementStep.dismantling_returned)">
+                            {{'Next step' | translate}}
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.18423e-07 4.72827L7.92115 4.72827L5.0467 7.60271L5.8146 8.37061L10 4.1852L5.8146 -0.000200638L5.0467 0.767695L7.92115 3.64214L4.13376e-07 3.64214L3.18423e-07 4.72827Z"
+                                    fill="#475765" />
+                            </svg>
+
+                        </button>
+                    </li>
+                </ul>
+            </rent-movement-state>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #dismantling_returned>
+    <div class="row full-height">
+        <div class="col-sm-6 border-right full-height pr-0">
+            <rent-movement-state class="full-height" [title]="'Демонтаж'" [side]="'left'"
+                [collection]="bookings.data.dismantling" [currentCollectionState]="'dismantling'"
+                [nextCollectionState]="'returned'" [newState]="'returned'" (move)="move($event)">
+                <ul>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="nextStep(movementStep.inuse_dismantling)">
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 3.64234H2.07885L4.9533 0.767894L4.1854 0L0 4.1854L4.1854 8.37081L4.9533 7.60291L2.07885 4.72847H10V3.64234Z"
+                                    fill="#475765" />
+                            </svg>
+                            {{'Previous step' | translate}}
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-xs btn-default" (click)="moveAll('dismantling', 'returned', 'returned')">
+                            {{'All to the warehouse' | translate}}
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.18423e-07 4.72827L7.92115 4.72827L5.0467 7.60271L5.8146 8.37061L10 4.1852L5.8146 -0.000200638L5.0467 0.767695L7.92115 3.64214L4.13376e-07 3.64214L3.18423e-07 4.72827Z"
+                                    fill="#475765" />
+                            </svg>
+
+                        </button>
+                    </li>
+                </ul>
+            </rent-movement-state>
+        </div>
+        <div class="col-sm-6 full-height pl-0">
+            <rent-movement-state class="full-height" [title]="'Возвращено на склад'" [side]="'right'"
+                [collection]="bookings.data.returned" [currentCollectionState]="'returned'"
+                [nextCollectionState]="'dismantling'" [newState]="'dismantling'" (move)="move($event)">
+                <ul>
+                    <li>
+                        <button class="btn btn-xs btn-default"
+                            (click)="moveAll('returned', 'dismantling', 'dismantling')">
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 3.64234H2.07885L4.9533 0.767894L4.1854 0L0 4.1854L4.1854 8.37081L4.9533 7.60291L2.07885 4.72847H10V3.64234Z"
+                                    fill="#475765" />
+                            </svg>
+
+                            {{'Everything to dismantle' | translate}}
+                        </button>
+                    </li>
+                </ul>
+            </rent-movement-state>
+        </div>
+    </div>
+</ng-template>
+
+<!-- SPLIT EQUIPMENT -->
+<!-- <div bsModal #eqSplitModal="bs-modal" class="modal fade stick-up" tabindex="-1" role="dialog"
+    aria-labelledby="eqSplitModal" [config]="{backdrop: 'static'}" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header clearfix ">
+                <button type="button" class="close" (click)="eqSplitModal.hide()" aria-hidden="true">
+                    <i class="pg pg-close fs-14"></i>
+                </button>
+                <h4 class="p-b-5"><span class="semi-bold">Разделить</span></h4>
+            </div>
+            <form role="form" #form="ngForm" (ngSubmit)="onSplitSubmit(form)">
+                <input type="hidden" name="equipmentId" [(ngModel)]="splitObj.equipmentId">
+                <input type="hidden" name="groupId" [(ngModel)]="splitObj.groupId">
+                <input type="hidden" name="totalQuantity" [(ngModel)]="splitObj.totalQuantity">
+                <input type="hidden" name="movementStatus" [(ngModel)]="splitObj.movementStatus">
+                <input type="hidden" name="package" [(ngModel)]="splitObj.package">
+                <div class="modal-body">
+                    <p class="small-text">
+                        {{splitObj.equipmentName}}
+                    </p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" style="max-width: 120px; margin: 0 auto;">
+                                <label>Отобрать</label>
+                                <div class="input-group">
+                                    <input class="form-control input-lg" type="number"
+                                        [(ngModel)]="splitObj.selectedQuantity" name="selectedQuantity" required>
+                                    <div class="input-group-append pl-2">
+                                        <span class="fs-24">/ {{splitObj.totalQuantity}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-xs btn-primary btn-cons" [disabled]="form.invalid">
+                        Разделить
+                    </button>
+                    <button type="button" class="btn btn-xs btn-cons" (click)="eqSplitModal.hide()">
+                        {{'form.cancel' | translate}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="inline">
+                                                        <button *ngIf="equipment.equipmentType == 'item'"
+                                                            class="btn btn-xs btn-default mr-1"
+                                                            (click)="openSplitForm('pack', equipment)"
+                                                            [disabled]="equipment.totalQuantity <= 1">
+                                                            Разделить
+                                                        </button>
+                                                    </div> -->

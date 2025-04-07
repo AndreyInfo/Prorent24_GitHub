@@ -1,0 +1,58 @@
+import { BaseModel } from "@models/base.model";
+import { SupplyType } from "@shared/enums/supply-type.enum";
+import { SetType } from "@shared/enums/set-type.enum";
+import { StockManagement } from "@shared/enums/stock-management.enum";
+import { QuantityMode } from "@shared/enums/quantity-mode.enum";
+import { TransportationType } from "@shared/enums/transportation-type.enum";
+import { KitType } from "@shared/enums/kit.enum";
+import { LenghtUnit } from "@shared/enums/lenght-unit.enum";
+import { WeightUnit } from "@shared/enums/weight-unit.enum";
+
+export class EquipmentModel extends BaseModel {
+  name: string;
+  supplyType: SupplyType = SupplyType.rental;
+  setType: SetType = SetType.item;
+  stockManagement: StockManagement;
+  criticalStock?: number;
+  quantityMode: QuantityMode = QuantityMode.enterQuantityManually;
+  quantity?: number = 1;
+  folderId: number;
+  folderName: string;
+  locationInWarehouse: string;
+  code: string;
+  displayInPlanner: boolean;
+  measuringUnit: string;
+  internalRemark: string;
+  externalRemark: string;
+  discountGroupId?: number;
+  //factorGroupId?: number;
+  rentalPrice: number;
+  subhirePrice: number;
+  newPrice: number;
+  salePrice: number;
+  purchasePrice: number;
+  marginPrice: number;
+  vatClassId: number;
+  length: number;
+  width: number;
+  height: number;
+  weight: number;
+  volume: number;
+  power: number;
+  current: number;
+  surfaceItem: boolean;
+  colour: string;
+  brand: string;
+  producerCode: string;
+  model: string;
+  powerConnector: string;
+  storage: string;
+  transportationType: TransportationType;
+  kitType: KitType;
+  maintenanceRequired: boolean;
+
+  weightUnit: WeightUnit;
+  lengthUnit: LenghtUnit;
+  widthUnit: LenghtUnit;
+  heightUnit: LenghtUnit;
+}

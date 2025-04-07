@@ -1,0 +1,110 @@
+<div class="row" style="margin-bottom: 25px;margin-top: 25px;">
+    <div class="col-md-12" style="padding-right: 10px;">
+        <div class="border-container">
+            <div class="container-fluid bg-white grid-controls-panel" style="height: 35px !important;">
+                <div>
+                    <a (click)="onCheckAllRows(false);checkboxState=false" class="link-button form-edit"
+                        style="font-size: 12px;line-height: 37px;">
+                        {{'form.unselected' | translate}}
+                    </a>
+                    <a (click)="onDeleteFiles()" class="link-button form-delete" style="line-height: 37px;">
+                        <svg width="10" height="12" viewBox="0 0 10 12" fill="none" style="margin-top: -4px;"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.66667 3.66669C1.35944 3.66669 1.11111 3.66669 1.11111 3.66669V10.8889C1.11111 11.5022 1.60889 12 2.22222 12H7.77778C8.39111 12 8.88889 11.5022 8.88889 10.8889V3.66669C8.88889 3.66669 8.64056 3.66669 8.33333 3.66669H1.66667ZM7.56556 2.00003L6.66667 0.888916H3.33333L2.43444 2.00003H0V3.11114H2.77778H7.22222H10V2.00003H7.56556Z"
+                                fill="#D66B5D" />
+                        </svg>
+                        <span style="margin-left: 11px;">{{'delete' | translate}}</span>
+                    </a>
+                    <input style="display: none" type="file" (change)="onUploadFile($event)"
+                    #fileInput>
+                    <a (click)="fileInput.click()" class="link-button form-edit link-bold"
+                        style="font-size: 12px;line-height: 37px;margin-left: 90px !important;">
+                        <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.33333 3.33333H6.11111V0H2.77778V3.33333H0.555556L4.44444 7.77778L8.33333 3.33333ZM0 8.88889H8.88889V10H0V8.88889Z"
+                                fill="#192D3E" />
+                        </svg>
+                        {{'form.download_file' | translate}}
+                    </a>
+                    <div class="inner folder-search pull-right" pg-parallax style="width: 250px;">
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <button type="button" class="filter-search-btn">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.13177 10.2635C6.31592 10.2635 7.4045 9.8562 8.27305 9.18073L11.093 12.0006L12 11.0936L9.18009 8.27369C9.8562 7.4045 10.2635 6.31592 10.2635 5.13177C10.2635 2.30224 7.9613 0 5.13177 0C2.30224 0 0 2.30224 0 5.13177C0 7.9613 2.30224 10.2635 5.13177 10.2635ZM5.13177 1.28294C7.2544 1.28294 8.9806 3.00914 8.9806 5.13177C8.9806 7.2544 7.2544 8.9806 5.13177 8.9806C3.00914 8.9806 1.28294 7.2544 1.28294 5.13177C1.28294 3.00914 3.00914 1.28294 5.13177 1.28294Z"
+                                            fill="#192D3E" fill-opacity="0.6" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <input class="input-sm folder-search-input"
+                                style="width: 87% !important;padding-right: 6px !important;"
+                                (keyup)="searchByText($event)" name="searchFolders" type="text" placeholder="Поиск...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 jqx-widget-child-container jqx-widget-child-container-chckebox">
+                <div class="checkbox check-primary check-box-grid">
+                    <input type="checkbox" id="chckebox" [(ngModel)]="checkboxState" name="chckebox"
+                        (change)="onCheckAllRows(checkboxState)">
+                    <label for="chckebox">
+                    </label>
+                </div>
+                <jqxTreeGrid #treeGrid [theme]="'metro'" [localization]="localization" [width]="'100%'"
+                    [height]="'529px'" [source]="source" [columns]="tableSource.columns" [selectionMode]="selectMode"
+                    [checkboxes]="true" [scrollBarSize]="5" (onRowClick)="onRowSelectItem($event)" (onRowDoubleClick)="onEditModal(selected_entity?.id)">
+                </jqxTreeGrid>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL EQUIPMENT GROUP -->
+<div bsModal #fileModal="bs-modal" class="modal fade slide-right" tabindex="1" role="dialog"
+    aria-labelledby="fileModal" [config]="{backdrop: 'static'}" aria-hidden="true">
+    <div class="modal-dialog group-modal">
+        <div class="modal-content" *ngIf="selected_entity" style="border: none;border-radius: 3px;">
+            <div>
+                <div class="inner group-modal-header" pg-parallax>
+                    <div class="input-group mb-2">
+                        <div class="modal-header-block">
+                            {{ selected_entity.file }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form role="form" #fileModalForm="ngForm" (ngSubmit)="onSubmit(fileModalForm,true,true,url)">
+                <input type="hidden" id="id" name="id" [(ngModel)]="selected_entity.id">
+                <input type="hidden" id="file" name="file" [(ngModel)]="selected_entity.file">
+                <input type="hidden" id="name" name="name" [(ngModel)]="selected_entity.file">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12" style="padding-left: 0px;">
+                            <div class="form-group border-blue"
+                                [class.has-error]="description.invalid && (description.dirty || description.touched)"
+                                [ngClass]="{'errors-submit': description.errors}">
+                                <label class="label-sm">{{'entity.description' | translate}} <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" placeholder="{{'entity.description' | translate}}" class="form-control"
+                                    id="description" name="description" [(ngModel)]="selected_entity.description" #description="ngModel" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center pt-5 btn-group">
+                        <button (click)="fileModal.hide()" type="submit" class="btn btn-sm btn-white folder-save-btn"
+                            [disabled]="fileModal.invalid">
+                            {{ 'form.save' | translate }}
+                        </button>
+                        <button type="button" class="btn btn-white btn-xs mr-1 form-cancel" style="margin-left: 5px;"
+                            (click)="fileModal.hide()">
+                            {{'form.cancel' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

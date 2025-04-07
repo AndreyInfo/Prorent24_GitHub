@@ -1,0 +1,153 @@
+[
+  {
+    "ModuleType": "CrewMembers",
+    "Name": "Office",
+    "Order": 1,
+    "IsSystem":true
+  },
+  {
+    "ModuleType": "CrewMembers",
+    "Name": "Freelancers",
+    "Order": 2,
+    "IsSystem":true
+  },
+  {
+    "ModuleType": "Contacts",
+    "Name": "Customers",
+    "Order": 1,
+    "IsSystem":true
+  },
+  {
+    "ModuleType": "Contacts",
+    "Name": "Locations",
+    "Order": 2,
+    "IsSystem":true
+  },
+  {
+    "ModuleType": "Contacts",
+    "Name": "Suppliers",
+    "Order": 3,
+    "IsSystem": true
+  },
+  {
+    "ModuleType": "Vehicles",
+    "Name": "Vehicles",
+    "Order": 1,
+    "IsSystem":true
+  },
+  {
+    "ModuleType": "Equipment",
+    "Name": "Audio",
+    "Order": 1,
+    "IsSystem":true,
+    "childs":[
+      {
+        "ModuleType": "Equipment",
+        "Name": "Active Speakers",
+        "Order": 1
+      },
+      {
+        "ModuleType": "Equipment",
+        "Name": "Amplifiers",
+        "Order": 2
+      },
+      {
+        "ModuleType": "Equipment",
+        "Name": "DJ",
+        "Order": 3
+      }
+    ]
+  },
+  {
+    "ModuleType": "Equipment",
+    "Name": "Microphones",
+    "Order": 2,
+    "IsSystem":true,
+    "childs":[
+      {
+        "ModuleType": "Equipment",
+        "Name": "Wired",
+        "Order": 1
+      },
+      {
+        "ModuleType": "Equipment",
+        "Name": "Wireless",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "ModuleType": "Equipment",
+    "Name": "Cables",
+    "Order": 3,
+    "IsSystem":true
+  },
+  {
+    "ModuleType": "Equipment",
+    "Name": "Consumables",
+    "Order": 4,
+    "IsSystem":true
+  },
+  {
+    "ModuleType": "Equipment",
+    "Name": "Lighting",
+    "Order": 5,
+    "IsSystem":true,
+     "childs":[
+      {
+        "ModuleType": "Equipment",
+        "Name": "Controllers",
+        "Order": 1
+      },
+      {
+        "ModuleType": "Equipment",
+        "Name": "Conventional",
+        "Order": 2
+      },
+      {
+        "ModuleType": "Equipment",
+        "Name": "Dimmer",
+        "Order": 3
+      },
+      {
+        "ModuleType": "Equipment",
+        "Name": "FX",
+        "Order": 4
+      },
+       {
+        "ModuleType": "Equipment",
+        "Name": "Intelligent",
+        "Order": 5
+      },
+      {
+        "ModuleType": "Equipment",
+        "Name": "LED",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "ModuleType": "Equipment",
+    "Name": "Rigging",
+    "Order": 6,
+    "IsSystem":true,
+     "childs":[
+      {
+        "ModuleType": "Equipment",
+        "Name": "Support",
+        "Order": 1
+      },
+      {
+        "ModuleType": "Equipment",
+        "Name": "Truss",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "ModuleType": "Equipment",
+    "Name": "Sets",
+    "Order": 7,
+    "IsSystem":true
+  }
+]

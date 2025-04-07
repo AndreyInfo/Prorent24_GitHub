@@ -1,0 +1,67 @@
+<div class="inner-content full-height page-content-wrapper scroll-vertical-hidden">
+
+    <!-- HEADER -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron no-margin">
+                <div class="container-fluid" style="margin-right: 20px;">
+                    <div class="inner" pg-parallax>
+                        <h4>{{'Notifications' | translate}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="">
+        <div class="row" style="height: 730px;">
+            <div class="col-lg-8">
+                <div class="card card-borderless dashboard-left-block" style="height: 100%;">
+                    <div class="col-md-12 scroll" style="padding: 0px;">
+                        <div class="widget-11-table auto-overflow">
+                            <table class="table table-condensed table-hover">
+                                <tbody>
+                                    <tr style="cursor: pointer;" *ngFor="let item of list"
+                                        (click)="readMessage(item)">
+                                        <td>
+                                            <img *ngIf="!item.isRead" src="../../../assets/img/icon/new-message.png"
+                                                width="40" height="40">
+                                            <img *ngIf="item.isRead"
+                                                src="../../../assets/img/icon/message-already-read.png" width="40"
+                                                height="40">
+                                        </td>
+                                        <td>
+                                            <h5>{{item.theme}}</h5>
+                                        </td>
+                                        <td>
+                                            <h5>{{item.creationDate | date:"dd.MM.yy HH:mm" }}</h5>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-white">
+                <div class="widget-info" *ngIf="selected_entity.message">
+                    <div class="card card-transparent mb-0 ng-star-inserted">
+                        <div class="card-header separator">
+                            <div class="card-title">
+                                {{ 'entity.message' | translate}} {{selected_entity.creationDate | date:"dd.MM.yy HH:mm"}}
+                            </div>
+                        </div>
+                        <div class="card-body ng-trigger ng-trigger-collapseState" style="opacity: 1;">
+                            <!---->
+                            <div class="pt-2">
+                                <div class="ng-star-inserted">
+                                    {{selected_entity.message}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

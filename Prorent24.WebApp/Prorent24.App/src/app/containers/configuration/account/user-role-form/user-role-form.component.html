@@ -1,0 +1,143 @@
+<div class="jumbotron no-margin" style="height: 100px;">
+    <div class="sm-p-l-0 sm-p-r-0">
+        <div class="inner" pg-parallax="">
+            <div class="container-fluid sm-p-l-0 sm-p-r-0">
+                <br>
+                <div>
+                    <div>
+                        <span class="config-nav-route-first"
+                            style="padding-right: 34px;">{{'account' | translate}}</span>
+                        <svg style="margin-top: -8px;" width="9" height="15" viewBox="0 0 9 15" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M-5.74444e-07 1.85825L5.42578 7.5L-8.12264e-08 13.1418L1.78711 15L9 7.5L1.78711 -7.8117e-08L-5.74444e-07 1.85825Z"
+                                fill="black" fill-opacity="0.2" />
+                        </svg>
+                        <span class="config-nav-route-second"
+                            style="padding-left: 34px;">{{ entity.id ? "Редактировать " : "Создать " }} роль</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form role="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="row">
+        <div class="col-lg-2.5">
+            <div>
+                <app-configuration-menu></app-configuration-menu>
+                <div class="row col-white control-config">
+                    <div class="col">
+                        <button type="submit" class="btn btn-sm btn-white form-save">
+                            {{ 'form.save' | translate }}
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-white btn-xs mr-1 form-cancel" style="margin-left: 5px;">
+                            {{'form.cancel' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 21px;"></div>
+        <div class="col">
+            <div class="row">
+                <div class="col-lg-12">
+                    <input type="hidden" name="id" [(ngModel)]="entity.id">
+                    <pgcard MinimalHeader="true">
+                        <ng-template #CardTitle>
+                            {{ entity.id ? "Редактировать " : "Создать " }} роль
+                        </ng-template>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group border-blue" [ngClass]="{'errors-submit': name.errors}"
+                                    [class.has-error]="name.invalid && (name.dirty || name.touched)">
+                                    <label>{{'Position' | translate}}</label>
+                                    <input type="text" placeholder="{{'Position' | translate}}" class="form-control"
+                                        id="name" name="name" [(ngModel)]="entity.name" #name="ngModel" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group border-blue " [ngClass]="{'errors-submit': rate.errors}"
+                                    [class.has-error]="rate.invalid && (rate.dirty || rate.touched)">
+                                    <label class="label-sm">{{'Salary' | translate}}</label>
+                                    <input type="number" placeholder="0" min="0" class="form-control" id="rate"
+                                        name="rate" [(ngModel)]="entity.rate" #rate="ngModel">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Without Function Permissions -->
+                        <div class="row" *ngIf="entity.modulePermissions">
+                            <div class="col-lg-1.5"
+                                *ngFor="let permission of entityWithoutFunctionPermissions(); let i = index">
+                                <div class="checkbox check-primary">
+                                    <input type="checkbox" id="{{permission.name}}" name="{{permission.name}}"
+                                        [checked]="permission.value" [(ngModel)]="permission.value">
+                                    <label for="{{permission.name}}">
+                                        {{ permission.name | translate }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Wit Function Permissions -->
+
+                        <pg-collapseset *ngFor="let permission of entityWithFunctionPermissions(); let i = index"
+                            class="row user-roles-collapseset">
+                            <pg-collapse [Title]="permission.name | translate" [Active]="permission.value"
+                                [HeaderCheckbox]="true" [(Checked)]="permission.value" [Id]="i">
+                                <div class="row">
+                                    <ng-container
+                                        *ngFor="let function of permission.functionPermissions; let j = index">
+                                        <div class="col-lg-6 mini-switch-widget" style="padding-left: 7px;"
+                                            *ngIf="function.enum.length == 2">
+                                            <ui-switch switchColor="#FFFFFF" defaultBgColor="#D2D2D2" size="small"
+                                                [checked]="function.value == 'yes' ? true : false"
+                                                (change)="$event ? function.value = 'yes' : function.value = 'no'">
+                                            </ui-switch>
+                                            <label
+                                                style="text-align:right;padding-left: 9px;">{{ function.name | translate}}</label>
+                                        </div>
+                                        <div class="col-lg-12"
+                                            style="display: inline-flex;padding-left: 0px;padding-right: 0px;padding-top: 5px;"
+                                            *ngIf="function.enum.length > 2">
+                                            <label
+                                                style="padding-top: 2px;padding-right: 9px;width: 25%;">{{ function.name | translate}}</label>
+                                            <pg-select style="width: 75%;" name="select_{{i}}_{{j}}"
+                                                id="select_{{i}}_{{j}}" [(ngModel)]="function.value" [PlaceHolder]="''">
+                                                <pg-option *ngFor="let item of function.enum"
+                                                    [Label]="item.key | translate" [Value]="item.key">
+                                                </pg-option>
+                                            </pg-select>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </pg-collapse>
+                        </pg-collapseset>
+
+
+
+                        <!-- <div >
+
+                            <div class="row">
+                                <div class="col-lg-12" *ngIf="permission.functionPermissions.length > 0">
+                                    <div class="checkbox check-primary">
+                                        <input type="checkbox" id="permission.value" name="permission.value"
+                                            [checked]="permission.value">
+                                        <label for="permission.value">
+                                            {{ permission.name | translate }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </pgcard>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

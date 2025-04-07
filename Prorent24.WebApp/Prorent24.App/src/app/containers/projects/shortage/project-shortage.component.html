@@ -1,0 +1,15 @@
+<div class="row" style="margin-bottom: 25px;margin-top: 25px;">
+    <!-- CONTENT -->
+    <div class="col-md-12" style="padding-right: 10px;">
+        <div class="border-container" style="height: 753px !important;">
+            <div class="jqx-widget-container jqxWidgetContainerProjectShortage">
+                <jqxGrid #dataGrid [theme]="'metro'" [localization]="localization" [width]="'100%'" [height]="'753px'"
+                    [autoheight]="true" [source]="source" [columns]="tableSource.columns" [columnsresize]="true"
+                    [sortable]="true" [autoshowfiltericon]="true" [enabletooltips]="false" [selectionmode]="selectMode"
+                    [scrollbarsize]="5" [rowsheight]="40" (onRowselect)="onRowSelect($event)"
+                    (onRowdoubleclick)="onEditRowModal(selected_entity?.id)">
+                </jqxGrid>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="jumbotron no-margin">
+  <div class="sm-p-l-0 sm-p-r-0">
+    <div class="inner" pg-parallax="">
+      <div class="container-fluid sm-p-l-0 sm-p-r-0">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="">{{'Customer relations' | translate}}</a></li>
+          <li class="breadcrumb-item active">{{'Blanks' | translate}}</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card card-transparent">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-12">
+        <pgcard MinimalHeader="true" HeaderClass="separator">
+          <ng-template #CardTitle>
+            <a routerLink="create" class="link-button">
+              <button type="button" class="btn btn-primary btn-xs mr-1">
+                <i class="fa fa-plus"></i> {{'form.add' | translate}}
+              </button>
+            </a>
+            <a routerLink="edit/{{selected_entity?.id}}" class="link-button">
+              <button class="btn btn-info btn-xs mr-1" [disabled]="!canAction">
+                <i class="fa fa-edit"></i>
+              </button>
+            </a>
+            <button class="btn btn-danger btn-xs mr-1" (click)="onDeleteRow()" [disabled]="!canAction">
+              <i class="fa fa-trash"></i>
+            </button>
+          </ng-template>
+
+          <div class="pt-3">
+            <jqxGrid #dataGrid [theme]="'metro'" [width]="'100%'" [autoheight]="true" [source]="source"
+              [columns]="tableSource.columns" [columnsresize]="true" [sortable]="true" [autoshowfiltericon]="true"
+              [enabletooltips]="false" [selectionmode]="'singlerow'" [columnsreorder]="true"
+              (onRowselect)="onRowSelect($event)" (onRowdoubleclick)="openEditForm()">
+            </jqxGrid>
+          </div>
+        </pgcard>
+      </div>
+    </div>
+  </div>
+</div>

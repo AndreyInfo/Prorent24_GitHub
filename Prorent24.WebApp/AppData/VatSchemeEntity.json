@@ -1,0 +1,18 @@
+﻿[
+  {
+    "Name": "НДС обратный платеж",
+    "Type": "VatReverseCharge"
+  },
+  {
+    "Name": "По умолчанию",
+    "Type": "Rates"
+  },
+  {
+    "Name": "Форс 20%",
+    "Type": "FixedRate"
+  },
+  {
+    "Name": "Форс 7%",
+    "Type": "FixedRate"
+  }
+]

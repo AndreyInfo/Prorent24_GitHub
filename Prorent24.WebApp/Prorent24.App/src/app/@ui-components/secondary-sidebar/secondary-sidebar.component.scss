@@ -1,0 +1,13 @@
+.secondary-sidebar{
+   padding-top: 0;
+}
+
+@media (max-width: 1024px) {
+    .secondary-show {
+        display: block;
+    }
+
+    .secondary-hide {
+        display: none;
+    }
+}
